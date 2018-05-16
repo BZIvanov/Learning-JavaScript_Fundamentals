@@ -3,7 +3,7 @@ function distanceBetweenPoints(x1, y1, x2, y2) {
     let pointB = { x: x2, y: y2 }
 
     let sideA = Math.pow(Math.abs(pointA.x - pointB.x), 2)
-    let sideB = Math.pow(Math.abs(pointA.y - pointB.y), 2)
+    let sideB = Math.pow(Math.abs(pointA['y'] - pointB['y']), 2)
     let result = Math.sqrt(sideA + sideB)
     return result
 }
