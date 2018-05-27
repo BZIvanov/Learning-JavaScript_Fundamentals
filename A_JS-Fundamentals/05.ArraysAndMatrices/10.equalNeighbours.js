@@ -1,6 +1,5 @@
 function equalNeighbours(matrix) {
     let count = 0
-    let maxIndex = 1
     for(let row = 0; row < matrix.length; row++) {
         for(let col = 0; col < matrix[row].length; col++) {
             if(matrix[row + 1] && matrix[row][col] === matrix[row + 1][col]) {
