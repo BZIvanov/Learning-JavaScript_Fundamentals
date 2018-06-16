@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>title</title>
+</head>
+<body>
+<h1>List of Items</h1>
+<ul id="items"></ul>
+<input type="text" id="newText" />
+<input type="button" value="Add" onclick="addItem()">
+
+
+<script>
+    function addItem() {
+        let item = document.getElementById("newText")
+        let list = document.getElementById("items")
+        let li = document.createElement("li")
+        li.innerHTML = `${item.value} <a href="#">[Delete]</a>`
+        li.addEventListener("click", deleteItem)
+        list.appendChild(li)
+
+        function deleteItem() {
+            this.parentNode.removeChild(this)
+        }
+
+        item.value = ""
+    }
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>title</title>
+</head>
+<body>
+<table border="1" id="customers">
+    <tr><th>Name</th><th>Email</th></tr>
+    <tr><td>Eve</td><td>eve@gmail.com</td></tr>
+    <tr><td>Nick</td><td>nick@yahooo.com</td></tr>
+    <tr><td>Didi</td><td>didi@didi.net</td></tr>
+    <tr><td>Tedy</td><td>tedy@tedy.com</td></tr>
+</table>
+Email: <input type="text" name="email" />
+<button onclick="deleteByEmail()">Delete</button>
+<div id="result" />
+
+<script>
+    function deleteByEmail() {
+        let table = document.querySelectorAll("table tr")
+        let email = document.getElementsByName("email")[0].value
+        
+        for(let row of table) {
+            if(row.children[1].textContent === email) {
+                row.parentNode.removeChild(row)
+                return
+            }
+        }
+        document.getElementById("result").textContent = "Not found."
+    }
+</script>
+</body>
+</html>
