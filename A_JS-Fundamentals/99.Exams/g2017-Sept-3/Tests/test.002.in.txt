@@ -1,0 +1,5 @@
+{"number":"408A","type":"double-bedded"}
+{"number":"405A","type":"double-bedded"}
+Guests
+{"first":{"name":"Ora Wilkerson","gender":"female","age":57},"second":{"name":"Melody Gill","gender":"female","age":53}}
+{"first":{"name":"Valerie French","gender":"female","age":68},"second":{"name":"Merle Jenkins","gender":"male","age":62}}

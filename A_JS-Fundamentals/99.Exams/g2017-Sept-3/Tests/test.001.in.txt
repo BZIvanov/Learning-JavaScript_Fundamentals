@@ -1,0 +1,5 @@
+{"number":"408A","type":"double-bedded"}
+{"number":"303","type":"triple"}
+Guests
+{"first":{"name":"Javier Ortega","gender":"male","age":59},"second":{"name":"Kevin Huff","gender":"male","age":67}}
+{"first":{"name":"Sadie Carson","gender":"female","age":66},"second":{"name":"Wendell Powell","gender":"male","age":43}}

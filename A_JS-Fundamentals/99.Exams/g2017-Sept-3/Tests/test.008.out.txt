@@ -1,0 +1,181 @@
+Room number: 115
+--Guest Name: Carol Hansen
+--Guest Age: 1
+--Guest Name: Lynette Pena
+--Guest Age: 28
+--Guest Name: Ora Wilkerson
+--Guest Age: 5
+Empty beds in the room: 0
+Room number: 190
+--Guest Name: Justin Tran
+--Guest Age: 22
+--Guest Name: Tracey Greer
+--Guest Age: 38
+Empty beds in the room: 0
+Room number: 193
+--Guest Name: Alexis Graham
+--Guest Age: 47
+--Guest Name: Elizabeth Huff
+--Guest Age: 40
+--Guest Name: Janis Franklin
+--Guest Age: 12
+Empty beds in the room: 0
+Room number: 195
+--Guest Name: Armando Cortez
+--Guest Age: 62
+--Guest Name: Jesus Terry
+--Guest Age: 31
+--Guest Name: Sergio Ferguson
+--Guest Age: 67
+Empty beds in the room: 0
+Room number: 248
+--Guest Name: Marshall Cain
+--Guest Age: 37
+--Guest Name: Milton Fleming
+--Guest Age: 20
+--Guest Name: Ronnie Floyd
+--Guest Age: 41
+Empty beds in the room: 0
+Room number: 300
+--Guest Name: Claudia Haynes
+--Guest Age: 29
+--Guest Name: Horace Thornton
+--Guest Age: 48
+Empty beds in the room: 0
+Room number: 313
+--Guest Name: Alejandro Lane
+--Guest Age: 30
+--Guest Name: Mathew Soto
+--Guest Age: 42
+--Guest Name: Rudy Mason
+--Guest Age: 63
+Empty beds in the room: 0
+Room number: 360
+--Guest Name: Rodolfo Howard
+--Guest Age: 28
+--Guest Name: Valerie French
+--Guest Age: 69
+Empty beds in the room: 0
+Room number: 408
+--Guest Name: Esther Valdez
+--Guest Age: 12
+--Guest Name: Levi Boyd
+--Guest Age: 19
+Empty beds in the room: 0
+Room number: 416
+--Guest Name: Alejandro Lane
+--Guest Age: 55
+--Guest Name: Julian Phelps
+--Guest Age: 51
+--Guest Name: Micheal Townsend
+--Guest Age: 44
+Empty beds in the room: 0
+Room number: 450
+--Guest Name: Erica Wood
+--Guest Age: 9
+--Guest Name: Matthew Rodriquez
+--Guest Age: 61
+Empty beds in the room: 0
+Room number: 468
+--Guest Name: Anne Richardson
+--Guest Age: 39
+--Guest Name: Darnell Mack
+--Guest Age: 44
+Empty beds in the room: 0
+Room number: 481
+--Guest Name: Dave Smith
+--Guest Age: 28
+--Guest Name: Javier Ortega
+--Guest Age: 69
+--Guest Name: Steven Todd
+--Guest Age: 64
+Empty beds in the room: 0
+Room number: 500
+--Guest Name: Dianne Harrington
+--Guest Age: 1
+--Guest Name: Doreen Sullivan
+--Guest Age: 24
+--Guest Name: Lee Rogers
+--Guest Age: 62
+Empty beds in the room: 0
+Room number: 621
+--Guest Name: Jimmy Jimenez
+--Guest Age: 33
+--Guest Name: Salvatore Carroll
+--Guest Age: 26
+--Guest Name: Troy Payne
+--Guest Age: 64
+Empty beds in the room: 0
+Room number: 668
+--Guest Name: Kelly Manning
+--Guest Age: 62
+--Guest Name: Micheal Townsend
+--Guest Age: 43
+Empty beds in the room: 0
+Room number: 690
+--Guest Name: Clinton Santiago
+--Guest Age: 63
+--Guest Name: Jim Graham
+--Guest Age: 6
+--Guest Name: Tyrone Hogan
+--Guest Age: 59
+Empty beds in the room: 0
+Room number: 709
+--Guest Name: Jim Graham
+--Guest Age: 27
+--Guest Name: Raquel Johnson
+--Guest Age: 9
+Empty beds in the room: 0
+Room number: 858
+--Guest Name: Connie Swanson
+--Guest Age: 23
+--Guest Name: Ida Wolfe
+--Guest Age: 28
+--Guest Name: Sheri Sparks
+--Guest Age: 62
+Empty beds in the room: 0
+Room number: 869
+--Guest Name: Jamie Chambers
+--Guest Age: 6
+--Guest Name: Merle Jenkins
+--Guest Age: 15
+Empty beds in the room: 0
+Room number: 901
+--Guest Name: Amos Murray
+--Guest Age: 34
+--Guest Name: Jody Harris
+--Guest Age: 11
+Empty beds in the room: 0
+Room number: 958
+--Guest Name: Erin Moreno
+--Guest Age: 33
+--Guest Name: Katie Fisher
+--Guest Age: 69
+--Guest Name: Velma Chavez
+--Guest Age: 29
+Empty beds in the room: 0
+Room number: 961
+--Guest Name: Esther Valdez
+--Guest Age: 66
+--Guest Name: Jimmy Jimenez
+--Guest Age: 69
+Empty beds in the room: 0
+Room number: 963
+--Guest Name: Dave Smith
+--Guest Age: 8
+--Guest Name: Rochelle Sandoval
+--Guest Age: 22
+Empty beds in the room: 0
+Room number: 976
+--Guest Name: Beatrice Fleming
+--Guest Age: 28
+--Guest Name: Gerard Williams
+--Guest Age: 19
+Empty beds in the room: 0
+Room number: 991
+--Guest Name: Jeanette Steele
+--Guest Age: 16
+--Guest Name: Sergio Ferguson
+--Guest Age: 55
+Empty beds in the room: 0
+Guests moved to the tea house: 12

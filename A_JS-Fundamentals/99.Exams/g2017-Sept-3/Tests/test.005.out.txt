@@ -1,0 +1,3 @@
+Room number: 903
+Empty beds in the room: 2
+Guests moved to the tea house: 10

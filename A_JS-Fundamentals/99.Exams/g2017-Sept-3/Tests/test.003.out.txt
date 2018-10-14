@@ -1,0 +1,27 @@
+Room number: 161
+--Guest Name: Freddie Harmon
+--Guest Age: 30
+--Guest Name: Jesus Terry
+--Guest Age: 64
+--Guest Name: Tracy Reid
+--Guest Age: 41
+Empty beds in the room: 0
+Room number: 242
+--Guest Name: Freddie Harmon
+--Guest Age: 46
+--Guest Name: Georgia Thomas
+--Guest Age: 38
+Empty beds in the room: 0
+Room number: 428
+--Guest Name: Carol Hansen
+--Guest Age: 6
+--Guest Name: Kara Burns
+--Guest Age: 7
+--Guest Name: Nina Diaz
+--Guest Age: 29
+Empty beds in the room: 0
+Room number: 537
+--Guest Name: Jordan Garner
+--Guest Age: 16
+Empty beds in the room: 2
+Guests moved to the tea house: 1
