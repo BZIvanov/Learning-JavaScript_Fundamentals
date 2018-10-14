@@ -1,0 +1,25 @@
+Room number: 115A
+--Guest Name: Jimmy Jimenez
+--Guest Age: 33
+--Guest Name: Salvatore Carroll
+--Guest Age: 26
+--Guest Name: Troy Payne
+--Guest Age: 64
+Empty beds in the room: 0
+Room number: 481
+--Guest Name: Katie Fisher
+--Guest Age: 69
+--Guest Name: Lynette Pena
+--Guest Age: 28
+--Guest Name: Ora Wilkerson
+--Guest Age: 5
+Empty beds in the room: 0
+Room number: A621
+--Guest Name: Clinton Santiago
+--Guest Age: 63
+--Guest Name: Jim Graham
+--Guest Age: 6
+--Guest Name: Tyrone Hogan
+--Guest Age: 59
+Empty beds in the room: 0
+Guests moved to the tea house: 1

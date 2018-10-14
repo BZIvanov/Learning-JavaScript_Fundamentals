@@ -1,0 +1,57 @@
+Room number: 217
+--Guest Name: Alejandro Lane
+--Guest Age: 10
+--Guest Name: Andre Kim
+--Guest Age: 4
+--Guest Name: Sammy Thompson
+--Guest Age: 47
+Empty beds in the room: 0
+Room number: 303
+--Guest Name: Audrey Underwood
+--Guest Age: 23
+--Guest Name: Chelsea Wilkins
+--Guest Age: 65
+--Guest Name: Ora Wilkerson
+--Guest Age: 57
+Empty beds in the room: 0
+Room number: 405A
+Empty beds in the room: 2
+Room number: 408A
+--Guest Name: Sadie Carson
+--Guest Age: 66
+--Guest Name: Wendell Powell
+--Guest Age: 43
+Empty beds in the room: 0
+Room number: 442
+--Guest Name: Merle Jenkins
+--Guest Age: 62
+--Guest Name: Valerie French
+--Guest Age: 68
+Empty beds in the room: 0
+Room number: 482
+--Guest Name: Billy Maxwell
+--Guest Age: 48
+--Guest Name: Violet Kelly
+--Guest Age: 10
+Empty beds in the room: 0
+Room number: 495
+Empty beds in the room: 2
+Room number: 600
+--Guest Name: Horace Thornton
+--Guest Age: 39
+--Guest Name: Javier Ortega
+--Guest Age: 59
+--Guest Name: Kevin Huff
+--Guest Age: 67
+Empty beds in the room: 0
+Room number: 705
+--Guest Name: Audrey Underwood
+--Guest Age: 19
+--Guest Name: Melody Gill
+--Guest Age: 53
+--Guest Name: Monica Dunn
+--Guest Age: 48
+Empty beds in the room: 0
+Room number: 906
+Empty beds in the room: 2
+Guests moved to the tea house: 2

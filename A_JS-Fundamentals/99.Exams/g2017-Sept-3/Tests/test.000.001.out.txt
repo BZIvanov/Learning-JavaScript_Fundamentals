@@ -1,0 +1,15 @@
+Room number: 206
+--Guest Name: Angel Nachev
+--Guest Age: 22
+--Guest Name: Katerina Stefanova
+--Guest Age: 23
+Empty beds in the room: 0
+Room number: 311
+--Guest Name: Miglena Yovcheva
+--Guest Age: 23
+--Guest Name: Tanya Popova
+--Guest Age: 24
+--Guest Name: Tatyana Germanova
+--Guest Age: 23
+Empty beds in the room: 0
+Guests moved to the tea house: 1

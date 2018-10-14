@@ -1,0 +1,9 @@
+Room number: 405A
+Empty beds in the room: 2
+Room number: 408A
+--Guest Name: Merle Jenkins
+--Guest Age: 62
+--Guest Name: Valerie French
+--Guest Age: 68
+Empty beds in the room: 0
+Guests moved to the tea house: 2

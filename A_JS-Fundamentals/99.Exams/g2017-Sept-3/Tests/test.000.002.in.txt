@@ -1,0 +1,9 @@
+{ "number": "101A", "type": "double-bedded" }
+{ "number": "104", "type": "triple" }
+{ "number": "101B", "type": "double-bedded" }
+{ "number": "102", "type": "triple" }
+Guests
+{ "first": { "name": "Sushi & Chicken", "gender": "female", "age": 15 }, "second": { "name": "Salisa Debelisa", "gender": "female", "age": 25 } }
+{ "first": { "name": "Daenerys Targaryen", "gender": "female", "age": 20 }, "second": { "name": "Jeko Snejev", "gender": "male", "age": 18 } }
+{ "first": { "name": "Pesho Goshov", "gender": "male", "age": 20 }, "second": { "name": "Gosho Peshov", "gender": "male", "age": 18 } }
+{ "first": { "name": "Conor McGregor", "gender": "male", "age": 29 }, "second": { "name": "Floyd Mayweather", "gender": "male", "age": 40 } }

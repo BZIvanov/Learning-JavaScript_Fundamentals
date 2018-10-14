@@ -1,0 +1,13 @@
+Room number: 303
+--Guest Name: Javier Ortega
+--Guest Age: 59
+--Guest Name: Kevin Huff
+--Guest Age: 67
+Empty beds in the room: 1
+Room number: 408A
+--Guest Name: Sadie Carson
+--Guest Age: 66
+--Guest Name: Wendell Powell
+--Guest Age: 43
+Empty beds in the room: 0
+Guests moved to the tea house: 0

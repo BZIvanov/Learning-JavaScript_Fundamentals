@@ -1,0 +1,7 @@
+{"number":"903","type":"double-bedded"}
+Guests
+{"first":{"name":"Laurie Montgomery","gender":"female","age":16},"second":{"name":"Sadie Carson","gender":"female","age":29}}
+{"first":{"name":"Erin Moreno","gender":"female","age":69},"second":{"name":"Beth Foster","gender":"female","age":48}}
+{"first":{"name":"Freddie Harmon","gender":"male","age":30},"second":{"name":"Jesus Terry","gender":"male","age":64}}
+{"first":{"name":"Nina Diaz","gender":"female","age":29},"second":{"name":"Carol Hansen","gender":"female","age":6}}
+{"first":{"name":"Tracy Reid","gender":"male","age":41},"second":{"name":"Jordan Garner","gender":"male","age":16}}

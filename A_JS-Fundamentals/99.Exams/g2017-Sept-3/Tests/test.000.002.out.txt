@@ -1,0 +1,23 @@
+Room number: 101A
+--Guest Name: Daenerys Targaryen
+--Guest Age: 20
+--Guest Name: Jeko Snejev
+--Guest Age: 18
+Empty beds in the room: 0
+Room number: 101B
+Empty beds in the room: 2
+Room number: 102
+--Guest Name: Conor McGregor
+--Guest Age: 29
+--Guest Name: Gosho Peshov
+--Guest Age: 18
+--Guest Name: Pesho Goshov
+--Guest Age: 20
+Empty beds in the room: 0
+Room number: 104
+--Guest Name: Salisa Debelisa
+--Guest Age: 25
+--Guest Name: Sushi & Chicken
+--Guest Age: 15
+Empty beds in the room: 1
+Guests moved to the tea house: 1

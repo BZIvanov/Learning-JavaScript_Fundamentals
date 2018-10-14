@@ -1,0 +1,35 @@
+{"number":"97","type":"triple"}
+{"number":"600","type":"double-bedded"}
+{"number":"924","type":"triple"}
+{"number":"242","type":"double-bedded"}
+{"number":"346","type":"double-bedded"}
+{"number":"537","type":"triple"}
+{"number":"161","type":"triple"}
+{"number":"46","type":"double-bedded"}
+{"number":"428","type":"triple"}
+{"number":"584","type":"double-bedded"}
+{"number":"34","type":"double-bedded"}
+{"number":"636","type":"triple"}
+{"number":"963","type":"double-bedded"}
+Guests
+{"first":{"name":"Laurie Montgomery","gender":"female","age":16},"second":{"name":"Sadie Carson","gender":"female","age":29}}
+{"first":{"name":"Erin Moreno","gender":"female","age":69},"second":{"name":"Beth Foster","gender":"female","age":48}}
+{"first":{"name":"Georgia Thomas","gender":"female","age":38},"second":{"name":"Freddie Harmon","gender":"male","age":46}}
+{"first":{"name":"Alexis Graham","gender":"female","age":19},"second":{"name":"Marco Arnold","gender":"male","age":4}}
+{"first":{"name":"Freddie Harmon","gender":"male","age":30},"second":{"name":"Jesus Terry","gender":"male","age":64}}
+{"first":{"name":"Nina Diaz","gender":"female","age":29},"second":{"name":"Carol Hansen","gender":"female","age":6}}
+{"first":{"name":"Tracy Reid","gender":"male","age":41},"second":{"name":"Jordan Garner","gender":"male","age":16}}
+{"first":{"name":"Kara Burns","gender":"female","age":7},"second":{"name":"Marjorie Butler","gender":"female","age":28}}
+{"first":{"name":"Ismael Wagner","gender":"male","age":4},"second":{"name":"Claude Schneider","gender":"male","age":63}}
+{"first":{"name":"Ashley Mcguire","gender":"female","age":31},"second":{"name":"Melody Gill","gender":"female","age":38}}
+{"first":{"name":"Joyce Roy","gender":"female","age":41},"second":{"name":"Miguel Kelly","gender":"male","age":23}}
+{"first":{"name":"Chelsea Wilkins","gender":"female","age":59},"second":{"name":"Marianne Boone","gender":"female","age":18}}
+{"first":{"name":"Lori Griffin","gender":"female","age":11},"second":{"name":"Byron Love","gender":"male","age":58}}
+{"first":{"name":"Carol Hansen","gender":"female","age":0},"second":{"name":"Christine Page","gender":"female","age":45}}
+{"first":{"name":"Ronnie Floyd","gender":"male","age":51},"second":{"name":"Steven Todd","gender":"male","age":6}}
+{"first":{"name":"Eva Reyes","gender":"female","age":2},"second":{"name":"Joyce Roy","gender":"female","age":43}}
+{"first":{"name":"Rochelle Sandoval","gender":"female","age":67},"second":{"name":"Matthew Rodriquez","gender":"male","age":36}}
+{"first":{"name":"Malcolm Bishop","gender":"male","age":58},"second":{"name":"Sergio Ferguson","gender":"male","age":0}}
+{"first":{"name":"Essie Stone","gender":"female","age":35},"second":{"name":"Keith Sutton","gender":"male","age":58}}
+{"first":{"name":"Mary Gregory","gender":"female","age":18},"second":{"name":"Marco Arnold","gender":"male","age":44}}
+{"first":{"name":"Tom Dennis","gender":"male","age":15},"second":{"name":"Jim Graham","gender":"male","age":63}}

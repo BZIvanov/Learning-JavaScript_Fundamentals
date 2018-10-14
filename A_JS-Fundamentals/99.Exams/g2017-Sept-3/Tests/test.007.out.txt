@@ -1,0 +1,91 @@
+Room number: 161
+--Guest Name: Claude Schneider
+--Guest Age: 63
+--Guest Name: Ismael Wagner
+--Guest Age: 4
+--Guest Name: Jordan Garner
+--Guest Age: 16
+Empty beds in the room: 0
+Room number: 242
+--Guest Name: Alexis Graham
+--Guest Age: 19
+--Guest Name: Marco Arnold
+--Guest Age: 4
+Empty beds in the room: 0
+Room number: 34
+--Guest Name: Essie Stone
+--Guest Age: 35
+--Guest Name: Keith Sutton
+--Guest Age: 58
+Empty beds in the room: 0
+Room number: 346
+--Guest Name: Joyce Roy
+--Guest Age: 41
+--Guest Name: Miguel Kelly
+--Guest Age: 23
+Empty beds in the room: 0
+Room number: 428
+--Guest Name: Ashley Mcguire
+--Guest Age: 31
+--Guest Name: Kara Burns
+--Guest Age: 7
+--Guest Name: Marjorie Butler
+--Guest Age: 28
+Empty beds in the room: 0
+Room number: 46
+--Guest Name: Byron Love
+--Guest Age: 58
+--Guest Name: Lori Griffin
+--Guest Age: 11
+Empty beds in the room: 0
+Room number: 537
+--Guest Name: Freddie Harmon
+--Guest Age: 30
+--Guest Name: Jesus Terry
+--Guest Age: 64
+--Guest Name: Tracy Reid
+--Guest Age: 41
+Empty beds in the room: 0
+Room number: 584
+--Guest Name: Matthew Rodriquez
+--Guest Age: 36
+--Guest Name: Rochelle Sandoval
+--Guest Age: 67
+Empty beds in the room: 0
+Room number: 600
+--Guest Name: Freddie Harmon
+--Guest Age: 46
+--Guest Name: Georgia Thomas
+--Guest Age: 38
+Empty beds in the room: 0
+Room number: 636
+--Guest Name: Chelsea Wilkins
+--Guest Age: 59
+--Guest Name: Marianne Boone
+--Guest Age: 18
+--Guest Name: Melody Gill
+--Guest Age: 38
+Empty beds in the room: 0
+Room number: 924
+--Guest Name: Beth Foster
+--Guest Age: 48
+--Guest Name: Carol Hansen
+--Guest Age: 6
+--Guest Name: Nina Diaz
+--Guest Age: 29
+Empty beds in the room: 0
+Room number: 963
+--Guest Name: Marco Arnold
+--Guest Age: 44
+--Guest Name: Mary Gregory
+--Guest Age: 18
+Empty beds in the room: 0
+Room number: 97
+--Guest Name: Erin Moreno
+--Guest Age: 69
+--Guest Name: Laurie Montgomery
+--Guest Age: 16
+--Guest Name: Sadie Carson
+--Guest Age: 29
+Empty beds in the room: 0
+Guests moved to the tea house: 10
