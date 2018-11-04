@@ -6,11 +6,10 @@ function currencyFormatter(separator, symbol, symbolFirst, value) {
 }
 
 function getDollarFormatter(currency) {
-    function formatter(value) {
-        return currency(",", "$", true, value)
+    function formatter(currency) {
+        return currencyFormatter(",", "$", true, currency)
     }
-    return formatter
+    return formatter(currency)
 }
 
-const dollarFormatter = getDollarFormatter(currencyFormatter)
-console.log(dollarFormatter(22.322332))
+console.log(getDollarFormatter(5345));

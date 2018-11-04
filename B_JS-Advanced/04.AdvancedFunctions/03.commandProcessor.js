@@ -15,9 +15,8 @@ function processor(arr) {
     }
 }
 
-processor(['append hello',
-'append again',
-'removeStart 3',
-'removeEnd 4',
-'print']
-)
+processor(['append 123',
+'append 45',
+'removeStart 2',
+'removeEnd 1',
+'print']);
