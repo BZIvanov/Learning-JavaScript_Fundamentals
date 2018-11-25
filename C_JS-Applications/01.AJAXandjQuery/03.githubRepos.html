@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>GitHub Repos</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+
+<body>
+    GitHub username:
+    <input type="text" id="username" value="k1r1L" />
+    <button onclick="loadRepos()">Load Repos</button>
+    <ul id="repos">
+        <li>
+            <a href="{repo.html_url}">
+                {repo.full_name}
+            </a>
+        </li>
+    </ul>
+    <script>
+        function loadRepos() {
+            // AJAX call …
+            $('#repos').empty();
+            let username = $('#username').val();
+            let url = 'https://api.github.com/users/' + username + '/repos';
+            $.ajax({
+                // GET is default method, we can skip if we want GET method
+                method: "GET",
+                url: url,
+                // success is property holding function which will be called if successful request
+                success: displayRepos,
+                // error is property holding function which will be called if failed request
+                error: errorMessage
+            });
+            // if returned statusCode is 2xx or 3xx success function will be called
+            function displayRepos(data) {
+                for (let repo of data) {
+                    let link = $('<a>').text(repo.full_name);
+                    link.attr('href', repo.html_url);
+                    let li = $('<li>').append(link);
+                    $('#repos').append(li);
+                }
+            }
+            // if returned statusCode is 4xx or 5xx error function will be called
+            function errorMessage() {
+                $('#repos').append($('<li>Error!</li>'))
+            }
+        }
+    </script>
+</body>
+
+</html>
