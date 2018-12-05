@@ -15,6 +15,9 @@ $(() => {
         this.get('#/catalog', displayCatalog);
         this.get('#/create', createForm);
         this.post('#/create', createTeam);
+        this.get('#/catalog/:id', getTeamDetails);
+        this.get('#/join/:id', joinTeam);
+        this.get('#/leave', leaveTeam);
     });
 
     function displayHome(context) {
@@ -151,6 +154,51 @@ $(() => {
                     auth.showInfo("Successfuly created team!");
                     context.redirect('#/catalog');
                 })
+            }).catch(auth.handleError);
+    }
+
+    function getTeamDetails(context) {
+        let teamId = context.params.id.substr(1);
+
+        teamsService.loadTeamDetails(teamId)
+            .then(function(teamInfo) {
+                context.loggedIn = sessionStorage.getItem('authtoken') !== null;
+                context.username = sessionStorage.getItem('username');
+                context.teamId = teamInfo._id;
+                context.name = teamInfo.name;
+                context.comment = teamInfo.comment;
+                context.isOnTeam = sessionStorage.getItem('teamId') === teamInfo._id;
+                context.isAuthor = teamInfo._acl.creator === sessionStorage.getItem('iserId');
+
+                context.loadPartials({
+                    header: 'templates/common/header.hbs',
+                    footer: 'templates/common/footer.hbs',
+                    teamControls: 'templates/catalog/teamControls.hbs'
+                }).then(function() {
+                    this.partial('templates/catalog/details.hbs')
+                })
+            }).catch(auth.handleError);
+    }
+
+    function joinTeam(context) {
+        let teamId = context.params.id.substr(1);
+        let member = sessionStorage.getItem('username');
+        console.log(context)
+
+        teamsService.joinTeam(teamId)
+            .then(function(userInfo) {
+                auth.saveSession(userInfo);
+                auth.showInfo(`${member} joined`);
+                context.redirect('#/catalog');
+            }).catch(auth.handleError);
+    }
+
+    function leaveTeam(context) {
+        teamsService.leaveTeam()
+            .then(function(userInfo) {
+                auth.saveSession(userInfo);
+                auth.showInfo(`${userInfo.username} left the team`);
+                context.redirect('#/catalog');
             }).catch(auth.handleError);
     }
 
