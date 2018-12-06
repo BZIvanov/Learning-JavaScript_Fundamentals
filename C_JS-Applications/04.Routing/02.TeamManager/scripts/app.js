@@ -18,6 +18,8 @@ $(() => {
         this.get('#/catalog/:id', getTeamDetails);
         this.get('#/join/:id', joinTeam);
         this.get('#/leave', leaveTeam);
+        this.get('#/edit/:id', editPage);
+        this.post('#/edit/:id', editInfo);
     });
 
     function displayHome(context) {
@@ -168,7 +170,7 @@ $(() => {
                 context.name = teamInfo.name;
                 context.comment = teamInfo.comment;
                 context.isOnTeam = sessionStorage.getItem('teamId') === teamInfo._id;
-                context.isAuthor = teamInfo._acl.creator === sessionStorage.getItem('iserId');
+                context.isAuthor = teamInfo._acl.creator === sessionStorage.getItem('userId');
 
                 context.loadPartials({
                     header: 'templates/common/header.hbs',
@@ -198,6 +200,38 @@ $(() => {
             .then(function(userInfo) {
                 auth.saveSession(userInfo);
                 auth.showInfo(`${userInfo.username} left the team`);
+                context.redirect('#/catalog');
+            }).catch(auth.handleError);
+    }
+
+    function editPage(context) {
+        let teamId = context.params.id.substr(1);
+
+        teamsService.loadTeamDetails(teamId)
+            .then(function(teamInfo) {
+                context.teamId = teamId;
+                context.name = teamInfo.name;
+                context.comment = teamInfo.comment;
+
+                context.loadPartials({
+                    header: 'templates/common/header.hbs',
+                    footer: 'templates/common/footer.hbs',
+                    editForm: 'templates/edit/editForm.hbs'
+                }).then(function() {
+                    this.partial('templates/edit/editPage.hbs');
+                });
+            }).catch(auth.handleError);
+    }
+
+    function editInfo(context) {
+        console.log(context)
+        let teamId = context.params.id.substr(1);
+        let teamName = context.params.name;
+        let teamComment = context.params.comment;
+
+        teamsService.edit(teamId, teamName, teamComment)
+            .then(function() {
+                auth.showInfo(`Team ${teamName} edited`);
                 context.redirect('#/catalog');
             }).catch(auth.handleError);
     }
