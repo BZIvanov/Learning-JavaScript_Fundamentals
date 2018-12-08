@@ -1,4 +1,4 @@
-let auth = (() => {
+let servicer = (() => {
     function saveSession(userInfo) {
         let userAuth = userInfo._kmd.authtoken;
         sessionStorage.setItem('authtoken', userAuth);
@@ -6,7 +6,6 @@ let auth = (() => {
         sessionStorage.setItem('userId', userId);
         let username = userInfo.username;
         sessionStorage.setItem('username', username);
-        sessionStorage.setItem('teamId', userInfo.teamId);
     }
 
     // user/login
