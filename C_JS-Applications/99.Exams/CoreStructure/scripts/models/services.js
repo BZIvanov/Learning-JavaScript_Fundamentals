@@ -47,6 +47,10 @@ let servicer = (() => {
         infoBox.text(message);
         infoBox.show();
         setTimeout(() => infoBox.fadeOut(), 3000);
+        
+        infoBox.on('click', function() {
+            $(this).hide();
+        })
     }
 
     function showError(message) {
@@ -54,6 +58,10 @@ let servicer = (() => {
         errorBox.text(message);
         errorBox.show();
         setTimeout(() => errorBox.fadeOut(), 3000);
+        
+        errorBox.on('click', function() {
+            $(this).hide();
+        });
     }
 
     function handleError(reason) {
