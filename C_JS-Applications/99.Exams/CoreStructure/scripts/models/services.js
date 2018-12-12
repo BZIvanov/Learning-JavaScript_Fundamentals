@@ -44,7 +44,8 @@ let servicer = (() => {
 
     function showInfo(message) {
         let infoBox = $('#infoBox');
-        infoBox.text(message);
+        infoBox.find('span').text(message);
+        //infoBox.text(message);
         infoBox.show();
         setTimeout(() => infoBox.fadeOut(), 3000);
         
@@ -55,7 +56,8 @@ let servicer = (() => {
 
     function showError(message) {
         let errorBox = $('#errorBox');
-        errorBox.text(message);
+        errorBox.find('span').text(message);
+        //errorBox.text(message);
         errorBox.show();
         setTimeout(() => errorBox.fadeOut(), 3000);
         
