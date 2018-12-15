@@ -1,0 +1,32 @@
+{{>header}}
+
+<div class="content">
+    <section id="viewWelcome">
+        <div class="welcome">
+            <div class="signup">
+                <form action="#/login" method="POST" id="loginForm">
+                    <h2>Sign In</h2>
+                    <label>Username:</label>
+                    <input name="username" type="text">
+                    <label>Password:</label>
+                    <input name="password" type="password">
+                    <input id="btnLogin" value="Sign In" type="submit">
+                </form>
+                <form action="#/register" method="POST" id="registerForm">
+                    <h2>Register</h2>
+                    <label>Username:</label>
+                    <input name="username" type="text">
+                    <label>Password:</label>
+                    <input name="password" type="password">
+                    <label>Repeat Password:</label>
+                    <input name="repeatPass" type="password">
+                    <input id="btnRegister" value="Sign Up" type="submit">
+                </form>
+            </div>
+
+            {{> welcome}}
+        </div>
+    </section>
+</div>
+
+{{> footer}}

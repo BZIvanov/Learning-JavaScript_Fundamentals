@@ -1,0 +1,23 @@
+{{>header}}
+
+<div class="content">
+    {{> navigation}}
+
+    <section id="viewComments">
+        {{> targetPost}}
+
+        <div class="post post-content">
+            <form action="#/createComment/:{{idPost}}" method="POST" id="commentForm">
+                <label>Comment</label>
+                <textarea name="content" type="text"></textarea>
+                <input type="submit" value="Add Comment" id="btnPostComment">
+            </form>
+        </div>
+
+        {{#each comments}}
+            {{> comment}}
+        {{/each}}
+    </section>
+</div>
+
+{{> footer}}
