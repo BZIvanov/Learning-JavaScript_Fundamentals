@@ -1,0 +1,33 @@
+{{> navbar}}
+
+<div class="user-profile">
+
+    <img id="user-avatar-url" src="{{avatarUrl}}" alt="user-profile">
+    <h1>{{memeName}}</h1>
+    <h2>{{memeEmail}}</h2>
+
+    {{#if canDelete}}
+        <a id="deleteUserButton" href="#/deleteUser/:{{currentUser}}">DELETE USER!</a>
+    {{/if}}
+
+    <p id="user-listings-title">User Memes</p>
+    <div class="user-meme-listings">
+        {{#each ownerMemes}}
+            <div class="user-meme">
+                <a href="#" class="user-meme-title">{{title}}</a>
+                <a href=""> <img class="userProfileImage" src="{{imageUrl}}"></a>
+
+                {{#if isOwner}}
+                    <div class="user-memes-buttons">
+                        <a href="#/edit/:{{_id}}" class="user-meme-btn">Edit</a>
+                        <a href="#/delete/:{{_id}}" class="user-meme-btn">Delete</a>
+                    </div>
+                {{/if}}
+            </div>
+        {{else}}
+            <p class="no-memes">No memes in database.</p>
+        {{/each}}
+    </div>
+</div>
+
+{{> footer}}
