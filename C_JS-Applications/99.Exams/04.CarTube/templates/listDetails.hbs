@@ -1,0 +1,27 @@
+{{> navbar}}
+
+<div class="listing-details">
+    <div class="my-listing-details">
+        <p id="auto-title">{{carDetails.title}}</p>
+        <img src="{{carDetails.imageUrl}}">
+        <div class="listing-props">
+            <h2>Brand: {{carDetails.brand}}</h2>
+            <h3>Model: {{carDetails.model}}</h3>
+            <h3>Year: {{carDetails.year}}</h3>
+            <h3>Fuel: {{carDetails.fuel}}</h3>
+            <h3>Price: {{carDetails.price}}$</h3>
+        </div>
+
+        {{#if isOwner}}
+            <div class="listings-buttons">
+                <a href="#/edit/{{params.carId}}" class="button-list">Edit</a>
+                <a href="#/delete/{{params.carId}}" class="button-list">Delete</a>
+            </div>
+        {{/if}}
+
+        <p id="description-title">Description:</p>
+        <p id="description-para">{{carDetails.description}}</p>
+    </div>
+</div>
+
+{{> footer}}
