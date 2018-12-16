@@ -1,0 +1,19 @@
+{{> header}}
+
+<main id="site-content">
+    <section class="detailsMyPet">
+        <h3>{{name}}</h3>
+        <p>Pet counter: <i class="fas fa-heart"></i> {{likes}}</p>
+        <p class="img"><img src="{{imageURL}}"></p>
+        <form action="#/editMyPet/:{{id}}" method="POST">
+            <textarea type="text" name="description">{{description}}</textarea>
+            <input type="hidden" name="name" value="{{name}}">
+            <input type="hidden" name="imageURL" value="{{imageURL}}">
+            <input type="hidden" name="likes" value="{{likes}}">
+            <input type="hidden" name="category" value="{{category}}">
+            <input type="submit" class="button" value="Save">
+        </form>
+    </section>
+</main>
+
+{{> footer}}
