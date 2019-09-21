@@ -1,8 +1,6 @@
 function calendar([day, month, year]) {
     let date = new Date(year, month , 0);
-    let monthNames = ["January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"
-    ];
+    let monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
     let tBody = $('<tbody>')
         .append($('<tr>')
@@ -47,14 +45,12 @@ function calendar([day, month, year]) {
             } else {
                 if (dayOfMonth == day) {
                     currentWeek.append($('<td>').addClass('today').text(dayOfMonth++));
-                }else {
+                } else {
                     currentWeek.append($('<td>').text(dayOfMonth++));
                 }
             }
         }
-
         tBody.append(currentWeek);
     }
-
     $('#content').append(calendar)
 }

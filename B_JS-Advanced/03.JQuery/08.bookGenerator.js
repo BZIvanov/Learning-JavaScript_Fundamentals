@@ -1,9 +1,7 @@
 function createBook(selector, title, author, isbn) {
-
     let bookGenerator = (function() {
-        let id = 1
+        let id = 1;
         return function (selector, title, author, isbn) {
-
             let container = $(selector);
             let bookContainer = $('<div>');
             bookContainer.attr('id', `book${id}`);
@@ -29,9 +27,8 @@ function createBook(selector, title, author, isbn) {
             });
 
             container.append(bookContainer);
-
-            id++
+            id++;
         }
-    })()
+    })();
     bookGenerator(selector, title, author, isbn);
 }
