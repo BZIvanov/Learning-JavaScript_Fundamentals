@@ -23,18 +23,18 @@
     </div>
     <script>
         function focus() {
-            let boxes = document.querySelectorAll("div div")
-            for(let box of boxes) {
-                box.children[1].addEventListener("focus", highlight)
-                box.children[1].addEventListener("blur", lightOut)
+            let boxes = document.querySelectorAll("div div");
+            for (let box of boxes) {
+                box.children[1].addEventListener("focus", highlight);
+                box.children[1].addEventListener("blur", lightOut);
             }
 
             function highlight(event) {
-                event.target.parentNode.className = "focused"
+                event.target.parentNode.className = "focused";
             }
 
             function lightOut(event) {
-                event.target.parentNode.className = ""
+                event.target.parentNode.className = "";
             }
         }
     </script>

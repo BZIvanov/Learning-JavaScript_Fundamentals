@@ -1,14 +1,14 @@
 function attachEventsListeners() {
-    let inputValue = document.getElementById('inputDistance')
-    let btn = document.getElementById('convert')
-    btn.addEventListener('click', calc)
+    let inputValue = document.getElementById('inputDistance');
+    let btn = document.getElementById('convert');
+    btn.addEventListener('click', calc);
 
     function calc() {
-        numberValue = Number(inputValue.value)
-        firstUnit = document.getElementById("inputUnits").selectedIndex
-        secondUnit = document.getElementById("outputUnits").selectedIndex
+        numberValue = Number(inputValue.value);
+        firstUnit = document.getElementById("inputUnits").selectedIndex;
+        secondUnit = document.getElementById("outputUnits").selectedIndex;
 
-        let convertToMeters
+        let convertToMeters;
         switch (firstUnit) {
             case 0: convertToMeters = numberValue * 1000; break;
             case 1: convertToMeters = numberValue * 1; break;
@@ -20,7 +20,7 @@ function attachEventsListeners() {
             case 7: convertToMeters = numberValue * 0.0254; break; 
         }
         
-        let result
+        let result;
         switch (secondUnit) {
             case 0: result = convertToMeters / 1000; break;
             case 1: result = convertToMeters / 1; break;
@@ -31,7 +31,7 @@ function attachEventsListeners() {
             case 6: result = convertToMeters / 0.3048; break;
             case 7: result = convertToMeters / 0.0254; break;
         }
-        let output = document.getElementById('outputDistance')
-        output.value = result
+        let output = document.getElementById('outputDistance');
+        output.value = result;
     }
 }
