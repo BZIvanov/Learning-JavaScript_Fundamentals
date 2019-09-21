@@ -14,7 +14,6 @@ function createBalloonClasses() {
                 length: ribbonLength
             };
         }
-
         get ribbon() {
             return this._ribbon;
         }
@@ -25,7 +24,6 @@ function createBalloonClasses() {
             super(color, gasWeight, ribbonColor, ribbonLength);
             this._text = text;
         }
-
         get text() {
             return this._text;
         }

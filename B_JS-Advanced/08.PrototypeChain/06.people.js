@@ -2,7 +2,7 @@ function createPeopleClasses() {
     class Employee {
         constructor(name, age) {
             if (new.target === Employee) {
-                throw new Error('Employee class cannot be instantiated.')
+                throw new Error('Employee class cannot be instantiated.');
             }
 
             this.name = name;

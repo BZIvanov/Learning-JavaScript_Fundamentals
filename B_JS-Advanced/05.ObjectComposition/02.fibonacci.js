@@ -8,7 +8,7 @@ let fib = (function () {
         prev = temp + first;
         return first;
     }
-})()
+})();
 
 console.log(fib());
 console.log(fib());

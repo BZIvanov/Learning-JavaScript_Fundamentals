@@ -24,5 +24,4 @@ function makeCard(face, suit) {
     
     return card;
 }
-
 console.log('' + makeCard('A', 'S'));

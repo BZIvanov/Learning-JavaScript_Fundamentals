@@ -19,4 +19,3 @@ describe("Test sum function", function() {
         assert.equal(result, 0);
     });
 });
-

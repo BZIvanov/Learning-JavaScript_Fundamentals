@@ -46,5 +46,4 @@ function votingSystem(action) {
 }
 
 let obj = {id: '1', author: 'pesho', content: 'hi guys', upvotes: 101, downvotes: 99};
-
 console.log(votingSystem.call(obj, 'score'));

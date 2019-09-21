@@ -7,9 +7,9 @@ function tickets(arr, target) {
         }
     }
 
-    for(let i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
         let [town, price, status] = arr[i].split("|");
-        arr[i] = new Ticket(town, +price, status)
+        arr[i] = new Ticket(town, +price, status);
     }
 
     arr.sort((a, b) => {

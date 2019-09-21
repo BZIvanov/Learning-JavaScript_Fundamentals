@@ -3,7 +3,7 @@ function cars(input) {
         let park = new Map();
         
         function create(items) {
-            if(items.length === 1) {
+            if (items.length === 1) {
                 park.set(items[0], {});
                 return;
             }
@@ -15,13 +15,13 @@ function cars(input) {
         function print(items) {
             let current = park.get(items[0]);
             let props = [];
-            for(let key in current) {
+            for (let key in current) {
                 props.push(`${key}:${current[key]}`);
             }
             console.log(props.join(", "));
         }
     
-        return { create, set, print }
+        return { create, set, print };
     })();
 
     for(let row of input) {
@@ -30,7 +30,6 @@ function cars(input) {
         factory[action]([...tokens]);
     }
 }
-
 cars(['create c1',
 'create c2 inherit c1',
 'set c1 color red',
@@ -38,4 +37,3 @@ cars(['create c1',
 'print c1',
 'print c2'
 ]);
-

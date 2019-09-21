@@ -20,7 +20,7 @@ class Textbox {
 
     set value(val) {
         this._value = val;
-        for(let el of this.elements) {
+        for (let el of this.elements) {
             $(el).val(val)
         }
     }

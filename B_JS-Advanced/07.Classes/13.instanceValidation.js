@@ -10,7 +10,7 @@ class CheckingAccount {
         return this._clientId;
     }
     set clientId(value) {
-        if(!/^\d{6}$/.test(value)) {
+        if (!/^\d{6}$/.test(value)) {
             throw new TypeError("Client ID must be a 6-digit number");
         }
 
@@ -21,10 +21,9 @@ class CheckingAccount {
         return this._email;
     }
     set email(value) {
-        if(!/^[A-Za-z\d]+\@[A-Za-z.]+$/.test(value)) {
+        if (!/^[A-Za-z\d]+\@[A-Za-z.]+$/.test(value)) {
             throw new TypeError("Invalid e-mail");
         }
-
         this._email = value;
     }
 
@@ -32,11 +31,11 @@ class CheckingAccount {
         return this._firstName;
     }
     set firstName(value) {
-        if(value.length < 3 || value.length > 20) {
+        if (value.length < 3 || value.length > 20) {
             throw new TypeError("First name must be between 3 and 20 characters long");
         }
 
-        if(!/^[A-Za-z]{3,20}$/.test(value)) {
+        if (!/^[A-Za-z]{3,20}$/.test(value)) {
             throw new TypeError("First name must contain only Latin characters");
         }
 
@@ -47,11 +46,11 @@ class CheckingAccount {
         return this._lastName;
     }
     set lastName(value) {
-        if(value.length < 3 || value.length > 20) {
+        if (value.length < 3 || value.length > 20) {
             throw new TypeError("Last name must be between 3 and 20 characters long");
         }
 
-        if(!/^[A-Za-z]{3,20}$/.test(value)) {
+        if (!/^[A-Za-z]{3,20}$/.test(value)) {
             throw new TypeError("Last name must contain only Latin characters");
         }
 
