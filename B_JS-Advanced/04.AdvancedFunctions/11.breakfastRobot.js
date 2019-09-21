@@ -20,10 +20,10 @@ let manager = (function () {
         let totalRequredFats = recipes.get(recipe).fat * quantity;
         let totalRequredFlavours = recipes.get(recipe).flavour * quantity;
 
-        if(totalRequredProteins > store.protein) return 'Error: not enough protein in stock';
-        if(totalRequredCarbohydrates > store.carbohydrate) return 'Error: not enough carbohydrate in stock';
-        if(totalRequredFats > store.fat) return 'Error: not enough fat in stock';
-        if(totalRequredFlavours > store.flavour) return 'Error: not enough flavour in stock';
+        if (totalRequredProteins > store.protein) return 'Error: not enough protein in stock';
+        if (totalRequredCarbohydrates > store.carbohydrate) return 'Error: not enough carbohydrate in stock';
+        if (totalRequredFats > store.fat) return 'Error: not enough fat in stock';
+        if (totalRequredFlavours > store.flavour) return 'Error: not enough flavour in stock';
 
         // There are enough ingredients
         store.protein -= totalRequredProteins;
@@ -43,13 +43,13 @@ let manager = (function () {
         let command = tokens[0];
         let cmdArgs = tokens.slice(1);
 
-        switch (command){
+        switch (command) {
             case 'restock': return restock(cmdArgs);
             case 'prepare': return prepare(cmdArgs);
             case 'report': return report();
         }
     }
-})()
+})();
 
 console.log(manager('restock protein 100'));
 console.log(manager('restock carbohydrate 100'));

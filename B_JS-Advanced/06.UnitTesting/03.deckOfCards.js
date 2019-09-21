@@ -22,8 +22,7 @@ function printDeckOfCards(cards) {
         
         return card;
     }
-  
-    
+ 
     for(let i = 0; i < cards.length; i++) {
         let f = cards[i].substring(0, cards[i].length - 1);
         let s = cards[i].substr(cards[i].length - 1, 1);
@@ -37,6 +36,5 @@ function printDeckOfCards(cards) {
     }
     console.log(cards.join(' '));
 }
-
 printDeckOfCards(['AS', '10D', 'KH', '2C']);
-//printDeckOfCards(['5S', '3D', 'QD', '1C']);
+printDeckOfCards(['5S', '3D', 'QD', '1C']);

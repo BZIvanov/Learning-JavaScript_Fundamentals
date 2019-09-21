@@ -7,4 +7,4 @@ let sumator = (function () {
     }
 })();
 
-console.log(sumator(1)(3).toString())
+console.log(sumator(1)(3).toString());

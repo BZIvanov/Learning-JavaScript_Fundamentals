@@ -23,7 +23,6 @@ function colorize(selector) {
         if (bestSelector.attr('id') == element.attr('id')) {
             return;
         }
-
         bestSelector = bestSelector.parent();
     }
 }

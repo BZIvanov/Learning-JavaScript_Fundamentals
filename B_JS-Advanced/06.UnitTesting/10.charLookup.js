@@ -8,5 +8,4 @@ function lookupChar(string, index) {
 
     return string.charAt(index);
 }
-
 module.exports = { lookupChar };

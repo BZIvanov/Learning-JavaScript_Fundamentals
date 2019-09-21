@@ -2,7 +2,7 @@ function generateMelonClasses() {
     class Melon {
         constructor(weight, melonSort) {
             if (new.target === Melon) {
-                throw new Error('Melon class cannot be instantiated.')
+                throw new Error('Melon class cannot be instantiated.');
             }
 
             this.weight = weight;

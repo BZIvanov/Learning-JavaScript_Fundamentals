@@ -1,10 +1,10 @@
 let vectorCalculator = (function () {
     function add(vectorA, vectorB) {
-        return [vectorA[0] + vectorB[0], vectorA[1] + vectorB[1]]
+        return [vectorA[0] + vectorB[0], vectorA[1] + vectorB[1]];
     }
 
     function multiply(vectorA, scalar) {
-        return [vectorA[0] * scalar, vectorA[1] * scalar]
+        return [vectorA[0] * scalar, vectorA[1] * scalar];
     }
 
     function length(vector) {
@@ -12,14 +12,14 @@ let vectorCalculator = (function () {
     }
 
     function dot(vectorA, vectorB) {
-        return vectorA[0] * vectorB[0] + vectorA[1] * vectorB[1]
+        return vectorA[0] * vectorB[0] + vectorA[1] * vectorB[1];
     }
 
     function cross(vectorA, vectorB) {
         return (vectorA[0] * vectorB[1]) - (vectorA[1] * vectorB[0]);
     }
 
-    return { add, multiply, length, dot, cross }
+    return { add, multiply, length, dot, cross };
 })();
 
 console.log(vectorCalculator.add([1,1], [1,0]));

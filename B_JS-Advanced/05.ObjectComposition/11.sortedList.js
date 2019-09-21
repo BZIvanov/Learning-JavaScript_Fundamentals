@@ -26,7 +26,6 @@ function generateLinkedList() {
 
         function isValidIndex(index) {
             return index >= 0 && index < storage.length;
-
         }
 
         function get(index) {

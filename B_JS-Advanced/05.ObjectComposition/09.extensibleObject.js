@@ -4,9 +4,9 @@ function extensibleObject() {
     myObj.extend = function (source) {
         for (let prop in source) {
             if (typeof source[prop] === 'function') {
-                Object.getPrototypeOf(myObj)[prop] = source[prop]
+                Object.getPrototypeOf(myObj)[prop] = source[prop];
             } else {
-                myObj[prop] = source[prop]
+                myObj[prop] = source[prop];
             } 
         }
     };
@@ -23,10 +23,10 @@ let obj2 = {
         console.log("Hello");
     }
 }
-obj1.extend(obj2)
+obj1.extend(obj2);
 
 // here we can see the greet function is now attached to the global Object
-let obj3 = {}
-obj3.greet()
+let obj3 = {};
+obj3.greet();
 
-console.log(obj1)
+console.log(obj1);

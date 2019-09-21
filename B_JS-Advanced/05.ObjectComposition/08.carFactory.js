@@ -31,7 +31,6 @@ function carFactory(obj) {
 
     return result;
 }
-
 console.log(carFactory({ model: 'VW Golf II',
 power: 90,
 color: 'blue',

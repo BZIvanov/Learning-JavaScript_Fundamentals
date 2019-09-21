@@ -4,5 +4,4 @@ function sum(arr) {
         sum += Number(num);
     return sum;
 }
-
 module.exports = { sum };

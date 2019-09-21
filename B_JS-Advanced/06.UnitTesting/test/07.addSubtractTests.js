@@ -7,7 +7,6 @@ describe('Test calculator createCalculator()', () => {
         calculator = createCalculator();
     });
 
-
     it('should be object, instance of calculator', () => {
         expect(calculator).to.be.an('object');
     });

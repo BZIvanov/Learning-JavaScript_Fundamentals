@@ -7,6 +7,5 @@ function euclidAlgorithm(numA, numB) {
     }
     return euclidAlgorithm(numB, numA % numB);
 }
-
-//console.log(euclidAlgorithm(252, 105));
+console.log(euclidAlgorithm(252, 105));
 console.log(euclidAlgorithm(105, 252));

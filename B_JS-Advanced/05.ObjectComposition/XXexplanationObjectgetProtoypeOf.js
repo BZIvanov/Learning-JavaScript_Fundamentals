@@ -9,5 +9,5 @@ myCar.wheels = 4;
 let mySecondCar = Object.create(myCar);
 
 
-console.log(mySecondCar)    // {}
-console.log(Object.getPrototypeOf(mySecondCar))   // { wheels: 4 }
+console.log(mySecondCar);    // {}
+console.log(Object.getPrototypeOf(mySecondCar));   // { wheels: 4 }

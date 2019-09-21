@@ -32,5 +32,4 @@ let sharedObject = {
         this.income = Number(newIncome);
     }
 };
-
 module.exports = { sharedObject };

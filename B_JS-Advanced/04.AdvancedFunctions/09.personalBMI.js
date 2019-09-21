@@ -38,5 +38,4 @@ function personalBmi(personName, age, weight, height) {
 
     return output;
 }
-
-console.log(personalBmi("Peter", 29, 75, 182))
+console.log(personalBmi("Peter", 29, 75, 182));

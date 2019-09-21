@@ -7,9 +7,9 @@ function currencyFormatter(separator, symbol, symbolFirst, value) {
 
 function getDollarFormatter(currency) {
     function formatter(currency) {
-        return currencyFormatter(",", "$", true, currency)
+        return currencyFormatter(",", "$", true, currency);
     }
-    return formatter(currency)
+    return formatter(currency);
 }
 
 console.log(getDollarFormatter(5345));
