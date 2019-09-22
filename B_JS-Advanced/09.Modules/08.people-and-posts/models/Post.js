@@ -19,8 +19,7 @@ class Post {
                     .addClass('author')
                     .text(this.author));
 
-        $(selector)
-            .append(postObj);
+        $(selector).append(postObj);
     }
 }
 

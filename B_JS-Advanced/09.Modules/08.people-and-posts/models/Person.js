@@ -17,8 +17,7 @@ class Person {
                 .append($('<div>')
                     .addClass('posts ' + this.name));
 
-        $(selector)
-            .append(personObj);
+        $(selector).append(personObj);
     }
 }
 

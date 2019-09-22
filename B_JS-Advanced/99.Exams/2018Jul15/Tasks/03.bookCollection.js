@@ -12,7 +12,7 @@ class BookCollection {
 
     set room (val) {
         if(val !== "livingRoom" && val !== "bedRoom" && val !== "closet") {
-            throw new Error(`Cannot have book shelf in {room's name}`)
+            throw new Error(`Cannot have book shelf in {room's name}`);
         }
         this._room = val;
     }
@@ -23,12 +23,12 @@ class BookCollection {
 
     toString(){
         if (this.shelf.length===0){
-            return 'It\'s an empty shelf'
+            return 'It\'s an empty shelf';
         } else {
             let header=`"${this.shelfGenre}" shelf in ${this.room} contains:\n`;
             let books='';
             for (let book of this.shelf) {
-                books+=`\uD83D\uDCD6 "${book.bookName}" - ${book.bookAuthor}\n`
+                books+=`\uD83D\uDCD6 "${book.bookName}" - ${book.bookAuthor}\n`;
             }
 
             return header+books.trimRight();
@@ -37,10 +37,10 @@ class BookCollection {
 
     addBook(bookName, bookAuthor, genre) {
         if (this.shelf.length < this.shelfCapacity) {
-            this.shelf.push({bookName,bookAuthor,genre})
+            this.shelf.push({bookName,bookAuthor,genre});
         } else {
             this.shelf.splice(0, 1);
-            this.shelf.push({bookName,bookAuthor,genre})
+            this.shelf.push({bookName,bookAuthor,genre});
         }
       
         this.shelf = this.shelf.sort((a, b) => {
@@ -51,8 +51,8 @@ class BookCollection {
     }
 
     throwAwayBook(bookName) {
-        for(let i = 0; i < this.shelf.length; i++) {
-            if(bookName === this.shelf[i].bookName) {
+        for (let i = 0; i < this.shelf.length; i++) {
+            if (bookName === this.shelf[i].bookName) {
                 this.shelf.splice(i, 1);
             }
         }
@@ -60,8 +60,8 @@ class BookCollection {
 
     showBooks(genre) {
         let result = `Results for search "${genre}":\n`;
-        for(let i = 0; i < this.shelf.length; i++) {
-            if(genre === this.shelf[i].genre) {
+        for (let i = 0; i < this.shelf.length; i++) {
+            if (genre === this.shelf[i].genre) {
                 result += `\uD83D\uDCD6 ${this.shelf[i].bookAuthor} - "${this.shelf[i].bookName}"\n`;
             }
         }

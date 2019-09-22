@@ -51,4 +51,4 @@ let requester = (() => {
         update,
         remove
     }
-})()
+})();

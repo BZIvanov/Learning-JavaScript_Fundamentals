@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Bus Schedule</title>
@@ -43,7 +42,6 @@
                 infoBox.text(`Next stop ${currentStop}`);
                 departButton.attr('disabled', true);
                 arriveButton.attr('disabled', false);
-                
                 currentId = data.next;
             }
 
@@ -68,5 +66,4 @@
         let result = solve();
     </script>
 </body>
-
 </html>

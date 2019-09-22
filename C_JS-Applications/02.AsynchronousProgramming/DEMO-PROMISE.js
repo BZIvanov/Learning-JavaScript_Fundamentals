@@ -99,12 +99,8 @@ function getAsync(url) {
 
 getAsync("https://api.github.com/users/BZIvanov/repos")
 .then(function(result) {
-    console.log("vanilla JS success")
+    console.log("vanilla JS success");
 })
 .catch(function(result) {
-    console.log("vanilla JS: " + result)
+    console.log("vanilla JS: " + result);
 });
-
-
-
-//-----------------------------------------------------------------------------

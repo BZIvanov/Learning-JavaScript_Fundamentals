@@ -7,7 +7,7 @@ class Checkbox {
         let that = this;
         $(selector).change(function () {
             that.value = $(selector).is(':checked');
-        })
+        });
     }
 
     get label() {

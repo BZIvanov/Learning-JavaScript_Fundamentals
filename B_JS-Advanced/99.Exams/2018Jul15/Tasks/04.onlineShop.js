@@ -23,7 +23,7 @@ function onlineShop(selector) {
     // Write your code here
 
     let product = $(".custom-select");
-    product.on("keyup", checkProduct)
+    product.on("keyup", checkProduct);
     let submitButton = $("#submit");
     submitButton.on("click", submitData);
     let list = $("ul.display");
@@ -35,7 +35,7 @@ function onlineShop(selector) {
     let currentSum = 0;
     
     function checkProduct() {
-        if($(this).val() !== "") {
+        if ($(this).val() !== "") {
             submitButton.removeAttr("disabled");
         } else {
             submitButton.attr("disabled", "disabled");
@@ -58,7 +58,7 @@ function onlineShop(selector) {
         quantity.val(1);
         submitButton.attr("disabled", "disabled");
 
-        if(currentCapacity >= 150) {
+        if (currentCapacity >= 150) {
             capacity.val("full").addClass("fullCapacity");
 
             product.attr("disabled", "disabled");

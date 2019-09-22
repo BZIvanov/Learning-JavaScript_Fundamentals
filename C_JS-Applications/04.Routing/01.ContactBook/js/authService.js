@@ -9,7 +9,6 @@ let auth = (() => {
         localStorage.setItem('userId', userData._id);
     }
 
-
     function register (username, password) {
         let obj = { username, password };
         remote.post('user', '', 'basic', obj)
@@ -37,4 +36,4 @@ let auth = (() => {
         register,
         saveSession
     }
-})()
+})();

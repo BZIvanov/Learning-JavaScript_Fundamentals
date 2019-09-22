@@ -5,10 +5,10 @@ function acceptance() {
 	let scrape = $('#fields input[name="productScrape"]');
 	let wh = $("#warehouse");
 
-	if(company.val() !== "" && product.val() !== "" && !isNaN(+quantity.val()) && !isNaN(+scrape.val())) {
+	if (company.val() !== "" && product.val() !== "" && !isNaN(+quantity.val()) && !isNaN(+scrape.val())) {
 		let q = +quantity.val();
 		let s = +scrape.val();
-		if(q > s) {
+		if (q > s) {
 			let divElement = $("<div>");
 			let pElement = $(`<p>[${company.val()}] ${product.val()} - ${q - s} pieces</p>`);
 
@@ -28,5 +28,4 @@ function acceptance() {
 			scrape.val("");
 		}
 	}
-	
 }

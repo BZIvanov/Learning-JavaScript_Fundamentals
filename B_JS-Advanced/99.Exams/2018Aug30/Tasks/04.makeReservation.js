@@ -63,16 +63,16 @@ function makeReservation(container) {
     }
 
     function checkWhichInput(text) {
-        if(text.startsWith("Name: ")) {
-            fillDataBack(fullName, text.substring(6))
+        if (text.startsWith("Name: ")) {
+            fillDataBack(fullName, text.substring(6));
         } else if(text.startsWith("E-mail: ")) {
-            fillDataBack(email, text.substring(8))
+            fillDataBack(email, text.substring(8));
         } else if(text.startsWith("Phone: ")) {
-            fillDataBack(phone, text.substring(7))
+            fillDataBack(phone, text.substring(7));
         } else if(text.startsWith("Address: ")) {
-            fillDataBack(address, text.substring(9))
+            fillDataBack(address, text.substring(9));
         } else if(text.startsWith("Postal Code: ")) {
-            fillDataBack(postCode, text.substring(13))
+            fillDataBack(postCode, text.substring(13));
         }
     }
 
@@ -94,7 +94,7 @@ function makeReservation(container) {
         thirdOption.appendTo(selectEl);
         selectEl.appendTo(paymentArea);
 
-        let extraDiv = $('<div id=extraDetails></div>')
+        let extraDiv = $('<div id=extraDetails></div>');
         extraDiv.appendTo(paymentArea);
 
         submitButton.attr("disabled", "disabled");
@@ -104,7 +104,7 @@ function makeReservation(container) {
         selectEl.on("change", paymentOptionInfo)
 
         function paymentOptionInfo(event) {
-            if(event.target.value === "creditCard") {
+            if (event.target.value === "creditCard") {
                 extraDiv.empty();
 
                 let cardNumberDiv = $('<div class="inputLabel">Card Number</div>');
@@ -132,7 +132,7 @@ function makeReservation(container) {
                 checkOut.appendTo(extraDiv);
                 $("#checkOut").on("click", checkOutOffer);
 
-            } else if(event.target.value === "bankTransfer") {
+            } else if (event.target.value === "bankTransfer") {
                 extraDiv.empty();
 
                 let pEl = $('<p>You have 48 hours to transfer the amount to:<br>IBAN: GR96 0810 0010 0000 0123 4567 890</p>');

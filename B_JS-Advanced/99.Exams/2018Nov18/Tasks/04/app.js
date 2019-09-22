@@ -13,8 +13,6 @@ function realEstateAgency() {
 	
 	let agency = $("#roof h1");
 	
-
-
 	regOfferButton.on("click", function () {
 		let areValid = validInputs();
 		function validInputs() {
@@ -61,18 +59,16 @@ function realEstateAgency() {
 		} else {
 			notification.empty();
 			let notifyFail = $('<p id="message">Your offer registration went wrong, try again.</p>');
-
 			notification.append(notifyFail);
 		}
-
 
 		rentPrice.val("");
 		apartmentType.val("");
 		comissionRate.val("");
-	})
+	});
 
 	findOfferButton.on("click", function() {
-		let fam = familyName.val()
+		let fam = familyName.val();
 		let secondAreValid = validInputsTwo();
 		function validInputsTwo() {
 			let fb = false;
@@ -104,8 +100,8 @@ function realEstateAgency() {
 			let availableOffers = [];
 			let ofrs = building.children();
 			let entriesValid = true;
-			for(let i = 0; i < ofrs.length; i++) {
-				let tempObj = {}
+			for (let i = 0; i < ofrs.length; i++) {
+				let tempObj = {};
 				let priceAsked = Number($(ofrs[i]).find("p").eq(0).text().substring(6));
 				let apartType = $(ofrs[i]).find("p").eq(1).text().substring(6);
 				let comRate = Number($(ofrs[i]).find("p").eq(2).text().substring(12));
@@ -116,20 +112,18 @@ function realEstateAgency() {
 			}
 
 			let agencyProfit = 0;
-			for(let i = 0; i < availableOffers.length; i++) {
-				if(searchedType.val() === availableOffers[i].apartType && +familyBudget.val() >= availableOffers[i].total) {
+			for (let i = 0; i < availableOffers.length; i++) {
+				if (searchedType.val() === availableOffers[i].apartType && +familyBudget.val() >= availableOffers[i].total) {
 					entriesValid = false;
 					let currentHouse = $(building).find("div").eq(i);
-					currentHouse.attr("style", "border: 2px solid red;")
+					currentHouse.attr("style", "border: 2px solid red;");
 					currentHouse.empty();
 
 					let pa = $(`<p>${familyName.val()}</p>`);
 					let pb = $(`<p>live here now</p>`);
 					let pbutton = $(`<button>MoveOut</button>`);
 					
-
 					pbutton.on("click", function() {
-						
 						notification.empty();
 						let noty = $(`<p id="message">They had found cockroaches in ${fam}\'s apartment</p>`);
 						$(this).parent().remove();
@@ -137,8 +131,7 @@ function realEstateAgency() {
 					});
 
 					agencyProfit += (availableOffers[i].priceAsked * (availableOffers[i].comRate / 100)) * 2;
-					agency.text(`Agency profit: ${agencyProfit} lv.`)
-
+					agency.text(`Agency profit: ${agencyProfit} lv.`);
 					currentHouse.append(pa);
 					currentHouse.append(pb);
 					currentHouse.append(pbutton);
@@ -146,25 +139,20 @@ function realEstateAgency() {
 					notification.empty();
 					let notif = $('<p id="message">Enjoy your new home! :))</p>');
 					notification.append(notif);
-					
 				}
 			}
-			if(entriesValid) {
+			if (entriesValid) {
 				notification.empty();
 				let notif = $('<p id="message">We were unable to find you a home, so sorry :(</p>');
 				notification.append(notif);
 			}
-			
 		} else {
 			notification.empty();
 			let notif = $('<p id="message">We were unable to find you a home, so sorry :(</p>');
 			notification.append(notif);
 		}
-
-
 		familyBudget.val("");
 		searchedType.val("");
 		familyName.val("");
-	})
-
+	});
 }

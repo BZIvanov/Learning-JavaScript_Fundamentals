@@ -65,4 +65,4 @@ let auth = (() => {
         showError,
         handleError
     }
-})()
+})();
