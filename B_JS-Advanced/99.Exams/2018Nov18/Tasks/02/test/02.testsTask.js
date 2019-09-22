@@ -14,7 +14,6 @@ describe("Test Softunify class", function() {
             expect(testCase.allSongs).to.eql({});
         });
     });
-
     describe("test downloadSong method", function() {
         it("normal case", function() {
             let result = testCase.downloadSong("Eminem", "Hello", "How nice...")
@@ -24,7 +23,6 @@ describe("Test Softunify class", function() {
             expect(result.allSongs).to.have.deep.property('Eminem', {rate: 0, votes: 0, songs: ["Hello - How nice..."]});
         });
     });
-
     describe("test playSong method", function() {
         it("for no songs downloaded", function() {
             expect(testCase.playSong("Hello")).to.equal("You have not downloaded a Hello song yet. Use SoftUniFy's function downloadSong() to change that!"); 
@@ -40,7 +38,6 @@ describe("Test Softunify class", function() {
             expect(result.playSong("Hello")).to.equal("Eminem:\nHello - Wow...\n"); 
         });
     });
-
     describe("test songsList getter", function() {
         it("for some songs downloaded", function() {
             let result = testCase.downloadSong("Eminem", "Hello", "Wow...");
@@ -52,7 +49,6 @@ describe("Test Softunify class", function() {
             expect(testCase.songsList).to.equal("Your song list is empty"); 
         });
     });
-
     describe("test rateArtist method", function() {
         it("for some songs downloaded", function() {
             let result = testCase.downloadSong("Eminem", "Hello", "Wow...");
@@ -63,4 +59,3 @@ describe("Test Softunify class", function() {
         
     });
 });
-

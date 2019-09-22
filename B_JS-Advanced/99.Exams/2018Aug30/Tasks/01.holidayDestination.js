@@ -9,11 +9,11 @@ function addDestination() {
     let spr = $("#spring");
     let aut = $("#autumn");
     
-    if(city.val() !== "" && country.val() !== "") {
+    if (city.val() !== "" && country.val() !== "") {
         let table = $("#destinations tbody");
         table.append(`<tr><td>${city.val()}, ${country.val()}</td><td>${season}</td></tr>`);
         
-        if(season === "Summer") {
+        if (season === "Summer") {
             sum.val(+sum.val() + 1);
         } else if(season === "Winter") {
             win.val(+win.val() + 1);

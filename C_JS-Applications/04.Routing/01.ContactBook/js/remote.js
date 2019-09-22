@@ -11,7 +11,6 @@ let remote = (() => {
         }
     }
 
-
     // request method (GET, POST, PUT)
     // kinvey module (user/appdata)
     // url endpoint

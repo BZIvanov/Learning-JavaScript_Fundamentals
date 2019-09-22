@@ -3,7 +3,6 @@ let Article = require('./Article.js');
 class ImageArticle extends Article {
     constructor(title, content, image) {
         super(title, content);
-
         this.image = image;
     }
 

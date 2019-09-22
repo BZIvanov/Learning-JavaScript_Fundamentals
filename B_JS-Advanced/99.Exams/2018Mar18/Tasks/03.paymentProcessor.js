@@ -5,7 +5,7 @@ class PaymentProcessor {
     }
 
     get options() {
-        return this._options
+        return this._options;
     }
 
     set options(value) {
@@ -17,27 +17,27 @@ class PaymentProcessor {
             types: ["service", "product", "other"],
             precision: 2
         } 
-        if(value && value.hasOwnProperty("types")) {
+        if (value && value.hasOwnProperty("types")) {
             this._options.types = value.types;
         }
-        if(value && value.hasOwnProperty("precision")) {
+        if (value && value.hasOwnProperty("precision")) {
             this._options.precision = value.precision;
         }
     }
 
     registerPayment(id, name, type, value) {
-        if(id === "" || name === "") {
+        if (id === "" || name === "") {
             throw new Error("Invalid ID or name");
         }
-        if(typeof value !== "number") {
-            throw new Error("Invalid value!")
+        if (typeof value !== "number") {
+            throw new Error("Invalid value!");
         }
-        if(!this.options.types.includes(type)) {
+        if (!this.options.types.includes(type)) {
             throw new Error("Invalid type!");
         }
 
-        for(let i = 0; i < this.payments.length; i++) {
-            if(this.payments[i].id === id) {
+        for (let i = 0; i < this.payments.length; i++) {
+            if (this.payments[i].id === id) {
                 throw new Error("ID already exists");
             }
         }
@@ -48,34 +48,34 @@ class PaymentProcessor {
 
     deletePayment(id) {
         let incorrectID = true;
-        for(let i = 0; i < this.payments.length; i++) {
-            if(this.payments[i].id === id) {
+        for (let i = 0; i < this.payments.length; i++) {
+            if (this.payments[i].id === id) {
                 incorrectID = false;
                 this.payments.splice(i, 1);
                 break;
             }
         }
-        if(incorrectID) {
+        if (incorrectID) {
             throw new Error("ID not found!");
         }
     }
 
     get(id) {
         let incorrectID = true;
-        for(let i = 0; i < this.payments.length; i++) {
-            if(this.payments[i].id === id) {
+        for (let i = 0; i < this.payments.length; i++) {
+            if (this.payments[i].id === id) {
                 incorrectID = false;
                 return `Details about payment ID: ${this.payments[i].id}\n- Name: ${this.payments[i].name}\n- Type: ${this.payments[i].type}\n- Value: ${(this.payments[i].value)}`;
             }
         }
-        if(incorrectID) {
+        if (incorrectID) {
             throw new Error("ID not included!");
         }
     }
 
     toString() {
         let balance = 0;
-        for(let i = 0; i < this.payments.length; i++) {
+        for (let i = 0; i < this.payments.length; i++) {
             balance += +this.payments[i].value;
         }
         

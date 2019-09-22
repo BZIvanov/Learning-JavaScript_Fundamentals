@@ -24,7 +24,6 @@ class Vacationer {
         strResult += `Security Number: ${this._creditCard.securityNumber}\n`;
 
         return strResult;
-
     }
 
     addDestinationToWishList(destination) {

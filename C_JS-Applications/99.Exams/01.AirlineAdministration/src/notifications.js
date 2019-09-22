@@ -1,31 +1,31 @@
 $( document ).on('ajaxStart', function() {
-    $("#loadingBox").show()
+    $("#loadingBox").show();
 });
 $( document ).on('ajaxStop', function() {
-    $("#loadingBox").hide()
+    $("#loadingBox").hide();
 });
 
 function showInfo(message) {
-    $("#infoBox > span").text(message)
-    $("#infoBox").show()
+    $("#infoBox > span").text(message);
+    $("#infoBox").show();
     setTimeout(function () {
-        $("#infoBox").hide()
-    }, 3000)
+        $("#infoBox").hide();
+    }, 3000);
 }
 
 function attachBoxesEvents() {
     $('#errorBox').on('click', function () {
-        $(this).hide()
-    })
+        $(this).hide();
+    });
     $('#infoBox').on('click', function () {
-        $(this).hide()
-    })
+        $(this).hide();
+    });
 }
 
 function showError(message) {
-    $("#errorBox > span").text(message)
-    $("#errorBox").show()
+    $("#errorBox > span").text(message);
+    $("#errorBox").show();
     setTimeout(function () {
-        $("#errorBox").hide()
-    }, 3000)
+        $("#errorBox").hide();
+    }, 3000);
 }

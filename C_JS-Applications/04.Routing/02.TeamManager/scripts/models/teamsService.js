@@ -14,7 +14,6 @@ let teamsService = (() => {
             comment: description,
             author: sessionStorage.getItem('username')
         };
-
         return requester.update('appdata', 'teams/' + teamId, 'kinvey', teamData);
     }
 
@@ -46,7 +45,6 @@ let teamsService = (() => {
        return requester.update('user', sessionStorage.getItem('userId'), userData, 'kinvey');
     }
 
-
     return {
         loadTeams,
         loadTeamDetails,
@@ -55,4 +53,4 @@ let teamsService = (() => {
         joinTeam,
         leaveTeam
     }
-})()
+})();

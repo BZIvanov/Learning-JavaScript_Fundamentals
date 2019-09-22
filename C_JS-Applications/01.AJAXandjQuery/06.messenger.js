@@ -18,7 +18,7 @@ function attachEvents() {
                 data: JSON.stringify({author, content, timestamp})
             })
             .then(loadMessages)
-            .catch(errorOnLoad)
+            .catch(errorOnLoad);
         }
     }
 
@@ -28,7 +28,7 @@ function attachEvents() {
             url: baseUrl + '.json'
         })
         .then(displayMessages)
-        .catch(errorOnLoad)
+        .catch(errorOnLoad);
     }
 
     function displayMessages(messages) {

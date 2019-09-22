@@ -13,11 +13,11 @@ $(() => {
             Array.from($("button")).forEach((button) => $(button).on("click", showHideInfo));
 
             function showHideInfo() {
-                if($(this).text() === "Show status code") {
-                    $(this).text("Hide status code")
+                if ($(this).text() === "Show status code") {
+                    $(this).text("Hide status code");
                     $(this).next().show();
                 } else {
-                    $(this).text("Show status code")
+                    $(this).text("Show status code");
                     $(this).next().hide();
                 }
             }

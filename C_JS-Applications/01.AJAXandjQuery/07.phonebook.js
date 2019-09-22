@@ -13,7 +13,7 @@ function attachEvents() {
                 data: JSON.stringify({ person, phone })
             })
             .then(loadPhonebook)
-            .catch(displayError)
+            .catch(displayError);
         }
     }
 
@@ -41,10 +41,10 @@ function attachEvents() {
                     url: baseUrl + '/' + key + '.json'
                 })
                 .then(loadPhonebook)
-                .catch(displayError)
+                .catch(displayError);
             });
             li.append(delBtn);
-            $('#phonebook').append(li)
+            $('#phonebook').append(li);
         }
     }
 
