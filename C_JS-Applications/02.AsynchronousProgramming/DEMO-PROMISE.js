@@ -25,16 +25,16 @@ example.then(function(result) {
 /*  1. the promise has parameter which is function with 2 parameters and they are another 2 functions.
     2. the function in Promise body for success has to be called as the first parameter, same for second parameter
 */
-let simpleExamp = new Promise(function(resolve, reject) {
+let simpleExamp = new Promise((resolve, reject) => {
     resolve("hi");
     reject("sorry");
 });
 /*  3. in *then* the anonymous function is the resolve function returned from the Promise and the result parameter is the parameter given to the resolve function. In this example its "hi"
     4. in *catch* the anonymous function is the reject function returned from the Promise and the oops parameter is the parameter given to the reject function. In this example its "sorry"
 */
-simpleExamp.then(function(result) {
+simpleExamp.then((result) => {
     console.log(result);
-}).catch(function(oops) {
+}).catch((oops) => {
     console.log(oops);
 })
 
