@@ -28,6 +28,7 @@ function attachEvents() {
                 }
             }
 
+            // then is called if all promises are resolved and in the then we get an array with resolved items in the order we provided them in promise.all
             Promise.all([
                 $.ajax({
                     method: "GET",
