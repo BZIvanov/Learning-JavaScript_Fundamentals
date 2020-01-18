@@ -1,5 +1,6 @@
 // 01. Triangle of star
-function stars(n) {
+// here we have default value for the function in case none is provided]
+function stars(n = 3) {
     for (let i = 1; i <= n; i++) {
         drawStars(i);
     }
@@ -12,14 +13,6 @@ function stars(n) {
     }
 }
 stars(5);
-
-// 02. Square of stars
-function squareStars(n = 5) {
-    for(let i = 0; i < n; i++) {
-        console.log('*' + ' *'.repeat(n - 1));
-    }
-}
-squareStars();
 
 // 03. Palindrome
 function palindrome(str) {
