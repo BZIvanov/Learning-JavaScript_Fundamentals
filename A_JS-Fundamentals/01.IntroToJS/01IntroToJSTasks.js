@@ -1,9 +1,3 @@
-// 01.Sum numbers
-function sumNumbers(a, b, c) {
-    console.log(a + b + c);
-}
-sumNumbers(2, 3, 4);
-
 // 02. Sum VAT
 function sumAndVAT(numbers) {
     let sum = 0;
@@ -19,8 +13,8 @@ sumAndVAT([1.20, 2.60, 3.50]);
 // 03. Letter occurrencies
 function letterOccurrencies(str, letter) {
     let counter = 0;
-    for ( let i = 0; i < str.length; i++) {
-        if(letter === str[i]) {
+    for (let i = 0; i < str.length; i++) {
+        if (letter === str[i]) {
             counter++;
         }
     }

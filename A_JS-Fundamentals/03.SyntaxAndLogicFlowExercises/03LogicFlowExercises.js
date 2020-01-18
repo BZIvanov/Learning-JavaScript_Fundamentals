@@ -1,9 +1,3 @@
-// 01. Hello javascript
-function greeting(name) {
-    console.log(`Hello, ${name}, I am JavaScript!`);
-}
-greeting("Pesho");
-
 // 02. Area and parameter
 function areaAndPerimeter(a, b) {
     console.log(a * b);
@@ -77,12 +71,6 @@ function imperialUnits(n) {
 }
 imperialUnits(55);
 
-// 09. Now playing
-function player(input) {
-    console.log(`Now Playing: ${input[1]} - ${input[0]} [${input[2]}]`);
-}
-player(['Number One', 'Nelly', '4:09']);
-
 // 10. Compose tag
 function composeTag(input) {
     console.log(`<img src="${input[0]}" alt="${input[1]}">`);
@@ -128,14 +116,6 @@ function pointInRectangle([x, y, xMin, xMax, yMin, yMax]) {
     }
 }
 pointInRectangle([8, -1, 2, 12, -3, 3]);
-
-// 16. Odd numbers
-function oddNumbers(n) {
-    for (let i = 1; i <= n; i += 2) {
-        console.log(i);
-    }
-}
-oddNumbers(5);
 
 // 17. Dollars triangle
 function dollarsTriangle(n) {

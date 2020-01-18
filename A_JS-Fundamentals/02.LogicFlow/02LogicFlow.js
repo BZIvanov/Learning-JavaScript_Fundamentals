@@ -1,9 +1,3 @@
-// 01. Multiply numbers
-function multiplyNumbers(a, b) {
-    return a * b;
-}
-console.log(multiplyNumbers(3, 2));
-
 // 02. Boxes and bottles
 function boxesAndBottles(n, k) {
     let boxesNeeded = Math.ceil(n / k);
