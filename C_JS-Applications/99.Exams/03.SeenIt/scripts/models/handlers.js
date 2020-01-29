@@ -194,7 +194,7 @@ handlers.displayComments = function(context) {
     
     let currentPost = requester.get('appdata', `posts/${id}`, 'kinvey');
     let currentPostComments = requester.get('appdata', `comments?query={"postId":"${id}"}&sort={"_kmd.ect":-1}`, 'kinvey');
-    
+    // then is called if all promises are resolved and in the then we get an array with resolved items in the order we provided them in promise.all
     Promise.all([currentPost, currentPostComments])
         .then(function([post, comments]){
             context.post = post;

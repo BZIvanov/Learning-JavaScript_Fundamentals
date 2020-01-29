@@ -1,5 +1,5 @@
 function startApp() {
-    sessionStorage.clear(); //clears user auth data
+    sessionStorage.clear();
     showHideMenuLinks();
     showView('viewHome');
 
@@ -188,6 +188,7 @@ function startApp() {
                 function appendBookRow(book, bookTable) {
                     let links = [];
                     if (book._acl.creator === sessionStorage['userId']) {
+                        // functions are actually objects and these kind of objects have a special method called bind with which we can set the this
                         let delLink = $('<a href="#">[Delete]</a>').on('click', deleteBook.bind(this, book));
                         let editLink = $('<a href="#">[Edit]</a>').on('click', loadBookForEdit.bind(this, book))
                         links = [delLink, ' ', editLink]
