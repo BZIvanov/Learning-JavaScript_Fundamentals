@@ -1,25 +1,4 @@
-// 02. Area and parameter
-function areaAndPerimeter(a, b) {
-    console.log(a * b);
-    console.log(a * 2 + b * 2);
-}
-areaAndPerimeter(1, 3);
-
-// 03. Distance
-function distance(arr) {
-    let speedAkmH = arr[0];
-    let speedBkmH = arr[1];
-    let timeInSeconds = arr[2];
-
-    let hourValue = timeInSeconds / 60 / 60;
-
-    let distanceTravelledAmeters = speedAkmH * hourValue * 1000;
-    let distanceTravelledBmeters = speedBkmH * hourValue * 1000;
-    console.log(Math.abs(distanceTravelledAmeters - distanceTravelledBmeters));
-}
-distance([11, 10, 120]);
-
-// 04. Distance 3D
+// 01. Distance 3D
 function distance3D(arr) {
     [x1, y1, z1, x2, y2, z2] = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5]];
     let result = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2) + Math.pow(z1 - z2, 2));
@@ -27,7 +6,7 @@ function distance3D(arr) {
 }
 distance3D([1, 1, 0, 5, 4, 0]);
 
-// 05. Grads to degrees
+// 02. Grads to degrees
 function gradsToDegrees(g) {
     g %= 400;
 
@@ -41,7 +20,7 @@ function gradsToDegrees(g) {
 gradsToDegrees(850);
 gradsToDegrees(0);
 
-// 06. Compound interest
+// 03. Compound interest
 function compoundInterest(input) {
     [p, i, n, t] = [input[0], input[1], input[2], input[3]];
     i /= 100;
@@ -52,7 +31,7 @@ function compoundInterest(input) {
 }
 compoundInterest([1500, 4.3, 3, 6]);
 
-// 07. Rounding
+// 04. Rounding
 function rounding(arr) {
     [num, d] = [arr[0], arr[1]];
     if(d > 15) {
@@ -63,7 +42,7 @@ function rounding(arr) {
 }
 rounding([10.5, 3]);
 
-// 08. Imperial units
+// 05. Imperial units
 function imperialUnits(n) {
     let main = Math.floor(n / 12, 0);
     let subMain = n % 12;
@@ -71,19 +50,13 @@ function imperialUnits(n) {
 }
 imperialUnits(55);
 
-// 10. Compose tag
-function composeTag(input) {
-    console.log(`<img src="${input[0]}" alt="${input[1]}">`);
-}
-composeTag(['smiley.gif', 'Smiley Face']);
-
-// 11. Binary to decimal
+// 06. Binary to decimal
 function binaryToDecimal(bin) {
     console.log(parseInt(bin, 2));
 }
 binaryToDecimal("00001001");
 
-// 12. Assign properties
+// 07. Assign properties
 function assignProperty(input) {
     let obj = {};
     for (let i = 0; i < input.length - 1; i += 2) {
@@ -93,7 +66,7 @@ function assignProperty(input) {
 }
 assignProperty(['name', 'Pesho', 'age', '23', 'gender', 'male']);
 
-// 13. Last month
+// 08. Last month
 function lastDayOfPrevMonth(arr) {
     // 0 for day value will return the last day from previous month
     let currentDate = new Date(arr[2], arr[1] - 1, 0);
@@ -101,13 +74,7 @@ function lastDayOfPrevMonth(arr) {
 }
 lastDayOfPrevMonth([17, 3, 2002]);
 
-// 14. Biggest three
-function biggestThree(arr) {
-    console.log(Math.max(arr[0], arr[1], arr[2]));
-}
-biggestThree([5, -2, 7]);
-
-// 15. Point in rectangle
+// 09. Point in rectangle
 function pointInRectangle([x, y, xMin, xMax, yMin, yMax]) {
     if ((xMin <= x && x <= xMax) && (yMin <= y && y <= yMax)) {
         console.log("inside");
@@ -117,7 +84,7 @@ function pointInRectangle([x, y, xMin, xMax, yMin, yMax]) {
 }
 pointInRectangle([8, -1, 2, 12, -3, 3]);
 
-// 17. Dollars triangle
+// 10. Dollars triangle
 function dollarsTriangle(n) {
     for (let i = 1; i <= n; i++) {
         console.log('$'.repeat(i));
@@ -125,7 +92,7 @@ function dollarsTriangle(n) {
 }
 dollarsTriangle(5);
 
-// 18. Movie prices
+// 11. Movie prices
 function moviePrices(input) {
     let movie = input[0].toLowerCase();
     let day = input[1].toLowerCase();
@@ -151,17 +118,6 @@ function moviePrices(input) {
             case "sunday": console.log(15); break;
             default: console.log("error");
         }
-    } else if (movie === "casablanca") {
-        switch(day) {
-            case "monday": console.log(8); break;
-            case "tuesday": console.log(8); break;
-            case "wednesday": console.log(8); break;
-            case "thursday": console.log(8); break;
-            case "friday": console.log(8); break;
-            case "saturday": console.log(10); break;
-            case "sunday": console.log(10); break;
-            default: console.log("error");
-        }
     } else if (movie === "the wizard of oz") {
         switch(day) {
             case "monday": console.log(10); break;
@@ -179,7 +135,7 @@ function moviePrices(input) {
 }
 moviePrices(["The Godfather", "Friday"]);
 
-// 19. Quadratic equation
+// 12. Quadratic equation
 function quadraticEquation(a, b, c) {
     let d = Math.pow(b, 2) - 4 * a * c;
     if (d > 0) {
@@ -195,7 +151,7 @@ function quadraticEquation(a, b, c) {
 }
 quadraticEquation(6, 11, -35);
 
-// 20. Multiplication table
+// 13. Multiplication table
 function multiplicationTable(n) {
     let html = '<table border="1">\n';
     for (let row = 0; row <= n; row++) {
@@ -221,7 +177,7 @@ function multiplicationTable(n) {
 }
 console.log(multiplicationTable(5));
 
-// 21. Figure of squares
+// 14. Figure of squares
 function figureFourSquares(n) {
     let result = "";
     let symbols = n - 2;

@@ -1,11 +1,4 @@
-// 02. Boxes and bottles
-function boxesAndBottles(n, k) {
-    let boxesNeeded = Math.ceil(n / k);
-    console.log(boxesNeeded);
-}
-boxesAndBottles(15, 7);
-
-// 03. Leap Year
+// 01. Leap Year
 function leapYear(year) {
     if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
         console.log("yes");
@@ -16,15 +9,7 @@ function leapYear(year) {
 }
 leapYear(2000);
 
-// 04. Circle Area
-function circleArea(r) {
-    let result = Math.PI * r * r;
-    console.log(result);
-    console.log(result.toFixed(2));
-}
-circleArea(5);
-
-// 05. Triangle Area
+// 02. Triangle Area
 function triangleArea(a, b, c) {
     let sp = (a + b + c) / 2;
     let area = Math.sqrt(sp * (sp - a) * (sp - b) * (sp - c));
@@ -32,7 +17,7 @@ function triangleArea(a, b, c) {
 }
 triangleArea(2, 3.5, 4);
 
-// 06. Cone
+// 03. Cone
 function cone(r, h) {
     let s = Math.sqrt(r * r + h * h);
     let volume = Math.PI * r * r * h / 3;
@@ -42,7 +27,7 @@ function cone(r, h) {
 }
 cone(3, 5);
 
-// 07. Odd even
+// 04. Odd even
 function oddEven(n) {
     if (!Number.isInteger(n)) {
         console.log("invalid");
@@ -54,7 +39,7 @@ function oddEven(n) {
 }
 oddEven(5);
 
-// 08. Fruit or vegetable
+// 05. Fruit or vegetable
 function fruitOrVegetable(food) {
     switch (food) {
         case "banana": 
@@ -78,7 +63,7 @@ function fruitOrVegetable(food) {
 }
 fruitOrVegetable("banana");
 
-// 09. Colorfull numbers
+// 06. Colorfull numbers
 function colorfulNumbers(n) {
     let html = "<ul>\n";
     for (let i = 1; i <= n; i ++) {
@@ -91,7 +76,7 @@ function colorfulNumbers(n) {
 }
 console.log(colorfulNumbers(10));
 
-// 10. Chess board
+// 07. Chess board
 function chessBoard(n) {
     let html = "<div class=\"chessboard\">\n";
     for (let i = 0; i < n; i++) {
@@ -108,7 +93,7 @@ function chessBoard(n) {
 }
 chessBoard(3);
 
-// 11. Binary logarithm
+// 08. Binary logarithm
 function binaryLogarithm(arr) {
     for (let i = 0; i < arr.length; i++) {
         console.log(Math.log2(arr[i]));
@@ -116,7 +101,7 @@ function binaryLogarithm(arr) {
 }
 binaryLogarithm([2, 5, 6, 8, 9]);
 
-// 12. Prime Checker
+// 09. Prime Checker
 function isPrime(num) {
     let prime = true;
     for (let i = 2; i <= Math.sqrt(num); i++) {

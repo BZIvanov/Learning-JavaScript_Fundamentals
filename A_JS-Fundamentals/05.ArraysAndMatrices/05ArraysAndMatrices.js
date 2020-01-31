@@ -1,26 +1,9 @@
-// 01. Sum first and last
-function sumFirstLast(input) {
-    let sum = Number(input[0]) + Number(input[input.length - 1]);
-    console.log(sum);
-}
-sumFirstLast(['20', '30', '40']);
-
-// 02. Even position element
-function evenPositionElement(arr) {
-    let str = "";
-    for(let i = 0; i < arr.length; i+=2) {
-        str += arr[i] + " ";
-    }
-    console.log(str);
-}
-evenPositionElement(['20', '30', '40']);
-
 // 03. Positive and negative numbers
 function poseNegNumbers(arr) {
     const result = [];
     
     for (let num of arr) {
-        if(num < 0) {
+        if (num < 0) {
             result.unshift(num);
         } else {
             result.push(num);

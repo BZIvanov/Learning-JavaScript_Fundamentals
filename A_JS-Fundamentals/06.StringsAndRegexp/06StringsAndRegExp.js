@@ -198,24 +198,6 @@ function performMultiplications(text) {
 }
 performMultiplications("My bill: 2*2.50 (beer); 2* 1.20 (kepab); -2  * 0.5 (deposit).");
 
-// 17. Split with delimeter
-function splitWithDelimeter(str, d) {
-    console.log(str.split(d).join('\n'));
-}
-splitWithDelimeter("One-Two-Three-Four-Five", "-");
-
-// 18. Repeat string
-function reapeatString(str, n) {
-    console.log(str.repeat(n));
-}
-reapeatString("repeat", 5);
-
-// 19. Starts with
-function checkStartWith(str, s) {
-    console.log(str.indexOf(s) === 0 ? true : false);
-}
-checkStartWith("How have you been?", "how");
-
 // 20. Ends with
 function checkEndsWith(str, s) {
     let len = s.length * -1;
