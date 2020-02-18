@@ -65,39 +65,6 @@ biggestElelemnt([ [3, 5, 7, 12],
                 [-1, 4, 33, 2],
                 [8, 3, 0, 4] ]);
 
-// 09. Diagonal sums
-function diagonalSums(matrix) {
-    let right = 0;
-    let left = 0;
-    for (let i = 0; i < matrix.length; i++) {
-        right += matrix[i][i];
-        left += matrix[i][matrix[i].length - 1 - i];
-    }
-    console.log(right + " " + left);
-}
-diagonalSums([[3, 5, 17],
-            [-1, 7, 14],
-            [1, -8, 89]]);
-
-// 10. Equal neighbours
-function equalNeighbours(matrix) {
-    let count = 0;
-    for (let row = 0; row < matrix.length; row++) {
-        for (let col = 0; col < matrix[row].length; col++) {
-            if (matrix[row + 1] && matrix[row][col] === matrix[row + 1][col]) {
-                count++;
-            }
-            if (matrix[row][col + 1] && matrix[row][col] === matrix[row][col + 1]) {
-                count++;
-            }
-        }
-    }
-    console.log(count);
-}
-equalNeighbours([['2', '2', '5', '7', '4'],
-                ['4', '0', '5', '3', '4'],
-                ['2', '5', '5', '4', '2']]);
-
 // 11. Given delimeter
 function givenDelimeter(arr) {
     let delimeter = arr.pop();

@@ -1,6 +1,6 @@
 // 01. Distance 3D
 function distance3D(arr) {
-  [x1, y1, z1, x2, y2, z2] = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5]];
+  const [x1, y1, z1, x2, y2, z2] = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5]];
   const result = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2) + Math.pow(z1 - z2, 2));
   console.log(result);
 }
@@ -22,7 +22,7 @@ gradsToDegrees(0);
 
 // 03. Rounding
 function rounding(arr) {
-  [num, d] = [arr[0], arr[1]];
+  const [num, d] = [arr[0], arr[1]];
   if(d > 15) {
     d = 15;
   }
@@ -33,8 +33,8 @@ rounding([10.5, 3]);
 
 // 04. Imperial units
 function imperialUnits(n) {
-  let main = Math.floor(n / 12, 0);
-  let subMain = n % 12;
+  const main = Math.floor(n / 12, 0);
+  const subMain = n % 12;
   console.log(`${main}'-${subMain}"`);
 }
 imperialUnits(55);

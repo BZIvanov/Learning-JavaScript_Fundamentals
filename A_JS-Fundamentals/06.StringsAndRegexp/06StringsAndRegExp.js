@@ -6,7 +6,7 @@ letters("Hello, World!");
 
 // 02. Concatenate reversed
 function concatenateReversed(arr) {
-    let result = Array.from(arr.join("")).reverse().join("");
+    const result = Array.from(arr.join("")).reverse().join("");
     console.log(result);
 }
 concatenateReversed(['I', 'am', 'student']);
