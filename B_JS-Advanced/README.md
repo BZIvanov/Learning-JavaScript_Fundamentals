@@ -53,6 +53,8 @@ person.printGender();
 ```
 
 ES7 shorthand syntax
+
+Here we can set properties directly saving us the constructor. And for methods we can use arrow functions stored as variables, so we will not have issues with **this**
 ```javascript
 class Human {
     gender = 'male';

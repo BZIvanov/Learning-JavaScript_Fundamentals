@@ -15,7 +15,9 @@ let f = function(x) {
 console.log(f(6));
 
 // after our function is saved in a variable we can also remove function key-word
-let g = (x) => {return x + 1};
+let g = (x) => {
+  return x + 1;
+};
 console.log(g(8));
 
 // in arrow functions the symbols "=>" work as return so we can also remove return key-word
