@@ -1,43 +1,58 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <title>Stopwatch</title>
-    </head>
-    <body>
-        <div id="time" style="border:3px solid blue; text-align:center; font-size:2em; margin-bottom:10px">00:00</div>
-        <button id="startBtn">Start</button>
-        <button id="stopBtn" disabled="true">Stop</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Stopwatch</title>
+  </head>
+  <body>
+    <div
+      id="time"
+      style="
+        border: 3px solid blue;
+        text-align: center;
+        font-size: 2em;
+        margin-bottom: 10px;
+      "
+    >
+      00:00
+    </div>
+    <button id="startBtn">Start</button>
+    <button id="stopBtn" disabled="true">Stop</button>
 
-        <script>
-            window.onload = function() { stopwatch(); }
+    <script>
+      window.onload = function () {
+        stopwatch();
+      };
 
-            function stopwatch() {
-                let time, intervalID;
-                let startBtn = document.getElementById('startBtn');
-                let stopBtn = document.getElementById('stopBtn');
+      function stopwatch() {
+        let time, intervalID;
+        let startBtn = document.getElementById('startBtn');
+        let stopBtn = document.getElementById('stopBtn');
 
-                startBtn.addEventListener('click', function() {
-                    time = -1;
-                    incrementTime();
-                    intervalID = setInterval(incrementTime, 1000);
-                    startBtn.disabled = true;
-                    stopBtn.disabled = false;
-                });
+        startBtn.addEventListener('click', function () {
+          time = -1;
+          incrementTime();
+          intervalID = setInterval(incrementTime, 1000);
+          startBtn.disabled = true;
+          stopBtn.disabled = false;
+        });
 
-                stopBtn.addEventListener('click', function() {
-                    clearInterval(intervalID);
-                    startBtn.disabled = false;
-                    stopBtn.disabled = true;
-                });
+        stopBtn.addEventListener('click', function () {
+          clearInterval(intervalID);
+          startBtn.disabled = false;
+          stopBtn.disabled = true;
+        });
 
-                function incrementTime() {
-                    time++;
-                    document.getElementById('time').textContent = ("0" + Math.trunc(time / 60)).slice(-2) + ':' + ("0" + (time % 60)).slice(-2);
-                }
-            }
-        </script>
-    </body>
+        function incrementTime() {
+          time++;
+          document.getElementById('time').textContent =
+            ('0' + Math.trunc(time / 60)).slice(-2) +
+            ':' +
+            ('0' + (time % 60)).slice(-2);
+        }
+      }
+    </script>
+  </body>
 </html>

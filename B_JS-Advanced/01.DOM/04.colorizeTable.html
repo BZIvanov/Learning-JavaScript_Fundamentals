@@ -1,27 +1,42 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>title</title>
-</head>
-<body>
+  </head>
+  <body>
     <table>
-        <tr><th>Name</th><th>Town</th></tr>
-        <tr><td>Eve</td><td>Sofia</td></tr>
-        <tr><td>Nick</td><td>Varna</td></tr>
-        <tr><td>Didi</td><td>Ruse</td></tr>
-        <tr><td>Tedy</td><td>Varna</td></tr>
+      <tr>
+        <th>Name</th>
+        <th>Town</th>
+      </tr>
+      <tr>
+        <td>Eve</td>
+        <td>Sofia</td>
+      </tr>
+      <tr>
+        <td>Nick</td>
+        <td>Varna</td>
+      </tr>
+      <tr>
+        <td>Didi</td>
+        <td>Ruse</td>
+      </tr>
+      <tr>
+        <td>Tedy</td>
+        <td>Varna</td>
+      </tr>
     </table>
     <button onclick="colorize()">Colorize</button>
     <script>
-        function colorize() {
-            let table = document.querySelectorAll("tbody tr");
-            for (let i = 1; i < table.length; i+=2) {
-                table[i].style.backgroundColor = "Teal";
-            }
+      function colorize() {
+        let table = document.querySelectorAll('tbody tr');
+        for (let i = 1; i < table.length; i += 2) {
+          table[i].style.backgroundColor = 'Teal';
         }
+      }
     </script>
-</body>
+  </body>
 </html>
