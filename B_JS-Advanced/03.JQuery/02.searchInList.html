@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Search in List</title>
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <ul id="towns">
-            <li>Sofia</li>
-            <li>Pleven</li>
-            <li>Varna</li>
-            <li>Plovdiv</li>
-        </ul>
-        <input type="text" id="searchText" />
-        <button onclick="search()">Search</button>
-        <div id="result"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Search in List</title>
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <ul id="towns">
+      <li>Sofia</li>
+      <li>Pleven</li>
+      <li>Varna</li>
+      <li>Plovdiv</li>
+    </ul>
+    <input type="text" id="searchText" />
+    <button onclick="search()">Search</button>
+    <div id="result"></div>
 
-        <script>
-            function search() {
-                let searchText = $('#searchText').val();
-                let matchedElements = $(`#towns li:contains('${searchText}')`);
-                $("#towns li").css('font-weight', '');
-                matchedElements.css('font-weight', 'bold');
-                $("#result").text(matchedElements.length + ' maches found.');
-            }
-        </script>
-    </body>
+    <script>
+      function search() {
+        let searchText = $('#searchText').val();
+        let matchedElements = $(`#towns li:contains('${searchText}')`);
+        $('#towns li').css('font-weight', '');
+        matchedElements.css('font-weight', 'bold');
+        $('#result').text(matchedElements.length + ' maches found.');
+      }
+    </script>
+  </body>
 </html>

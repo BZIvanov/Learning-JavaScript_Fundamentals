@@ -1,45 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Sections</title>
-        <style>
-            #content {
-                width: 1000px;
-            }
-            #content div {
-                float: left;
-                width: 300px;
-                height: 300px;
-                margin: 2em;
-                background: #5555ff;
-                text-align: center;
-            }
-            #content div p {
-                color: white;
-                margin: 6em 3em 6em 3em;
-            }
-        </style>
-    </head>
-    <body onload="create(['Section 1', 'Section 2', 'Section 3', 'Section 4']);">
-        <div id="content">
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sections</title>
+    <style>
+      #content {
+        width: 1000px;
+      }
+      #content div {
+        float: left;
+        width: 300px;
+        height: 300px;
+        margin: 2em;
+        background: #5555ff;
+        text-align: center;
+      }
+      #content div p {
+        color: white;
+        margin: 6em 3em 6em 3em;
+      }
+    </style>
+  </head>
+  <body onload="create(['Section 1', 'Section 2', 'Section 3', 'Section 4']);">
+    <div id="content"></div>
 
-        <script>
-            function create(sentences) {
-                for (let word of sentences) {
-                    let divElement = document.createElement("div");
-                    let paraElement = document.createElement("p");
-                    paraElement.textContent = word;
-                    paraElement.style.display = "none";
-                    divElement.appendChild(paraElement);
-                    divElement.addEventListener("click", function() {
-                        this.children[0].style.display = "block";
-                    })
-                    let container = document.getElementById("content");
-                    container.appendChild(divElement);
-                }
-            }
-        </script>
-    </body>
+    <script>
+      function create(sentences) {
+        for (let word of sentences) {
+          let divElement = document.createElement('div');
+          let paraElement = document.createElement('p');
+          paraElement.textContent = word;
+          paraElement.style.display = 'none';
+          divElement.appendChild(paraElement);
+          divElement.addEventListener('click', function () {
+            this.children[0].style.display = 'block';
+          });
+          let container = document.getElementById('content');
+          container.appendChild(divElement);
+        }
+      }
+    </script>
+  </body>
 </html>

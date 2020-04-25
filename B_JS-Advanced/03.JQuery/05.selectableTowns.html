@@ -1,53 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Selectable Towns</title>
-        <style>
-            li {
-                display: inline-block;
-                cursor: pointer;
-                padding: 10px;
-            }
-            ul { padding:0; }
-        </style>
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    </head>
-    <body>
-        <h2>Towns</h2>
-        <ul id="items">
-            <li>Sofia</li>
-            <li>Varna</li>
-            <li>Plovdiv</li>
-            <li>Bourgas</li>
-            <li>Rousse</li>
-        </ul>
-        <button id="showTownsButton">Show Towns</button>
-        <div id="selectedTowns"></div>
-        <script>
-            $(attachEvents());
+  <head>
+    <meta charset="UTF-8" />
+    <title>Selectable Towns</title>
+    <style>
+      li {
+        display: inline-block;
+        cursor: pointer;
+        padding: 10px;
+      }
+      ul {
+        padding: 0;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  </head>
+  <body>
+    <h2>Towns</h2>
+    <ul id="items">
+      <li>Sofia</li>
+      <li>Varna</li>
+      <li>Plovdiv</li>
+      <li>Bourgas</li>
+      <li>Rousse</li>
+    </ul>
+    <button id="showTownsButton">Show Towns</button>
+    <div id="selectedTowns"></div>
+    <script>
+      $(attachEvents());
 
-            function attachEvents() {
-                $("#items li").on('click', selectTown);
-                $("#showTownsButton").on('click', showSelected);
+      function attachEvents() {
+        $('#items li').on('click', selectTown);
+        $('#showTownsButton').on('click', showSelected);
 
-                function selectTown() {
-                    if (!$(this).attr("data-selected")) {
-                        $(this).attr("data-selected", "true").css("background-color", "#DDD");
-                    }
-                    else {
-                        $(this).removeAttr("data-selected").css("background-color", "");
-                    }
-                }
+        function selectTown() {
+          if (!$(this).attr('data-selected')) {
+            $(this)
+              .attr('data-selected', 'true')
+              .css('background-color', '#DDD');
+          } else {
+            $(this).removeAttr('data-selected').css('background-color', '');
+          }
+        }
 
-                function showSelected() {
-                    let result = $('#items li[data-selected="true"]')
-                        .toArray()
-                        .map(li => $(li).text())
-                        .join(", ");
-                    $("#selectedTowns").text(result);
-                }
-            }
-        </script>
-    </body>
+        function showSelected() {
+          let result = $('#items li[data-selected="true"]')
+            .toArray()
+            .map((li) => $(li).text())
+            .join(', ');
+          $('#selectedTowns').text(result);
+        }
+      }
+    </script>
+  </body>
 </html>

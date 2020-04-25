@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"><title>Focus</title>
-        <style>
-            .error { 
-                border: 2px solid red; 
-            }
-        </style>
-    </head>
-    <body onload="validate()">
-        <label for="email">Enter email:</label>
-        <input id="email" type="text"/>
-        <script>
-            function validate() {
-                let box = document.getElementById("email");
-                box.addEventListener("change", valid);
+  <head>
+    <meta charset="UTF-8" />
+    <title>Focus</title>
+    <style>
+      .error {
+        border: 2px solid red;
+      }
+    </style>
+  </head>
+  <body onload="validate()">
+    <label for="email">Enter email:</label>
+    <input id="email" type="text" />
+    <script>
+      function validate() {
+        let box = document.getElementById('email');
+        box.addEventListener('change', valid);
 
-                function valid() {   
-                    let text = box.value;
-                    let pattern = /\w+@\w+\.\w+/g;
-                    if (pattern.test(text)) {
-                        box.className = "";
-                    } 
-                    else {
-                        box.className = "error";
-                    }
-                }
-            }
-        </script>
-    </body>
+        function valid() {
+          let text = box.value;
+          let pattern = /\w+@\w+\.\w+/g;
+          if (pattern.test(text)) {
+            box.className = '';
+          } else {
+            box.className = 'error';
+          }
+        }
+      }
+    </script>
+  </body>
 </html>
