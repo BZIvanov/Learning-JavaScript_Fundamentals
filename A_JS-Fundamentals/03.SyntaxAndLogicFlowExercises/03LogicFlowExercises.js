@@ -1,7 +1,9 @@
 // 01. Distance 3D
 function distance3D(arr) {
-  const [x1, y1, z1, x2, y2, z2] = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5]];
-  const result = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2) + Math.pow(z1 - z2, 2));
+  const [x1, y1, z1, x2, y2, z2] = [...arr];
+  const result = Math.sqrt(
+    Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2) + Math.pow(z1 - z2, 2)
+  );
   console.log(result);
 }
 distance3D([1, 1, 0, 5, 4, 0]);
@@ -13,7 +15,7 @@ function gradsToDegrees(g) {
   if (g < 0) {
     g += 400;
   }
-  
+
   g *= 0.9;
   console.log(g);
 }
@@ -22,8 +24,8 @@ gradsToDegrees(0);
 
 // 03. Rounding
 function rounding(arr) {
-  const [num, d] = [arr[0], arr[1]];
-  if(d > 15) {
+  const [num, d] = [...arr];
+  if (d > 15) {
     d = 15;
   }
   let zeroShifter = Math.pow(10, d);
@@ -41,9 +43,9 @@ imperialUnits(55);
 
 // 05. Binary to decimal
 function binaryToDecimal(bin) {
-    console.log(parseInt(bin, 2));
+  console.log(parseInt(bin, 2));
 }
-binaryToDecimal("00001001");
+binaryToDecimal('00001001');
 
 // 06. Assign properties
 function assignProperty(input) {
@@ -65,10 +67,10 @@ lastDayOfPrevMonth([17, 3, 2002]);
 
 // 08. Point in rectangle
 function pointInRectangle([x, y, xMin, xMax, yMin, yMax]) {
-  if ((xMin <= x && x <= xMax) && (yMin <= y && y <= yMax)) {
-    console.log("inside");
+  if (xMin <= x && x <= xMax && yMin <= y && y <= yMax) {
+    console.log('inside');
   } else {
-    console.log("outside");
+    console.log('outside');
   }
 }
 pointInRectangle([8, -1, 2, 12, -3, 3]);

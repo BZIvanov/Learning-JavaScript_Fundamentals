@@ -1,5 +1,5 @@
 // 01. Triangle of star
-// here we have default value for the function in case none is provided]
+// here we have default value for the function in case none is provided
 function stars(n = 3) {
   for (let i = 1; i <= n; i++) {
     drawStars(i);
@@ -17,25 +17,37 @@ stars(5);
 // 04. Day of week
 function dayOfWeek() {
   switch (arguments[0]) {
-    case "Monday": return 1;
-    case "Tuesday": return 2;
-    case "Wednesday": return 3;
-    case "Thursday": return 4;
-    case "Friday": return 5;
-    case "Saturday": return 6;
-    case "Sunday": return 7;
-    default: return "error";
+    case 'Monday':
+      return 1;
+    case 'Tuesday':
+      return 2;
+    case 'Wednesday':
+      return 3;
+    case 'Thursday':
+      return 4;
+    case 'Friday':
+      return 5;
+    case 'Saturday':
+      return 6;
+    case 'Sunday':
+      return 7;
+    default:
+      return 'error';
   }
 }
-console.log(dayOfWeek("Monday"));
+console.log(dayOfWeek('Monday'));
 
 // 05. Calculator
 function calculator(x, y, op) {
   switch (op) {
-    case "+": return add(x, y);
-    case "-": return subtract(x, y);
-    case "*": return multiply(x, y);
-    case "/": return divide(x, y);
+    case '+':
+      return add(x, y);
+    case '-':
+      return subtract(x, y);
+    case '*':
+      return multiply(x, y);
+    case '/':
+      return divide(x, y);
   }
   function add(a, b) {
     return a + b;
@@ -69,28 +81,37 @@ aggregateElements([1, 2, 3]);
 
 // 07. Words uppercase
 function wordsUppercase(str) {
-  console.log(str.toUpperCase().split(/\W+/).filter(x => x !== '').join(", "));
+  console.log(
+    str
+      .toUpperCase()
+      .split(/\W+/)
+      .filter((x) => x !== '')
+      .join(', ')
+  );
 }
 wordsUppercase('Hi, how are you?');
 
 // 08. Inside volume
 function insideVolume(input) {
-  for(let i = 0; i < input.length; i += 3) {
+  for (let i = 0; i < input.length; i += 3) {
     let x = Number(input[i]);
     let y = Number(input[i + 1]);
     let z = Number(input[i + 2]);
 
     if (isInside(x, y, z)) {
-      console.log("inside");
+      console.log('inside');
     } else {
-      console.log("outside");
+      console.log('outside');
     }
   }
 
   function isInside(a, b, c) {
-    let x1 = 10, x2 = 50;
-    let y1 = 20, y2 = 80;
-    let z1 = 15, z2 = 50;
+    let x1 = 10,
+      x2 = 50;
+    let y1 = 20,
+      y2 = 80;
+    let z1 = 15,
+      z2 = 50;
 
     if (a >= x1 && a <= x2) {
       if (b >= y1 && b <= y2) {
@@ -103,10 +124,7 @@ function insideVolume(input) {
     }
   }
 }
-insideVolume([13.1, 50, 31.5, 
-            50, 80, 50,
-            -5, 18, 43]
-);
+insideVolume([13.1, 50, 31.5, 50, 80, 50, -5, 18, 43]);
 
 // 09. Road radar
 function roadRadar(input) {
@@ -114,29 +132,32 @@ function roadRadar(input) {
   let area = input[1];
 
   let getLimit = (zone) => {
-    switch(zone) {
-      case "residential": return 20; break;
-      case "city": return 50; break;
-      case "interstate": return 90; break;
-      case "motorway": return 130; break;
+    switch (zone) {
+      case 'residential':
+        return 20;
+      case 'city':
+        return 50;
+      case 'interstate':
+        return 90;
+      case 'motorway':
+        return 130;
     }
-  }
+  };
 
   let getInfraction = (s, l) => {
     let overspeed = s - l;
     if (overspeed <= 0) {
       return false;
-    }
-    else {
+    } else {
       if (overspeed <= 20) {
-        return "speeding";
+        return 'speeding';
       } else if (overspeed <= 40) {
-        return "excessive speeding";
+        return 'excessive speeding';
       } else {
-        return "reckless driving";
+        return 'reckless driving';
       }
     }
-  }
+  };
 
   let infraction = getInfraction(speed, getLimit(area));
 
@@ -144,7 +165,7 @@ function roadRadar(input) {
     console.log(infraction);
   }
 }
-roadRadar([21, "residential"]);
+roadRadar([21, 'residential']);
 
 // 10. Cooking by numbers
 function cookingByNumbers(arr) {
@@ -152,59 +173,76 @@ function cookingByNumbers(arr) {
   let ops = arr.length;
 
   for (let i = 0; i < ops; i++) {
-    switch(arr[i]) {
-      case "chop": n /= 2; console.log(n); break;
-      case "dice": n = Math.sqrt(n); console.log(n); break;
-      case "spice": n += 1; console.log(n); break;
-      case "bake": n *= 3; console.log(n); break;
-      case "fillet": n *= 0.8; console.log(n); break;
-      default: console.log("error"); break;
+    switch (arr[i]) {
+      case 'chop':
+        n /= 2;
+        console.log(n);
+        break;
+      case 'dice':
+        n = Math.sqrt(n);
+        console.log(n);
+        break;
+      case 'spice':
+        n += 1;
+        console.log(n);
+        break;
+      case 'bake':
+        n *= 3;
+        console.log(n);
+        break;
+      case 'fillet':
+        n *= 0.8;
+        console.log(n);
+        break;
+      default:
+        console.log('error');
+        break;
     }
   }
 }
-cookingByNumbers([9, "dice", "spice", "chop", "bake", "fillet"]);
+cookingByNumbers([9, 'dice', 'spice', 'chop', 'bake', 'fillet']);
 
 // 11. Modify average
 function modifyAverage(n) {
-  let str = "" + n;
+  let str = '' + n;
   let sum = 0;
-  
+
   for (let i = 0; i < str.length; i++) {
     sum += Number(str[i]);
   }
-  
+
   while (sum / str.length <= 5) {
     sum = 0;
     for (let i = 0; i < str.length; i++) {
       sum += Number(str[i]);
     }
     sum += 9;
-    str += "9";
+    str += '9';
   }
-  console.log(str)
+  console.log(str);
 }
 modifyAverage(5835);
 
 // 12. Validity checker
 function validtyChecker(arr) {
-  [a, b, c, d] = [arr[0], arr[1], arr[2], arr[3]];
-  
+  [a, b, c, d] = [...arr];
+
   if (checkIt(a, b, 0, 0)) {
-    printIt(a, b, 0, 0, "valid");
+    printIt(a, b, 0, 0, 'valid');
   } else {
-    printIt(a, b, 0, 0, "invalid");
+    printIt(a, b, 0, 0, 'invalid');
   }
 
   if (checkIt(c, d, 0, 0)) {
-    printIt(c, d, 0, 0, "valid");
+    printIt(c, d, 0, 0, 'valid');
   } else {
-    printIt(c, d, 0, 0, "invalid");
+    printIt(c, d, 0, 0, 'invalid');
   }
 
   if (checkIt(a, b, c, d)) {
-    printIt(a, b, c, d, "valid");
+    printIt(a, b, c, d, 'valid');
   } else {
-    printIt(a, b, c, d, "invalid");
+    printIt(a, b, c, d, 'invalid');
   }
 
   function checkIt(x1, y1, x2, y2) {
@@ -225,16 +263,19 @@ validtyChecker([2, 1, 1, 1]);
 
 // 14. Trip length
 function tripLenght([x1, y1, x2, y2, x3, y3]) {
-  [x1, y1, x2, y2, x3, y3] = [x1, y1, x2, y2, x3, y3].map(Number);
-  dist12 = calculateDist(x1,y1,x2,y2);
-  dist13 = calculateDist(x1,y1,x3,y3);
-  dist23 = calculateDist(x2,y2,x3,y3);
-  if (Math.max(dist12, dist13, dist23) == dist13) console.log(`1->2->3: ${dist12+dist23}`);
-  else if (Math.max(dist12, dist13, dist23) == dist12) console.log(`1->3->2: ${dist13+dist23}`);
-  else if (Math.max(dist12, dist13, dist23) == dist23) console.log(`2->1->3: ${dist12+dist13}`);
+  const [x1, y1, x2, y2, x3, y3] = [x1, y1, x2, y2, x3, y3].map(Number);
+  dist12 = calculateDist(x1, y1, x2, y2);
+  dist13 = calculateDist(x1, y1, x3, y3);
+  dist23 = calculateDist(x2, y2, x3, y3);
+  if (Math.max(dist12, dist13, dist23) == dist13)
+    console.log(`1->2->3: ${dist12 + dist23}`);
+  else if (Math.max(dist12, dist13, dist23) == dist12)
+    console.log(`1->3->2: ${dist13 + dist23}`);
+  else if (Math.max(dist12, dist13, dist23) == dist23)
+    console.log(`2->1->3: ${dist12 + dist13}`);
 
   function calculateDist(x1, y1, x2, y2) {
-    return  Math.sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
+    return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
   }
 }
 tripLength([0, 0, 2, 0, 4, 0]);
@@ -246,32 +287,44 @@ function radioCrystals(input) {
   for (let i = 1; i < input.length; i++) {
     let crystal = input[i];
     console.log(`Processing chunk ${crystal} microns`);
-    let cutCount =0;
-    while (crystal / 4 >= target) {  crystal /= 4;  cutCount++ }
+    let cutCount = 0;
+    while (crystal / 4 >= target) {
+      crystal /= 4;
+      cutCount++;
+    }
     if (cutCount != 0) {
       console.log(`Cut x${cutCount}`);
-      console.log("Transporting and washing");
+      console.log('Transporting and washing');
       crystal = Math.floor(crystal);
     }
-    let lapCount =0;
-    while (crystal-crystal*0.2 >= target) {  crystal -= crystal*0.2;  lapCount++ }
+    let lapCount = 0;
+    while (crystal - crystal * 0.2 >= target) {
+      crystal -= crystal * 0.2;
+      lapCount++;
+    }
     if (lapCount != 0) {
       console.log(`Lap x${lapCount}`);
-      console.log("Transporting and washing");
+      console.log('Transporting and washing');
       crystal = Math.floor(crystal);
     }
-    let grindCount =0;
-    while (crystal-20 >= target) {  crystal -= 20;  grindCount++ }
+    let grindCount = 0;
+    while (crystal - 20 >= target) {
+      crystal -= 20;
+      grindCount++;
+    }
     if (grindCount != 0) {
       console.log(`Grind x${grindCount}`);
-      console.log("Transporting and washing");
+      console.log('Transporting and washing');
       crystal = Math.floor(crystal);
     }
-    let etchCount =0;
-    while (crystal-2 >= target-1) {  crystal -= 2;  etchCount++ }
+    let etchCount = 0;
+    while (crystal - 2 >= target - 1) {
+      crystal -= 2;
+      etchCount++;
+    }
     if (etchCount != 0) {
       console.log(`Etch x${etchCount}`);
-      console.log("Transporting and washing");
+      console.log('Transporting and washing');
       crystal = Math.floor(crystal);
     }
     if (crystal < target) {
@@ -287,34 +340,34 @@ radioCrystals(['1375', '50000']);
 function DNAHelix(n) {
   let structure = ['A', 'T', 'C', 'G', 'T', 'T', 'A', 'G', 'G', 'G'];
   let duplicate = structure.slice(0);
-  let result ="";
+  let result = '';
 
   for (let i = 1; i <= n; i++) {
     if (i % 4 === 1) {
       result += `**${duplicate[0]}${duplicate[1]}**\n`;
       duplicate.splice(0, 2);
-      if (duplicate.length === 0 ) {
+      if (duplicate.length === 0) {
         duplicate = structure.slice(0);
       }
-    } 
+    }
     if (i % 4 === 2) {
       result += `*${duplicate[0]}--${duplicate[1]}*\n`;
       duplicate.splice(0, 2);
-      if (duplicate.length === 0 ) {
+      if (duplicate.length === 0) {
         duplicate = structure.slice(0);
       }
-    } 
+    }
     if (i % 4 === 3) {
       result += `${duplicate[0]}----${duplicate[1]}\n`;
       duplicate.splice(0, 2);
-      if (duplicate.length === 0 ) {
+      if (duplicate.length === 0) {
         duplicate = structure.slice(0);
       }
     }
     if (i % 4 === 0) {
       result += `*${duplicate[0]}--${duplicate[1]}*\n`;
       duplicate.splice(0, 2);
-      if (duplicate.length === 0 ) {
+      if (duplicate.length === 0) {
         duplicate = structure.slice(0);
       }
     }
