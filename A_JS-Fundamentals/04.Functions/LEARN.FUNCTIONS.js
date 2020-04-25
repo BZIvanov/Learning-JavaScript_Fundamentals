@@ -20,7 +20,7 @@ let g = (x) => {
 };
 console.log(g(8));
 
-// in arrow functions the symbols "=>" work as return so we can also remove return key-word
+// in arrow functions the symbols "=>" work as return so we can also remove return key-word and the curly brackets
 let h = (x) => x + 1;
 console.log(h(9));
 
