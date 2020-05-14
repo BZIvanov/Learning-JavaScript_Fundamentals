@@ -3,48 +3,53 @@
 Arrow functions are useful in cases where we want to preserve **this**, because they use the context they are placed in.
 
 ```javascript
-const printName = () => console.log("Ina")
+const printName = () => console.log('Ina');
 ```
+
 ```javascript
-const printName = name => console.log(name)
+const printName = (name) => console.log(name);
 ```
+
 ```javascript
-const printName = (name) => console.log(name)
+const printName = (name) => console.log(name);
 ```
+
 ```javascript
-const printName = (first, last) => console.log(first + " " + last)
+const printName = (first, last) => console.log(first + ' ' + last);
 ```
+
 ```javascript
 const sumNumbers = (first, second) => {
-    let sum = first + second;
-    return sum;
-}
+  let sum = first + second;
+  return sum;
+};
 ```
 
 ## Class
 
 ES6 version
+
 ```javascript
 class Human {
-    constructor() {
-        this.gender = 'male';
-    }
+  constructor() {
+    this.gender = 'male';
+  }
 
-    printGender() {
-        console.log(this.gender);
-    }
+  printGender() {
+    console.log(this.gender);
+  }
 }
 
 class Person extends Human {
-    constructor() {
-        super();
-        this.name = 'Ina';
-        this.gender = 'female';
-    }
+  constructor() {
+    super();
+    this.name = 'Ina';
+    this.gender = 'female';
+  }
 
-    printMyName() {
-        console.log(this.name);
-    }
+  printMyName() {
+    console.log(this.name);
+  }
 }
 
 const person = new Person();
@@ -55,22 +60,23 @@ person.printGender();
 ES7 shorthand syntax
 
 Here we can set properties directly saving us the constructor. And for methods we can use arrow functions stored as variables, so we will not have issues with **this**
+
 ```javascript
 class Human {
-    gender = 'male';
+  gender = 'male';
 
-    printGender = () => {
-        console.log(this.gender);
-    }
+  printGender = () => {
+    console.log(this.gender);
+  };
 }
 
 class Person extends Human {
-    name = 'Ina';
-    gender = 'female';
+  name = 'Ina';
+  gender = 'female';
 
-    printMyName = () => {
-        console.log(this.name);
-    }
+  printMyName = () => {
+    console.log(this.name);
+  };
 }
 
 const person = new Person();
@@ -88,12 +94,12 @@ console.log(newNumbers); // results in [1, 2, 3, 4]
 
 ```javascript
 const person = {
-    name: 'Ina'
+  name: 'Ina',
 };
 const newPerson = {
-    ...person,
-    age: 28
-}
+  ...person,
+  age: 28,
+};
 console.log(newPerson); // results in { name: "Ina", age: 28 }
 ```
 
@@ -103,21 +109,38 @@ Also when working with arrays you will often want to use concat() method where i
 
 ## Destructuring
 
-What we do in the below example is we get the name and save it differently named variable *firstName*. For age we have default value of *21* in case none is provided. For *favColor* we do both of giving different variable name and default value. In the *...rest* variable we will put all the other object properties.
+What we do in the below example is we get the name and save it differently named variable _firstName_. For age we have default value of _21_ in case none is provided. For _favColor_ we do both of giving different variable name and default value. In the _...rest_ variable we will put all the other object properties.
+
+- Object destructuring
 
 ```javascript
 const person = {
-    name: 'Ina',
-    age: 24,
-    favColor: 'red',
-    pet: 'spider',
-    specialty: 'JS'
-}
+  name: 'Ina',
+  age: 24,
+  favColor: 'red',
+  pet: 'spider',
+  specialty: 'JS',
+};
 
-const { name: firstName, age = 21, favColor: color = 'purple', ...rest } = person;
+const {
+  name: firstName,
+  age = 21,
+  favColor: color = 'purple',
+  ...rest
+} = person;
 
-console.log(firstName);     // Ina
-console.log(age);           // 24
-console.log(color);         // red
-console.log(rest);          // { pet: 'spider', specialty: 'JS' }
+console.log(firstName); // Ina
+console.log(age); // 24
+console.log(color); // red
+console.log(rest); // { pet: 'spider', specialty: 'JS' }
+```
+
+- Array destructuring
+
+```javascript
+const things = ['apple', 'needlessThing', 'balooon', 'chair'];
+// by leaving the second element empty we will not create variable for it, because we don't want it
+const [fruit, , toy, furniture, more = 'Default value'] = things;
+console.log(`I love ${fruit} and sitting on a comfortable ${furniture}`);
+console.log(more); // will result in Default value, because value is provided, but we have default
 ```
