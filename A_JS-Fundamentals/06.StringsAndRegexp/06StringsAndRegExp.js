@@ -31,7 +31,7 @@ function extractText(str) {
   let startIndex = str.indexOf('(');
   let endIndex = str.indexOf(')', startIndex);
 
-  let result = [];
+  const result = [];
   while (startIndex > 0) {
     if (endIndex < 0) {
       break;
@@ -47,7 +47,7 @@ extractText('Rakiya (Bulgarian brandy) is self-made liquor (alcoholic drink)');
 // 05. Aggregate table
 function aggregateTable(input) {
   let sum = 0;
-  let towns = [];
+  const towns = [];
   for (let i of input) {
     [town, price] = i.split('|').filter((x) => x !== '');
     towns.push(town.trim());
@@ -64,9 +64,9 @@ aggregateTable([
 
 // 06. Restaurant bill
 function bill(input) {
-  let items = input.filter((x, i) => i % 2 == 0);
-  let sum = input
-    .filter((x, i) => i % 2 == 1)
+  const items = input.filter((x, i) => i % 2 == 0);
+  const sum = input
+    .filter((_, i) => i % 2 == 1)
     .map(Number)
     .reduce((a, b) => a + b);
   console.log(`You purchased ${items.join(', ')} for a total sum of ${sum}`);
@@ -75,11 +75,11 @@ bill(['Beer Zagorka', '2.65', 'Tripe soup', '7.80', 'Lasagna', '5.69']);
 
 // 07. Usernames
 function usernames(inputEmails) {
-  let results = [];
+  const results = [];
   for (let email of inputEmails) {
-    let [alias, domain] = email.split('@');
+    const [alias, domain] = email.split('@');
     let username = alias + '.';
-    let domainParts = domain.split('.');
+    const domainParts = domain.split('.');
     domainParts.forEach((p) => (username += p[0]));
     results.push(username);
   }
@@ -92,7 +92,7 @@ function censorship(text, bannedWords) {
   for (let word of bannedWords) {
     let startIndex = text.indexOf(word);
     while (startIndex > 0) {
-      let wordLength = word.length;
+      const wordLength = word.length;
       text = text.replace(word, '-'.repeat(wordLength));
       startIndex = text.indexOf(word, startIndex);
     }
@@ -122,7 +122,7 @@ escaping(['<b>unescaped text</b>', 'normal text']);
 
 // 10. Match all words
 function matchAllWords(text) {
-  let words = text.match(/\w+/g);
+  const words = text.match(/\w+/g);
   console.log(words.join('|'));
 }
 matchAllWords(
@@ -131,7 +131,7 @@ matchAllWords(
 
 // 11. Email validation
 function emailValidation(email) {
-  let regex = new RegExp(/\b[A-Za-z0-9]+@[a-z]+\.[a-z]+\b/);
+  const regex = new RegExp(/\b[A-Za-z0-9]+@[a-z]+\.[a-z]+\b/);
   if (regex.test(email)) {
     console.log('Valid');
   } else {
@@ -143,8 +143,8 @@ emailValidation('invalid@emai1.bg');
 
 // 12. Expression split
 function expressionSplit(input) {
-  let regex = /[\s,;()\t.]+/;
-  let result = input.split(regex);
+  const regex = /[\s,;()\t.]+/;
+  const result = input.split(regex);
   result.forEach((element) => {
     console.log(element);
   });
@@ -153,7 +153,10 @@ expressionSplit('let sum = 4 * 4,b = "wow";');
 
 // 13. Match dates
 function matchDates(items) {
-  let re = new RegExp('\\b([0-9]{1,2})-([A-Z][a-z]{2,2})-([0-9]{4,4})\\b', 'g');
+  const re = new RegExp(
+    '\\b([0-9]{1,2})-([A-Z][a-z]{2,2})-([0-9]{4,4})\\b',
+    'g'
+  );
   let whole = re.exec(items);
   while (whole) {
     console.log(
@@ -170,10 +173,12 @@ matchDates([
 
 // 14. Employee data
 function employeeData(inputs) {
-  let re = new RegExp('^([A-Z][a-zA-Z]*) - ([1-9][0-9]*) - ([a-zA-Z0-9 -]+)$');
+  const re = new RegExp(
+    '^([A-Z][a-zA-Z]*) - ([1-9][0-9]*) - ([a-zA-Z0-9 -]+)$'
+  );
 
   for (let input of inputs) {
-    let correct = re.exec(input);
+    const correct = re.exec(input);
     if (correct) {
       [name, position, salary] = [correct[1], correct[3], correct[2]];
       console.log(`Name: ${name}\nPosition: ${position}\nSalary: ${salary}`);
@@ -219,7 +224,7 @@ performMultiplications(
 
 // 20. Ends with
 function checkEndsWith(str, s) {
-  let len = s.length * -1;
+  const len = s.length * -1;
   if (str.substr(len) === s) {
     return true;
   } else {
@@ -241,7 +246,7 @@ capitalizeWords('Was that Easy? tRY thIs onE for SiZe!');
 
 // 22. Capture numbers
 function captureNumbers(arr) {
-  let result = arr.join('').match(/\d+/g);
+  const result = arr.join('').match(/\d+/g);
   console.log(result.join(' '));
 }
 captureNumbers([
@@ -253,9 +258,9 @@ captureNumbers([
 
 // 23. Find variables
 function findVariables(str) {
-  let result = [];
+  const result = [];
   // create non-capturing group with ?: because we dont need _ in the final result
-  let re = /\b(?:_([A-Za-z0-9)]+))\b/g;
+  const re = /\b(?:_([A-Za-z0-9)]+))\b/g;
   let validItem = re.exec(str);
   while (validItem) {
     result.push(validItem[1]);
@@ -267,8 +272,8 @@ findVariables('The _id and _age variables are both integers.');
 
 // 24. Find occurencies
 function wordOccurrences(text, item) {
-  let re = new RegExp(`\\b${item}\\b`, 'gi');
-  let result = text.match(re);
+  const re = new RegExp(`\\b${item}\\b`, 'gi');
+  const result = text.match(re);
   if (result) {
     console.log(result.length);
   } else {
@@ -290,8 +295,8 @@ wordOccurrences(
 
 // 25. Extract links
 function extractLinks(data) {
-  let re = /(www)\.([a-zA-Z0-9-]+)(\.[a-z]+)+/g;
-  let result = re.exec(data);
+  const re = /(www)\.([a-zA-Z0-9-]+)(\.[a-z]+)+/g;
+  const result = re.exec(data);
   while (result) {
     console.log(result[0]);
     result = re.exec(data);
@@ -308,10 +313,10 @@ extractLinks([
 // 26. Secret data
 function secretData(data) {
   // ?= is positive lookahead in regex which assure that our match will be followed by something but that thing will not be included in the match
-  let client = /\*[A-Z][A-Za-z]*(?=\s|$)/g;
-  let phone = /\+[0-9-]{10}(?=\s|$)/g;
-  let id = /![a-zA-Z0-9]+(?=\s|\t|$)/g;
-  let base = /_[0-9A-Za-z]+(?=\s|$)/g;
+  const client = /\*[A-Z][A-Za-z]*(?=\s|$)/g;
+  const phone = /\+[0-9-]{10}(?=\s|$)/g;
+  const id = /![a-zA-Z0-9]+(?=\s|\t|$)/g;
+  const base = /_[0-9A-Za-z]+(?=\s|$)/g;
   for (let line of data) {
     console.log(
       line

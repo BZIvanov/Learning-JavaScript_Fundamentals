@@ -1,7 +1,7 @@
 // 01. Towns to JSON
 function townsToJSON(arr) {
-  let result = [];
-  let headers = arr
+  const result = [];
+  const headers = arr
     .shift()
     .split('|')
     .filter((x) => x !== '')
@@ -11,7 +11,7 @@ function townsToJSON(arr) {
       .split('|')
       .filter((x) => x !== '')
       .map((x) => x.trim());
-    let data = {};
+    const data = {};
     data[headers[0]] = row[0];
     data[headers[1]] = Number(row[1]);
     data[headers[2]] = Number(row[2]);
@@ -25,19 +25,19 @@ townsToJSON([
   '| Beijing | 39.913818 | 116.363625 |',
 ]);
 
-// 03. From JSON to HTML
+// 02. From JSON to HTML
 function scoreToHTML(data) {
   data = JSON.parse(data);
   let html = '<table>\n';
   html += '   <tr>';
-  for (let key in data[0]) {
+  for (const key in data[0]) {
     html += `<th>${htmlEscape(key)}</th>`;
   }
   html += '</tr>\n';
 
-  for (let d of data) {
+  for (const d of data) {
     html += '   <tr>';
-    for (let key in d) {
+    for (const key in d) {
       html += `<td>${htmlEscape(d[key])}</td>`;
     }
     html += '</tr>\n';
@@ -46,7 +46,7 @@ function scoreToHTML(data) {
 
   function htmlEscape(text) {
     text = new String(text);
-    let symbols = {
+    const symbols = {
       '"': '&quot;',
       '&': '&amp;',
       "'": '&#39;',
@@ -64,9 +64,9 @@ console.log(
   )
 );
 
-// 04. Sum by town
+// 03. Sum by town
 function sumByTown(arr) {
-  let result = {};
+  const result = {};
 
   for (let i = 0; i < arr.length; i += 2) {
     if (result.hasOwnProperty(arr[i])) {
@@ -80,13 +80,13 @@ function sumByTown(arr) {
 }
 sumByTown(['Sofia', 20, 'Varna', 3, 'Sofia', 5, 'Varna', 4]);
 
-// 05. Count words
+// 04. Count words
 function countWords(input) {
   input = input
     .join('')
     .split(/\W+/g)
     .filter((x) => x !== '');
-  let result = {};
+  const result = {};
   for (let i = 0; i < input.length; i++) {
     if (result.hasOwnProperty(input[i])) {
       result[input[i]] += 1;
@@ -98,9 +98,9 @@ function countWords(input) {
 }
 countWords(["Far too slow, you're far too slow."]);
 
-// 06. Count words with map
+// 05. Count words with map
 function countWordsWithMap(input) {
-  let myMap = new Map();
+  const myMap = new Map();
   input
     .join(' ')
     .toLowerCase()
@@ -113,27 +113,27 @@ function countWordsWithMap(input) {
       myMap.set(word, myMap.get(word) + 1);
     });
 
-  let sortedKeys = Array.from(myMap.keys()).sort();
+  const sortedKeys = Array.from(myMap.keys()).sort();
 
   // values in the sortedKeys are the keys from myMap
-  for (let value of sortedKeys) {
+  for (const value of sortedKeys) {
     console.log(`'${value}' -> ${myMap.get(value)} times`);
   }
 }
 countWordsWithMap(["Far too slow, you're far too slow.", 'hello']);
 
-// 07. Population in towns
+// 06. Population in towns
 function populationInTowns(arr) {
-  let myMap = new Map();
+  const myMap = new Map();
 
-  for (let str of arr) {
-    let [town, population] = str.split(/\s*<->\s*/);
+  for (const str of arr) {
+    const [town, population] = str.split(/\s*<->\s*/);
     if (!myMap.has(town)) {
       myMap.set(town, 0);
     }
     myMap.set(town, myMap.get(town) + +population);
   }
-  for (let [key, value] of myMap) {
+  for (const [key, value] of myMap) {
     console.log(`${key} : ${value}`);
   }
 }
@@ -145,20 +145,20 @@ populationInTowns([
   'Las Vegas <-> 1000000',
 ]);
 
-// 08. City markets
+// 07. City markets
 function cityMarkets(arr) {
-  let myMap = new Map();
-  for (let row of arr) {
-    let [town, product, quanity, price] = row.split(/ -> | : /g);
+  const myMap = new Map();
+  for (const row of arr) {
+    const [town, product, quanity, price] = row.split(/ -> | : /g);
     if (!myMap.has(town)) {
       myMap.set(town, new Map());
     }
     myMap.get(town).set(product, Number(quanity) * Number(price));
   }
 
-  for (let [key, value] of myMap) {
+  for (const [key, value] of myMap) {
     console.log(`Town - ${key}`);
-    for (let [k, v] of value) {
+    for (const [k, v] of value) {
       console.log(`$$$${k} : ${v}`);
     }
   }
@@ -172,21 +172,21 @@ cityMarkets([
   'Montana -> Chereshas -> 1000 : 0.3',
 ]);
 
-// 09. Lowest prices cities
+// 08. Lowest prices cities
 function findLowestPricedProducts(input) {
-  let products = new Map();
-  for (let priceList of input) {
-    let [town, product, price] = priceList.split(/\s+\|\s+/g);
+  const products = new Map();
+  for (const priceList of input) {
+    const [town, product, price] = priceList.split(/\s+\|\s+/g);
     if (!products.has(product)) {
       products.set(product, new Map());
     }
     products.get(product).set(town, Number(price));
   }
 
-  for (let [product, towns] of products) {
+  for (const [product, towns] of products) {
     let minPrice = Number.MAX_VALUE;
     let minPriceTown = '';
-    for (let [town, price] of towns) {
+    for (const [town, price] of towns) {
       if (price < minPrice) {
         minPrice = price;
         minPriceTown = town;
@@ -205,12 +205,12 @@ findLowestPricedProducts([
   'New York | Burger | 10',
 ]);
 
-// 10. Extract unique words
+// 09. Extract unique words
 function extractWords(inputSentences) {
-  let wordPattern = /\b\w+\b/g;
-  let words = new Set();
-  for (let sentence of inputSentences) {
-    let matches = sentence.match(wordPattern);
+  const wordPattern = /\b\w+\b/g;
+  const words = new Set();
+  for (const sentence of inputSentences) {
+    const matches = sentence.match(wordPattern);
     matches.forEach((x) => words.add(x.toLowerCase()));
   }
   console.log([...words.values()].join(', '));
@@ -225,16 +225,14 @@ extractWords([
   'Vivamus turpis dui, malesuada ac turpis dapibus, congue egestas metus.',
 ]);
 
-// 11. Heroic inventory
+// 10. Heroic inventory
 function heroicInventory(arr) {
-  let result = [];
-  for (let row of arr) {
+  const result = [];
+  for (const row of arr) {
     let [name, level, items] = row.split(/\s*\/\s*/);
     level = Number(level);
     items ? (items = items.split(/\W+/g)) : (items = []);
-
-    let tempObject = { name, level, items };
-    result.push(tempObject);
+    result.push({ name, level, items });
   }
   console.log(JSON.stringify(result));
 }
@@ -244,13 +242,13 @@ heroicInventory([
   'Hes / 1 ',
 ]);
 
-// 12. JSON table
+// 11. JSON table
 function JSONTable(arr) {
   let result = '<table>\n';
   for (let row of arr) {
     row = JSON.parse(row);
     result += '\t<tr>\n';
-    for (let key in row) {
+    for (const key in row) {
       result += `\t\t<td>${htmlEscape(row[key])}</td>\n`;
     }
     result += '\t<tr>\n';
@@ -274,11 +272,11 @@ JSONTable([
   '{"name":"Georgi","position":"Lecturer","salary":1000}',
 ]);
 
-// 13. Cappy juice
+// 12. Cappy juice
 function cappyJuice(input) {
-  let juices = new Map();
-  let bottles = new Map();
-  for (let row of input) {
+  const juices = new Map();
+  const bottles = new Map();
+  for (const row of input) {
     let [fruit, quantity] = row.split(' => ');
     quantity = Number(quantity);
 
@@ -291,7 +289,7 @@ function cappyJuice(input) {
       bottles.set(fruit, Math.floor(juices.get(fruit) / 1000));
     }
   }
-  for (let [key, val] of bottles) {
+  for (const [key, val] of bottles) {
     console.log(`${key} => ${val}`);
   }
 }
@@ -303,12 +301,12 @@ cappyJuice([
   'Strawberry => 549',
 ]);
 
-// 14. Store catalogue
+// 13. Store catalogue
 function storeCatalogue(arr) {
-  let store = new Map();
-  for (let row of arr) {
-    let [product, price] = row.split(' : ');
-    let letter = product[0];
+  const store = new Map();
+  for (const row of arr) {
+    const [product, price] = row.split(' : ');
+    const letter = product[0];
     if (!store.has(letter)) {
       store.set(letter, new Map());
     }
@@ -319,11 +317,11 @@ function storeCatalogue(arr) {
     return a[0].toLowerCase().localeCompare(b[0].toLowerCase());
   }
 
-  let sortedLetters = Array.from(store).sort(alphaSort);
-  for (let [key, value] of sortedLetters) {
+  const sortedLetters = Array.from(store).sort(alphaSort);
+  for (const [key, value] of sortedLetters) {
     console.log(key);
-    let sortedProducts = Array.from(value).sort(alphaSort);
-    for (let [k, v] of sortedProducts) {
+    const sortedProducts = Array.from(value).sort(alphaSort);
+    for (const [k, v] of sortedProducts) {
       console.log(`  ${k}: ${v}`);
     }
   }
@@ -339,11 +337,11 @@ storeCatalogue([
   'T-Shirt : 10',
 ]);
 
-// 15. Auto engineering company
+// 14. Auto engineering company
 function generateCarLog(data) {
-  let catalogue = new Map();
-  for (let line of data) {
-    let [brand, model, quantity] = line.split(/\s\|\s/);
+  const catalogue = new Map();
+  for (const line of data) {
+    const [brand, model, quantity] = line.split(/\s\|\s/);
     if (!catalogue.has(brand)) {
       catalogue.set(brand, new Map());
     }
@@ -356,9 +354,9 @@ function generateCarLog(data) {
       .set(model, catalogue.get(brand).get(model) + Number(quantity));
   }
 
-  for (let [brand, models] of catalogue) {
+  for (const [brand, models] of catalogue) {
     console.log(brand);
-    for (let [model, quantity] of models) {
+    for (const [model, quantity] of models) {
       console.log(`###${model} -> ${quantity}`);
     }
   }
@@ -376,23 +374,23 @@ generateCarLog([
   'Citroen | C5 | 10',
 ]);
 
-// 16. System components
+// 15. System components
 function systemComponents(input) {
-  let systems = new Map();
+  const systems = new Map();
   input.forEach((row) => {
-    let [system, component, subcomponent] = row.split(' | ');
+    const [system, component, subcomponent] = row.split(' | ');
     if (!systems.has(system)) systems.set(system, {});
     if (!systems.get(system).hasOwnProperty(component))
       systems.get(system)[component] = [];
     systems.get(system)[component].push(subcomponent);
   });
-  let systemsSortedKeys = [...systems.keys()].sort(
+  const systemsSortedKeys = [...systems.keys()].sort(
     amountOfComponentsThenAlpabeticalSort
   );
   systemsSortedKeys.forEach((systemName) => {
     console.log(systemName);
-    let system = systems.get(systemName);
-    let componentsSortedKeys = Object.keys(system).sort((a, b) => {
+    const system = systems.get(systemName);
+    const componentsSortedKeys = Object.keys(system).sort((a, b) => {
       return system[a].length < system[b].length;
     });
     componentsSortedKeys.forEach((component) => {
@@ -431,10 +429,10 @@ systemComponents([
   'Indice | Session | Default Security',
 ]);
 
-// 17. Usernames
+// 16. Usernames
 function usernames(input) {
-  let usernames = new Set();
-  for (let name of input) {
+  const usernames = new Set();
+  for (const name of input) {
     usernames.add(name);
   }
   function nameCompare(a, b) {
@@ -453,15 +451,15 @@ usernames([
   'Braston',
 ]);
 
-// 18. Unique sequence
+// 17. Unique sequence
 function uniqueSequences(data) {
-  let customSort = (arrA, arrB, map) => map.get(arrA) - map.get(arrB);
-  let arrays = new Map();
-  for (let line of data) {
-    let array = JSON.parse(line)
+  const customSort = (arrA, arrB, map) => map.get(arrA) - map.get(arrB);
+  const arrays = new Map();
+  for (const line of data) {
+    const array = JSON.parse(line)
       .map(Number)
       .sort((a, b) => b - a);
-    let toStore = `[${array.join(', ')}]`;
+    const toStore = `[${array.join(', ')}]`;
     if (!arrays.has(toStore)) {
       arrays.set(toStore, array.length);
     }
@@ -481,13 +479,13 @@ uniqueSequences([
   '[7.339, 7.180, 7.14, 80.099]',
 ]);
 
-// 19. Arena tier
+// 18. Arena tier
 function arenaTier(arr) {
-  let gladiators = {};
+  const gladiators = {};
 
-  for (let row of arr) {
+  for (const row of arr) {
     if (row.indexOf(' -> ') > -1) {
-      let [glad, skill, level] = row.split(' -> ');
+      const [glad, skill, level] = row.split(' -> ');
       if (!gladiators.hasOwnProperty(glad)) {
         gladiators[glad] = { ___total___: 0 };
       }
@@ -495,20 +493,20 @@ function arenaTier(arr) {
         gladiators[glad][skill] = 0;
       }
       if (gladiators[glad][skill] < +level) {
-        let previousValue = gladiators[glad][skill];
+        const previousValue = gladiators[glad][skill];
         gladiators[glad][skill] = +level;
         gladiators[glad]['___total___'] += +level - previousValue;
       }
     } else if (row.indexOf(' vs ') > -1) {
-      let [first, second] = row.split(' vs ');
+      const [first, second] = row.split(' vs ');
       if (
         gladiators.hasOwnProperty(first) &&
         gladiators.hasOwnProperty(second)
       ) {
-        let firstSkills = Object.keys(gladiators[first]).filter(
+        const firstSkills = Object.keys(gladiators[first]).filter(
           (x) => x !== '___total___'
         );
-        let secondSkills = Object.keys(gladiators[second]).filter(
+        const secondSkills = Object.keys(gladiators[second]).filter(
           (x) => x !== '___total___'
         );
         let haveSkillInCommon = false;
@@ -529,22 +527,22 @@ function arenaTier(arr) {
         }
       }
     } else {
-      let sortedKeys = Object.keys(gladiators).sort((a, b) => {
+      const sortedKeys = Object.keys(gladiators).sort((a, b) => {
         return (
           gladiators[b]['___total___'] - gladiators[a]['___total___'] ||
           a.localeCompare(b)
         );
       });
-      for (let key of sortedKeys) {
+      for (const key of sortedKeys) {
         console.log(`${key}: ${gladiators[key]['___total___']} skill`);
-        let sortedInnerKeys = Object.keys(gladiators[key])
+        const sortedInnerKeys = Object.keys(gladiators[key])
           .filter((x) => x !== '___total___')
           .sort((a, b) => {
             return (
               gladiators[key][b] - gladiators[key][a] || a.localeCompare(b)
             );
           });
-        for (let innerKey of sortedInnerKeys) {
+        for (const innerKey of sortedInnerKeys) {
           console.log(`- ${innerKey} <!> ${gladiators[key][innerKey]}`);
         }
       }
@@ -571,14 +569,14 @@ arenaTier([
   'Ave Cesar',
 ]);
 
-// 20. Game of epicness
+// 19. Game of epicness
 function gameOfEpicness(objects, arr) {
-  let kingdoms = {};
+  const kingdoms = {};
   //arrange kingdoms
   for (let obj of objects) {
-    let kd = obj['kingdom'];
-    let gr = obj['general'];
-    let am = obj['army'];
+    const kd = obj['kingdom'];
+    const gr = obj['general'];
+    const am = obj['army'];
     if (!kingdoms.hasOwnProperty(kd)) {
       kingdoms[kd] = { ___totalWins___: 0, ___totalLosses___: 0 };
     }
@@ -589,7 +587,7 @@ function gameOfEpicness(objects, arr) {
   }
 
   //arrange fights
-  for (let row of arr) {
+  for (const row of arr) {
     if (row[0] === row[2]) {
       continue;
     }
@@ -600,8 +598,8 @@ function gameOfEpicness(objects, arr) {
       kingdoms[row[0]].hasOwnProperty(row[1]) &&
       kingdoms[row[2]].hasOwnProperty(row[3])
     ) {
-      let attackingArmy = kingdoms[row[0]][row[1]]['army'];
-      let defendingArmy = kingdoms[row[2]][row[3]]['army'];
+      const attackingArmy = kingdoms[row[0]][row[1]]['army'];
+      const defendingArmy = kingdoms[row[2]][row[3]]['army'];
       if (attackingArmy > defendingArmy) {
         kingdoms[row[0]][row[1]]['army'] = Math.floor(
           kingdoms[row[0]][row[1]]['army'] * 1.1
@@ -629,7 +627,7 @@ function gameOfEpicness(objects, arr) {
   }
 
   //print results
-  let winner = Object.keys(kingdoms).sort((a, b) => {
+  const winner = Object.keys(kingdoms).sort((a, b) => {
     return (
       kingdoms[b]['___totalWins___'] - kingdoms[a]['___totalWins___'] ||
       kingdoms[a]['___totalLosses___'] - kingdoms[b]['___totalLosses___'] ||
@@ -637,12 +635,12 @@ function gameOfEpicness(objects, arr) {
     );
   })[0];
   console.log(`Winner: ${winner}`);
-  let sortedGenerals = Object.keys(kingdoms[winner])
+  const sortedGenerals = Object.keys(kingdoms[winner])
     .filter((x) => x !== '___totalWins___' && x !== '___totalLosses___')
     .sort((a, b) => {
       return kingdoms[winner][b]['army'] - kingdoms[winner][a]['army'];
     });
-  for (let gen of sortedGenerals) {
+  for (const gen of sortedGenerals) {
     console.log(`/\\general: ${gen}`);
     console.log(`---army: ${kingdoms[winner][gen]['army']}`);
     console.log(`---wins: ${kingdoms[winner][gen]['wins']}`);
@@ -667,12 +665,12 @@ gameOfEpicness(
   ]
 );
 
-// 21. Followers
+// 20. Followers
 function followers(arr) {
   let totalUsers = 0;
-  let people = {};
+  const people = {};
 
-  for (let row of arr) {
+  for (const row of arr) {
     if (row.indexOf('Welcome, ') > -1) {
       registerUser(row);
     } else {
@@ -681,7 +679,7 @@ function followers(arr) {
   }
 
   function registerUser(item) {
-    let newUser = item.split(' ').filter((x) => x !== '')[1];
+    const newUser = item.split(' ').filter((x) => x !== '')[1];
     if (!people.hasOwnProperty(newUser)) {
       people[newUser] = { following: 0, followers: 0, list: [] };
       totalUsers++;
@@ -689,12 +687,12 @@ function followers(arr) {
   }
 
   function followUser(item) {
-    let [f1, f2] = item.split(' followed ');
+    const [f1, f2] = item.split(' followed ');
     if (f1 === f2) {
       return;
     }
-    let p1 = people.hasOwnProperty(f1);
-    let p2 = people.hasOwnProperty(f2);
+    const p1 = people.hasOwnProperty(f1);
+    const p2 = people.hasOwnProperty(f2);
     if (p1 === false || p2 === false) {
       return;
     }
@@ -709,7 +707,7 @@ function followers(arr) {
 
   //print the results
   console.log(`Total users registered: ${totalUsers}`);
-  let sortedUsers = Object.keys(people).sort((a, b) => {
+  const sortedUsers = Object.keys(people).sort((a, b) => {
     return (
       people[b]['followers'] - people[a]['followers'] ||
       b.localeCompare(a) ||
@@ -718,14 +716,14 @@ function followers(arr) {
   });
 
   let order = 0;
-  for (let user of sortedUsers) {
+  for (const user of sortedUsers) {
     order++;
     if (order === 1) {
       console.log(
         `1. ${user} : ${people[user]['following']} following, ${people[user]['followers']} followers`
       );
-      let sortedList = people[user]['list'].sort();
-      for (let name of sortedList) {
+      const sortedList = people[user]['list'].sort();
+      for (const name of sortedList) {
         console.log(`*  ${name}`);
       }
     } else {
@@ -751,11 +749,11 @@ followers([
   'Welcome, Zoella',
 ]);
 
-// 22. Travellers log
+// 21. Travellers log
 function travlellersLog(arr) {
-  let people = {};
+  const people = {};
 
-  for (let row of arr) {
+  for (const row of arr) {
     if (row.indexOf('visited') === -1) {
       addIncome(row);
     } else {
@@ -764,7 +762,7 @@ function travlellersLog(arr) {
   }
 
   function addIncome(r) {
-    let [name, income] = r.split(' gets ');
+    const [name, income] = r.split(' gets ');
     if (!people.hasOwnProperty(name)) {
       people[name] = { money: 0 };
     }
@@ -772,9 +770,9 @@ function travlellersLog(arr) {
   }
 
   function visitLandmark(r) {
-    let [name, leftA] = r.split(' visited the ');
-    let [landmark, leftB] = leftA.split(' in ');
-    let [country, price] = leftB.split(' - ');
+    const [name, leftA] = r.split(' visited the ');
+    const [landmark, leftB] = leftA.split(' in ');
+    const [country, price] = leftB.split(' - ');
 
     if (!people.hasOwnProperty(name)) {
       people[name] = {};
@@ -798,26 +796,26 @@ function travlellersLog(arr) {
   }
 
   //print the results
-  let sortedPeople = Object.keys(people).sort((a, b) => {
-    let c1 = Object.keys(people[a]).length;
-    let c2 = Object.keys(people[b]).length;
+  const sortedPeople = Object.keys(people).sort((a, b) => {
+    const c1 = Object.keys(people[a]).length;
+    const c2 = Object.keys(people[b]).length;
     return c2 - c1;
   });
 
-  for (let person of sortedPeople) {
+  for (const person of sortedPeople) {
     console.log(
       `${person} visited ${
         Object.keys(people[person]).length - 1
       } countries and has ${people[person]['money']} money left`
     );
-    let sortedCountries = Object.keys(people[person])
+    const sortedCountries = Object.keys(people[person])
       .filter((x) => x !== 'money')
       .sort((a, b) => {
         let m1 = people[person][a].length;
         let m2 = people[person][b].length;
         return m2 - m1;
       });
-    for (let sc of sortedCountries) {
+    for (const sc of sortedCountries) {
       console.log(`- ${sc} -> ${people[person][sc].length} landmarks`);
       people[person][sc] = people[person][sc].sort();
       for (let lm of people[person][sc]) {
@@ -844,15 +842,15 @@ travlellersLog([
   'Maria visited the CapeCod in USA - 100',
 ]);
 
-// 23. School grades
+// 22. School grades
 function schoolGrades(arr) {
-  let school = {};
+  const school = {};
 
-  for (let row of arr) {
-    let tokens = row.split(', ');
-    let name = tokens[0].substring(14);
-    let grade = tokens[1].substring(7);
-    let score = +tokens[2].substring(33);
+  for (const row of arr) {
+    const tokens = row.split(', ');
+    const name = tokens[0].substring(14);
+    const grade = tokens[1].substring(7);
+    const score = +tokens[2].substring(33);
     if (score < 3) {
       continue;
     }
@@ -862,12 +860,12 @@ function schoolGrades(arr) {
     school[grade]['list'].push(name);
     school[grade]['AVG'].push(score);
   }
-  let sortedGrades = Object.keys(school).sort((a, b) => {
+  const sortedGrades = Object.keys(school).sort((a, b) => {
     return +a - +b;
   });
-  for (let sg of sortedGrades) {
-    let n = +sg + 1;
-    let averageGRade =
+  for (const sg of sortedGrades) {
+    const n = +sg + 1;
+    const averageGRade =
       school[sg]['AVG'].reduce((acc, cur) => {
         return acc + cur;
       }, 0) / school[sg]['AVG'].length;
@@ -894,10 +892,10 @@ schoolGrades([
   'Student name: Gavin, Grade: 10, Graduated with an average score: 4.00',
 ]);
 
-// 24. Browser logger
+// 23. Browser logger
 function broswerHistory(obj, actions) {
-  for (let action of actions) {
-    let [act, website] = action.split(' ');
+  for (const action of actions) {
+    const [act, website] = action.split(' ');
     if (act === 'Open') {
       openTab(website);
     } else if (act === 'Close') {
@@ -916,8 +914,8 @@ function broswerHistory(obj, actions) {
 
   function closeTab(w) {
     if (obj['Open Tabs'].includes(w)) {
-      let index = obj['Open Tabs'].indexOf(w);
-      let closedItem = obj['Open Tabs'].splice(index, 1)[0];
+      const index = obj['Open Tabs'].indexOf(w);
+      const closedItem = obj['Open Tabs'].splice(index, 1)[0];
       obj['Recently Closed'].push(closedItem);
       actionLogs(w, 'Close ');
     }
@@ -933,27 +931,27 @@ function broswerHistory(obj, actions) {
   console.log(`Browser Logs: ${obj['Browser Logs'].join(', ')}`);
 }
 
-// 25. Catalogue
+// 24. Catalogue
 function catalogue(arr) {
-  let list = {};
-  for (let row of arr) {
-    let [item, price] = row.split(' : ');
-    let capLetter = item[0].toUpperCase();
+  const list = {};
+  for (const row of arr) {
+    const [item, price] = row.split(' : ');
+    const capLetter = item[0].toUpperCase();
     if (!list.hasOwnProperty(capLetter)) {
       list[capLetter] = {};
     }
     list[capLetter][item] = +price;
   }
 
-  let sortedKeys = Object.keys(list).sort((a, b) =>
+  const sortedKeys = Object.keys(list).sort((a, b) =>
     a.toLowerCase().localeCompare(b.toLowerCase())
   );
-  for (let key of sortedKeys) {
+  for (const key of sortedKeys) {
     console.log(key);
-    let sortedInnerKeys = Object.keys(list[key]).sort((a, b) =>
+    const sortedInnerKeys = Object.keys(list[key]).sort((a, b) =>
       a.toLowerCase().localeCompare(b.toLowerCase())
     );
-    for (let innerKey of sortedInnerKeys) {
+    for (const innerKey of sortedInnerKeys) {
       console.log(`  ${innerKey}: ${list[key][innerKey]}`);
     }
   }
@@ -969,18 +967,18 @@ catalogue([
   'T-Shirt : 10',
 ]);
 
-// 26. Flight schedule
+// 25. Flight schedule
 function flightSchedule(arr) {
-  let flights = arr[0];
-  let actions = arr[1];
-  let act = arr[2][0];
-  let result = [];
+  const flights = arr[0];
+  const actions = arr[1];
+  const act = arr[2][0];
+  const result = [];
 
-  let affected = actions.map((x) => (x = x.split(' ')[0]));
+  const affected = actions.map((x) => (x = x.split(' ')[0]));
 
   if (act === 'Cancelled') {
-    let canceledFlights = flights.filter((x) => {
-      for (let af of affected) {
+    const canceledFlights = flights.filter((x) => {
+      for (const af of affected) {
         if (x.indexOf(af) > -1) {
           return true;
         }
@@ -989,15 +987,14 @@ function flightSchedule(arr) {
     });
     for (let cf of canceledFlights) {
       cf = cf.split(' ');
-      let tempObj = {
+      result.push({
         Destination: cf[1],
         Status: 'Cancelled',
-      };
-      result.push(tempObj);
+      });
     }
   } else if (act === 'Ready to fly') {
-    let notCanceledFlights = flights.filter((x) => {
-      for (let af of affected) {
+    const notCanceledFlights = flights.filter((x) => {
+      for (const af of affected) {
         if (x.indexOf(af) > -1) {
           return false;
         }
@@ -1006,11 +1003,10 @@ function flightSchedule(arr) {
     });
     for (let cf of notCanceledFlights) {
       cf = cf.split(' ');
-      let tempObj = {
+      result.push({
         Destination: cf[1],
         Status: 'Ready to fly',
-      };
-      result.push(tempObj);
+      });
     }
   }
   result.forEach((y) => console.log(y));
