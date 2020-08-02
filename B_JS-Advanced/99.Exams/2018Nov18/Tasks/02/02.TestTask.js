@@ -1,79 +1,81 @@
 class SoftUniFy {
-    constructor() {
-        this.allSongs = {};
+  constructor() {
+    this.allSongs = {};
+  }
+
+  downloadSong(artist, song, lyrics) {
+    if (!this.allSongs[artist]) {
+      this.allSongs[artist] = { rate: 0, votes: 0, songs: [] };
     }
 
-    downloadSong(artist, song, lyrics) {
-        if (!this.allSongs[artist]) {
-            this.allSongs[artist] = {rate: 0, votes: 0, songs: []}
-        }
+    this.allSongs[artist]['songs'].push(`${song} - ${lyrics}`);
 
-        this.allSongs[artist]['songs'].push(`${song} - ${lyrics}`);
+    return this;
+  }
 
-        return this;
+  playSong(song) {
+    let songArtists = Object.keys(this.allSongs).reduce((acc, cur) => {
+      let songs = this.allSongs[cur]['songs'].filter(
+        (songInfo) => songInfo.split(/ - /)[0] === song
+      );
+
+      if (songs.length > 0) {
+        acc[cur] = songs;
+      }
+
+      return acc;
+    }, {});
+
+    let arr = Object.keys(songArtists);
+    let output = '';
+
+    if (arr.length > 0) {
+      arr.forEach((artist) => {
+        output += `${artist}:\n`;
+        output += `${songArtists[artist].join('\n')}\n`;
+      });
+    } else {
+      output = `You have not downloaded a ${song} song yet. Use SoftUniFy's function downloadSong() to change that!`;
     }
+    return output;
+  }
 
-    playSong(song) {
-        let songArtists = Object.keys(this.allSongs).reduce((acc, cur) => {
-            let songs = this.allSongs[cur]['songs']
-                .filter((songInfo) => songInfo
-                .split(/ - /)[0] === song);
+  get songsList() {
+    let songs = Object.values(this.allSongs)
+      .map((v) => v['songs'])
+      .reduce((acc, cur) => {
+        return acc.concat(cur);
+      }, []);
 
-            if (songs.length > 0) {
-                acc[cur] = songs;
-            }
+    let output;
 
-            return acc;
-        }, {});
-
-        let arr = Object.keys(songArtists);
-        let output = "";
-
-        if (arr.length > 0) {
-            arr.forEach((artist) => {
-                output += `${artist}:\n`;
-                output += `${songArtists[artist].join('\n')}\n`;
-            });
-        } else {
-            output = `You have not downloaded a ${song} song yet. Use SoftUniFy's function downloadSong() to change that!`;
-        }
-        return output;
+    if (songs.length > 0) {
+      output = songs.join('\n');
+    } else {
+      output = 'Your song list is empty';
     }
+    return output;
+  }
 
-    get songsList() {
-        let songs = Object.values(this.allSongs)
-            .map((v) => v['songs'])
-            .reduce((acc, cur) => {
-                return acc.concat(cur);
-            }, []);
+  rateArtist() {
+    let artistExist = this.allSongs[arguments[0]];
+    let output;
 
-        let output;
+    if (artistExist) {
+      if (arguments.length === 2) {
+        artistExist['rate'] += +arguments[1];
+        artistExist['votes'] += 1;
+      }
 
-        if (songs.length > 0) {
-            output = songs.join('\n');
-        } else {
-            output = 'Your song list is empty';
-        }
-        return output;
+      let currentRate = +(artistExist['rate'] / artistExist['votes']).toFixed(
+        2
+      );
+      isNaN(currentRate) ? (output = 0) : (output = currentRate);
+    } else {
+      output = `The ${arguments[0]} is not on your artist list.`;
     }
-
-    rateArtist() {
-        let artistExist = this.allSongs[arguments[0]];
-        let output;
-
-        if (artistExist) {
-            if (arguments.length === 2) {
-                artistExist['rate'] += +arguments[1];
-                artistExist['votes'] += 1;
-            }
-
-            let currentRate = (+(artistExist['rate'] / artistExist['votes']).toFixed(2));
-            isNaN(currentRate) ? output = 0 : output = currentRate;
-        } else {
-            output = `The ${arguments[0]} is not on your artist list.`;
-        }
-        return output;
-    }
+    return output;
+  }
 }
 
 module.exports = { SoftUniFy };
