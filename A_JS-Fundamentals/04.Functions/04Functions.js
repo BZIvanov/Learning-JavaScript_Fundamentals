@@ -94,9 +94,9 @@ wordsUppercase('Hi, how are you?');
 // 08. Inside volume
 function insideVolume(input) {
   for (let i = 0; i < input.length; i += 3) {
-    let x = Number(input[i]);
-    let y = Number(input[i + 1]);
-    let z = Number(input[i + 2]);
+    const x = Number(input[i]);
+    const y = Number(input[i + 1]);
+    const z = Number(input[i + 2]);
 
     if (isInside(x, y, z)) {
       console.log('inside');
@@ -106,11 +106,11 @@ function insideVolume(input) {
   }
 
   function isInside(a, b, c) {
-    let x1 = 10,
+    const x1 = 10,
       x2 = 50;
-    let y1 = 20,
+    const y1 = 20,
       y2 = 80;
-    let z1 = 15,
+    const z1 = 15,
       z2 = 50;
 
     if (a >= x1 && a <= x2) {
@@ -128,10 +128,10 @@ insideVolume([13.1, 50, 31.5, 50, 80, 50, -5, 18, 43]);
 
 // 09. Road radar
 function roadRadar(input) {
-  let speed = input[0];
-  let area = input[1];
+  const speed = input[0];
+  const area = input[1];
 
-  let getLimit = (zone) => {
+  const getLimit = (zone) => {
     switch (zone) {
       case 'residential':
         return 20;
@@ -144,8 +144,8 @@ function roadRadar(input) {
     }
   };
 
-  let getInfraction = (s, l) => {
-    let overspeed = s - l;
+  const getInfraction = (s, l) => {
+    const overspeed = s - l;
     if (overspeed <= 0) {
       return false;
     } else {
@@ -159,7 +159,7 @@ function roadRadar(input) {
     }
   };
 
-  let infraction = getInfraction(speed, getLimit(area));
+  const infraction = getInfraction(speed, getLimit(area));
 
   if (infraction) {
     console.log(infraction);
@@ -170,7 +170,7 @@ roadRadar([21, 'residential']);
 // 10. Cooking by numbers
 function cookingByNumbers(arr) {
   let n = Number(arr.shift());
-  let ops = arr.length;
+  const ops = arr.length;
 
   for (let i = 0; i < ops; i++) {
     switch (arr[i]) {
@@ -225,7 +225,7 @@ modifyAverage(5835);
 
 // 12. Validity checker
 function validtyChecker(arr) {
-  [a, b, c, d] = [...arr];
+  [a, b, c, d] = arr;
 
   if (checkIt(a, b, 0, 0)) {
     printIt(a, b, 0, 0, 'valid');
@@ -262,8 +262,8 @@ function validtyChecker(arr) {
 validtyChecker([2, 1, 1, 1]);
 
 // 14. Trip length
-function tripLenght([x1, y1, x2, y2, x3, y3]) {
-  const [x1, y1, x2, y2, x3, y3] = [x1, y1, x2, y2, x3, y3].map(Number);
+function tripLength(arr) {
+  const [x1, y1, x2, y2, x3, y3] = arr.map(Number);
   dist12 = calculateDist(x1, y1, x2, y2);
   dist13 = calculateDist(x1, y1, x3, y3);
   dist23 = calculateDist(x2, y2, x3, y3);
@@ -283,7 +283,7 @@ tripLength([0, 0, 2, 0, 4, 0]);
 // 15. Radio crystals
 function radioCrystals(input) {
   input = input.map(Number);
-  let target = input[0];
+  const target = input[0];
   for (let i = 1; i < input.length; i++) {
     let crystal = input[i];
     console.log(`Processing chunk ${crystal} microns`);
@@ -338,7 +338,7 @@ radioCrystals(['1375', '50000']);
 
 // 16. DNA Helix
 function DNAHelix(n) {
-  let structure = ['A', 'T', 'C', 'G', 'T', 'T', 'A', 'G', 'G', 'G'];
+  const structure = ['A', 'T', 'C', 'G', 'T', 'T', 'A', 'G', 'G', 'G'];
   let duplicate = structure.slice(0);
   let result = '';
 

@@ -1,6 +1,6 @@
 function calendar([day, month, year]) {
   month--; // months in Date() are [0...11], not [1...12]
-  let daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
   if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
     daysInMonth[1] = 29; // leap year
 
@@ -11,9 +11,9 @@ function calendar([day, month, year]) {
 
   // Print the days of the previous month
   let week = 0;
-  let date = new Date(year, month, 1);
-  let dayOfWeek = date.getDay();
-  let firstDayPrevMonth = daysInMonth[(month - 1 + 12) % 12] - dayOfWeek;
+  const date = new Date(year, month, 1);
+  const dayOfWeek = date.getDay();
+  const firstDayPrevMonth = daysInMonth[(month - 1 + 12) % 12] - dayOfWeek;
   if (dayOfWeek > 0) html += '  <tr>';
   for (let i = 1; i <= dayOfWeek; i++) {
     html += '<td class="prev-month">' + (firstDayPrevMonth + i) + '</td>';

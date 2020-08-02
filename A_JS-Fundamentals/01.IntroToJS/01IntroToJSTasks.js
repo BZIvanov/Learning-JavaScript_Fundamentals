@@ -31,3 +31,10 @@ function distanceBetweenPoints(x1, y1, x2, y2) {
   return result;
 }
 console.log(distanceBetweenPoints(2, 4, 5, 0));
+
+// 04. Exponentiation
+function exponent(a, b) {
+  console.log(a ** b); // 125
+}
+
+multi(5, 3);

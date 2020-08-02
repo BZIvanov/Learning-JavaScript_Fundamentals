@@ -1,6 +1,6 @@
 // 01. Distance 3D
 function distance3D(arr) {
-  const [x1, y1, z1, x2, y2, z2] = [...arr];
+  const [x1, y1, z1, x2, y2, z2] = arr;
   const result = Math.sqrt(
     Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2) + Math.pow(z1 - z2, 2)
   );
@@ -24,7 +24,7 @@ gradsToDegrees(0);
 
 // 03. Rounding
 function rounding(arr) {
-  const [num, d] = [...arr];
+  const [num, d] = arr;
   if (d > 15) {
     d = 15;
   }
@@ -49,7 +49,7 @@ binaryToDecimal('00001001');
 
 // 06. Assign properties
 function assignProperty(input) {
-  let obj = {};
+  const obj = {};
   for (let i = 0; i < input.length - 1; i += 2) {
     obj[input[i]] = input[i + 1];
   }

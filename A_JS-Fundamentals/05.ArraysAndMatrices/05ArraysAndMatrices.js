@@ -15,7 +15,7 @@ console.log(poseNegNumbers([7, -2, 8, 9]));
 
 // 04. First last k numbers
 function firstAndLastKNumbers(arr) {
-  let k = arr.shift();
+  const k = arr.shift();
   console.log(arr.slice(0, k));
   console.log(arr.slice(arr.length - k));
 }
@@ -23,7 +23,7 @@ firstAndLastKNumbers([3, 6, 7, 8, 9]);
 
 // 05. Last k numbers
 function lastKNumbers(n, k) {
-  let result = [1];
+  const result = [1];
   for (let i = 1; i < n; i++) {
     let sum = 0;
     let start = result.length - k;
@@ -42,7 +42,7 @@ lastKNumbers(6, 3);
 
 // 06. Process odd numbers
 function processOddNumbers(arr) {
-  let result = arr
+  const result = arr
     .filter((el, i) => i % 2 !== 0)
     .map((x) => x * 2)
     .reverse();
@@ -52,7 +52,7 @@ processOddNumbers([10, 15, 20, 25]);
 
 // 07. Smallest two numbers
 function smallestTwoNumbers(arr) {
-  let result = arr
+  const result = arr
     .sort((a, b) => a - b)
     .slice(0, 2)
     .join(' ');
@@ -81,14 +81,14 @@ biggestElelemnt([
 
 // 11. Given delimeter
 function givenDelimeter(arr) {
-  let delimeter = arr.pop();
+  const delimeter = arr.pop();
   console.log(arr.join(delimeter));
 }
 givenDelimeter(['One', 'Two', 'Three', 'Four', 'Five', '-']);
 
 // 12. Nth element
 function everyNthElement(arr) {
-  let step = Number(arr.pop());
+  const step = Number(arr.pop());
   for (let i = 0; i < arr.length; i += step) {
     console.log(arr[i]);
   }
@@ -97,7 +97,7 @@ everyNthElement(['dsa', 'asd', 'test', 'sett', 'est', '2']);
 
 // 13. Add remove element
 function addRemove(arr) {
-  let result = [];
+  const result = [];
   let value = 1;
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === 'add') {
@@ -124,7 +124,7 @@ function rotateArray(input) {
   n = n % input.length;
 
   for (let i = 0; i < n; i++) {
-    let last = input[input.length - 1];
+    const last = input[input.length - 1];
     input.pop();
     input.unshift(last);
   }
@@ -135,7 +135,7 @@ rotateArray(['1', '2', '3', '4', '2']);
 
 // 15. Increasing subsequence
 function increasingSubsequence(arr) {
-  let result = [];
+  const result = [];
   let max = Number.NEGATIVE_INFINITY;
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] >= max) {
@@ -156,18 +156,18 @@ sortArray(['Isacc', 'Theodor', 'Jack', 'Harrison', 'George']);
 sortArray(['test', 'Deny', 'omen', 'Default']);
 
 // 17. Magical matrices
-function matrix(input) {
-  let sum = input[0].reduce((a, b) => a + b, 0);
+function magicalMatrices(input) {
+  const sum = input[0].reduce((a, b) => a + b, 0);
   for (let row in input) {
-    let rowSum = input[row].reduce((a, b) => a + b, 0);
+    const rowSum = input[row].reduce((a, b) => a + b, 0);
     if (rowSum != sum) {
       return false;
     }
   }
-  let calcSum = function (arr) {
+  const calcSum = function (arr) {
     return arr.reduce((a, b) => a + b, 0);
   };
-  let colSums = input.map(function (row, i) {
+  const colSums = input.map(function (row, i) {
     return calcSum(input.map((row) => row[i]));
   });
   for (let s of colSums) {
@@ -201,7 +201,7 @@ console.log(
 
 // 18. Spiral matrix
 function generateSpiralMatrix(rows, cols) {
-  let matrix = [];
+  const matrix = [];
   for (let row = 0; row < rows; row++) {
     matrix[row] = [];
     for (let col = 0; col < cols; col++) {
@@ -254,7 +254,7 @@ generateSpiralMatrix(5, 5);
 
 // 19. Diagonal attack
 function diagonalsAttack(matrixRows) {
-  let matrix = matrixRows.map((row) => row.split(' ').map(Number));
+  const matrix = matrixRows.map((row) => row.split(' ').map(Number));
 
   let sumFirstDiagonal = 0;
   for (let i = 0; i < matrix.length; i++) {
@@ -265,10 +265,10 @@ function diagonalsAttack(matrixRows) {
     sumSecondDiagonal = sumSecondDiagonal + matrix[j][matrix.length - 1 - j];
   }
 
-  if (sumFirstDiagonal == sumSecondDiagonal) {
+  if (sumFirstDiagonal === sumSecondDiagonal) {
     for (let q = 0; q < matrix.length; q++) {
       for (let z = 0; z < matrix.length; z++) {
-        if (q != z && q != matrix.length - 1 - z) {
+        if (q !== z && q !== matrix.length - 1 - z) {
           matrix[q][z] = sumFirstDiagonal;
         }
       }
@@ -284,19 +284,21 @@ function diagonalsAttack(matrixRows) {
     }
   }
 }
+diagonalsAttack(['1 2 3', '4 5 6', '7 8 9']);
 
 // 20. Orbit
 function orbitOfMatrix(arr) {
-  let [width, height, x, y] = arr;
-  let matrix = [];
-  //fill matrix with zeroes
+  const [width, height, x, y] = arr;
+  const matrix = [];
+
   for (let i = 0; i < width; i++) {
-    let rs = [];
+    const rs = [];
     for (let j = 0; j < height; j++) {
       rs.push(0);
     }
     matrix.push(rs);
   }
+
   let number = 2;
   let colEnd = y;
   let rowEnd = x;
@@ -307,6 +309,7 @@ function orbitOfMatrix(arr) {
   let counterColEnd = colEnd;
   let counterRowStart = rowEnd;
   let counterColStart = colEnd;
+
   while (true) {
     counterRowEnd++;
     counterColEnd++;
