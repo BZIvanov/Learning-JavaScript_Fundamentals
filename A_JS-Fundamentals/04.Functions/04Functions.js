@@ -15,6 +15,7 @@ function stars(n = 3) {
 stars(5);
 
 // 04. Day of week
+// SIDE NOTE: on arguments we can not use array methods like push etc... but we can still use spread operators
 function dayOfWeek() {
   switch (arguments[0]) {
     case 'Monday':
