@@ -1,40 +1,40 @@
 function generateClasses() {
-    class Person {
-        constructor(name, email) {
-            this.name = name;
-            this.email = email;
-        }
-
-        toString() {
-            return `${this.constructor.name} (name: ${this.name}, email: ${this.email})`;
-        }
+  class Person {
+    constructor(name, email) {
+      this.name = name;
+      this.email = email;
     }
 
-    class Teacher extends Person {
-        constructor(name, email, subject) {
-            super(name, email);
-            this.subject = subject;
-        }
+    toString() {
+      return `${this.constructor.name} (name: ${this.name}, email: ${this.email})`;
+    }
+  }
 
-        toString() {
-            return super.toString().slice(0, -1) + `, subject: ${this.subject})`;
-        }
+  class Teacher extends Person {
+    constructor(name, email, subject) {
+      super(name, email);
+      this.subject = subject;
     }
 
-    class Student extends Person {
-        constructor(name, email, course) {
-            super(name, email);
-            this.course = course;
-        }
+    toString() {
+      return super.toString().slice(0, -1) + `, subject: ${this.subject})`;
+    }
+  }
 
-        toString() {
-            return super.toString().slice(0, -1) + `, course: ${this.course})`;
-        }
+  class Student extends Person {
+    constructor(name, email, course) {
+      super(name, email);
+      this.course = course;
     }
 
-    return { Person, Teacher, Student };
+    toString() {
+      return super.toString().slice(0, -1) + `, course: ${this.course})`;
+    }
+  }
+
+  return { Person, Teacher, Student };
 }
 
 let p = generateClasses();
-let ivan = new p.Student("Ivan", "ivan@mail.bg", "js")
-console.log(ivan) // Student { name: 'Ivan', email: 'ivan@mail.bg', course: 'js' }
+let ivan = new p.Student('Ivan', 'ivan@mail.bg', 'js');
+console.log(ivan); // Student { name: 'Ivan', email: 'ivan@mail.bg', course: 'js' }
