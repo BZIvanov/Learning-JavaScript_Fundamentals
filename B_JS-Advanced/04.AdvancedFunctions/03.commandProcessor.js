@@ -1,5 +1,5 @@
 function processor(arr) {
-  let commandProcessor = (function () {
+  const commandProcessor = (function () {
     let result = '';
     return {
       append: (str) => {
@@ -23,4 +23,4 @@ function processor(arr) {
   }
 }
 
-processor(['append 123', 'append 45', 'removeStart 2', 'removeEnd 1', 'print']);
+processor(['append 123', 'append 45', 'removeStart 2', 'removeEnd 1', 'print']); // 34

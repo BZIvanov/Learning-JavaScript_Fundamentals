@@ -5,23 +5,23 @@ const recursionTree = {
   children: [
     {
       name: 'Jim',
-      children: []
+      children: [],
     },
     {
       name: 'Zoe',
       children: [
         { name: 'Kyle', children: [] },
-        { name: 'Sophia', children: [] }
-      ]
-    }
-  ]
+        { name: 'Sophia', children: [] },
+      ],
+    },
+  ],
 };
 
 function printChildrenRecursive(t) {
   if (t.children.length === 0) {
     return;
   }
-  t.children.forEach(child => {
+  t.children.forEach((child) => {
     console.log(child.name);
     printChildrenRecursive(child);
   });
