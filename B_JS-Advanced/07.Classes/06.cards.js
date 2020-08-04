@@ -1,5 +1,5 @@
-let result = (function () {
-  let faces = [
+const result = (function () {
+  const FACES = [
     '2',
     '3',
     '4',
@@ -15,7 +15,7 @@ let result = (function () {
     'A',
   ];
 
-  let Suits = {
+  const SUITS = {
     CLUBS: '\u2663',
     DIAMONDS: '\u2666',
     HEARTS: '\u2665',
@@ -32,7 +32,7 @@ let result = (function () {
       return this._face;
     }
     set face(face) {
-      if (faces.indexOf(face) < 0) {
+      if (FACES.indexOf(face) < 0) {
         throw new Error('Not a valid face');
       }
       this._face = face;
@@ -43,7 +43,7 @@ let result = (function () {
     }
     set suit(suit) {
       if (
-        [...Object.keys(Suits)].filter((k) => Suits[k] === suit).length <= 0
+        [...Object.keys(SUITS)].filter((k) => SUITS[k] === suit).length <= 0
       ) {
         throw new Error('Not a valid suit');
       }
@@ -51,12 +51,12 @@ let result = (function () {
     }
   }
 
-  return { Card, Suits };
+  return { Card, SUITS };
 })();
 
-let Card = result.Card;
-let Suits = result.Suits;
-let card = new Card('Q', Suits.CLUBS);
+const Card = result.Card;
+const SUITS = result.SUITS;
+const card = new Card('Q', SUITS.CLUBS);
 card.face = 'A';
-card.suit = Suits.DIAMONDS;
-let card2 = new Card('1', Suits.DIAMONDS); // Should throw Error
+card.suit = SUITS.DIAMONDS;
+const card2 = new Card('1', SUITS.DIAMONDS); // Should throw Error
