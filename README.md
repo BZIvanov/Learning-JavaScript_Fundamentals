@@ -7,4 +7,5 @@ Nodes on the DOM are of reference type and if we want to copy some node with new
 ```javascript
 let dupNode = node.cloneNode(true);
 ```
+
 You can read more about the method and other useful methods on [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Node/cloneNode)
