@@ -1,4 +1,4 @@
-let cache = {};
+const cache = {};
 
 function memoizedAddTo80(n) {
   if (n in cache) {
