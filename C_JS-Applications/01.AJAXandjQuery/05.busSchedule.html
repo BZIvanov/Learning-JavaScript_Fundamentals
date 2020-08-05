@@ -1,69 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Bus Schedule</title>
     <style>
-        #schedule { text-align: center; width: 400px; }
-        input { width: 120px; }
-        #info { background-color:aquamarine; border:1px solid black; margin:0.25em; }
-        .info { font-size: 1.5em; padding: 0.25em; }
+      #schedule {
+        text-align: center;
+        width: 400px;
+      }
+      input {
+        width: 120px;
+      }
+      #info {
+        background-color: aquamarine;
+        border: 1px solid black;
+        margin: 0.25em;
+      }
+      .info {
+        font-size: 1.5em;
+        padding: 0.25em;
+      }
     </style>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="schedule">
-        <div id="info"><span class="info">Not Connected</span></div>
-        <div id="controls">
-            <input id="depart" value="Depart" type="button" onclick="result.depart()">
-            <input id="arrive" value="Arrive" type="button" onclick="result.arrive()" disabled="true">
-        </div>
+      <div id="info"><span class="info">Not Connected</span></div>
+      <div id="controls">
+        <input
+          id="depart"
+          value="Depart"
+          type="button"
+          onclick="result.depart()"
+        />
+        <input
+          id="arrive"
+          value="Arrive"
+          type="button"
+          onclick="result.arrive()"
+          disabled="true"
+        />
+      </div>
     </div>
     <script>
-        function solve() {
-            let currentId = 'depot';
-            let currentStop = '';
-            let infoBox = $("#info .info");
-            let departButton = $('#depart');
-            let arriveButton = $('#arrive');
+      function solve() {
+        let currentId = 'depot';
+        let currentStop = '';
+        let infoBox = $('#info .info');
+        let departButton = $('#depart');
+        let arriveButton = $('#arrive');
 
-            function depart() {
-                $.ajax({
-                    method: "GET",
-                    url: `https://judgetests.firebaseio.com/schedule/${currentId}.json`
-                })
-                .then(showBusStop)
-                .catch(displayError);
-            }
-
-            function showBusStop(data) {
-                currentStop = data.name;
-                infoBox.text(`Next stop ${currentStop}`);
-                departButton.attr('disabled', true);
-                arriveButton.attr('disabled', false);
-                currentId = data.next;
-            }
-
-            function arrive() {
-                infoBox.text(`Arriving at ${currentStop}`);
-                departButton.attr('disabled', false);
-                arriveButton.attr('disabled', true);
-            }
-
-            function displayError(err) {
-                infoBox.text('Error');
-                departButton.attr('disabled', true);
-                arriveButton.attr('disabled', true);
-            }
-
-            return {
-                depart,
-                arrive
-            };
+        function depart() {
+          $.ajax({
+            method: 'GET',
+            url: `https://judgetests.firebaseio.com/schedule/${currentId}.json`,
+          })
+            .then(showBusStop)
+            .catch(displayError);
         }
 
-        let result = solve();
+        function showBusStop(data) {
+          currentStop = data.name;
+          infoBox.text(`Next stop ${currentStop}`);
+          departButton.attr('disabled', true);
+          arriveButton.attr('disabled', false);
+          currentId = data.next;
+        }
+
+        function arrive() {
+          infoBox.text(`Arriving at ${currentStop}`);
+          departButton.attr('disabled', false);
+          arriveButton.attr('disabled', true);
+        }
+
+        function displayError(err) {
+          infoBox.text('Error');
+          departButton.attr('disabled', true);
+          arriveButton.attr('disabled', true);
+        }
+
+        return {
+          depart,
+          arrive,
+        };
+      }
+
+      let result = solve();
     </script>
-</body>
+  </body>
 </html>
