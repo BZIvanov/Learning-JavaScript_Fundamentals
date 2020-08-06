@@ -144,3 +144,13 @@ const [fruit, , toy, furniture, more = 'Default value'] = things;
 console.log(`I love ${fruit} and sitting on a comfortable ${furniture}`);
 console.log(more); // will result in Default value, because value is provided, but we have default
 ```
+
+### Working with the DOM
+
+Nodes on the DOM are of reference type and if we want to copy some node with new reference we can use the following method.
+
+```javascript
+let dupNode = node.cloneNode(true);
+```
+
+You can read more about the method and other useful methods on [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Node/cloneNode)

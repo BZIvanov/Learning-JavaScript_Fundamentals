@@ -1,11 +1,21 @@
-# JS-Core
+## :baby: JavaScript Fundamentals
 
-### Working with the DOM
+This repository contains learning material related to the fundamentals of JavaScript.
 
-Nodes on the DOM are of reference type and if we want to copy some node with new reference we can use the following method.
+## :pencil: Content
 
-```javascript
-let dupNode = node.cloneNode(true);
-```
-
-You can read more about the method and other useful methods on [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Node/cloneNode)
+- Section A:
+  - Basic syntax
+  - Conditions
+  - Arrays and multidimensional arrays
+  - Strings
+  - Objects
+- Section B:
+  - DOM
+  - jQuery
+  - Functions
+  - Unit testing
+- Section C:
+  - AJAX requests
+  - Handlebars
+  - Routing
