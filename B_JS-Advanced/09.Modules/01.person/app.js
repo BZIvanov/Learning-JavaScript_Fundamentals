@@ -1,4 +1,4 @@
-let Person = require('./person');
+const Person = require('./person');
 
-let p = new Person("Gosho");
+const p = new Person('Gosho');
 console.log(p);

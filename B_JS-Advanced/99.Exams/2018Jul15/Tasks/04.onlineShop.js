@@ -1,5 +1,5 @@
 function onlineShop(selector) {
-    let form = `<div id="header">Online Shop Inventory</div>
+  let form = `<div id="header">Online Shop Inventory</div>
     <div class="block">
         <label class="field">Product details:</label>
         <br>
@@ -19,52 +19,52 @@ function onlineShop(selector) {
         <label class="field">Price:</label><input id="sum" readonly>
         <label class="field">BGN</label>
     </div>`;
-    $(selector).html(form);
-    // Write your code here
+  $(selector).html(form);
+  // Write your code here
 
-    let product = $(".custom-select");
-    product.on("keyup", checkProduct);
-    let submitButton = $("#submit");
-    submitButton.on("click", submitData);
-    let list = $("ul.display");
-    let price = $("#price");
-    let quantity = $("#quantity");
-    let capacity = $("#capacity");
-    let sum = $("#sum");
-    let currentCapacity = 0;
-    let currentSum = 0;
-    
-    function checkProduct() {
-        if ($(this).val() !== "") {
-            submitButton.removeAttr("disabled");
-        } else {
-            submitButton.attr("disabled", "disabled");
-        }
+  let product = $('.custom-select');
+  product.on('keyup', checkProduct);
+  let submitButton = $('#submit');
+  submitButton.on('click', submitData);
+  let list = $('ul.display');
+  let price = $('#price');
+  let quantity = $('#quantity');
+  let capacity = $('#capacity');
+  let sum = $('#sum');
+  let currentCapacity = 0;
+  let currentSum = 0;
+
+  function checkProduct() {
+    if ($(this).val() !== '') {
+      submitButton.removeAttr('disabled');
+    } else {
+      submitButton.attr('disabled', 'disabled');
     }
-    
-    function submitData() {
-        currentCapacity += +quantity.val();
-        currentSum += +price.val();
-        
-        let textItem = `Product: ${product.val()} Price: ${price.val()} Quantity: ${quantity.val()}`;
-        let liElement = $("<li>").text(textItem);
-        liElement.appendTo(list);
+  }
 
-        capacity.val(currentCapacity);
-        sum.val(currentSum);
+  function submitData() {
+    currentCapacity += +quantity.val();
+    currentSum += +price.val();
 
-        product.val("");
-        price.val(1);
-        quantity.val(1);
-        submitButton.attr("disabled", "disabled");
+    let textItem = `Product: ${product.val()} Price: ${price.val()} Quantity: ${quantity.val()}`;
+    let liElement = $('<li>').text(textItem);
+    liElement.appendTo(list);
 
-        if (currentCapacity >= 150) {
-            capacity.val("full").addClass("fullCapacity");
+    capacity.val(currentCapacity);
+    sum.val(currentSum);
 
-            product.attr("disabled", "disabled");
-            price.attr("disabled", "disabled");
-            quantity.attr("disabled", "disabled");
-            submitButton.attr("disabled", "disabled");
-        }
+    product.val('');
+    price.val(1);
+    quantity.val(1);
+    submitButton.attr('disabled', 'disabled');
+
+    if (currentCapacity >= 150) {
+      capacity.val('full').addClass('fullCapacity');
+
+      product.attr('disabled', 'disabled');
+      price.attr('disabled', 'disabled');
+      quantity.attr('disabled', 'disabled');
+      submitButton.attr('disabled', 'disabled');
     }
+  }
 }

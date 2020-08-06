@@ -1,13 +1,13 @@
-let Entity = require('./Entity');
+const Entity = require('./Entity');
 
 class Dog extends Entity {
-    constructor(name) {
-        super(name);
-    }
+  constructor(name) {
+    super(name);
+  }
 
-    saySomething() {
-        return `${this.name} barks!`;
-    }
+  saySomething() {
+    return `${this.name} barks!`;
+  }
 }
 
 module.exports = Dog;
