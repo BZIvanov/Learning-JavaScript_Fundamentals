@@ -17,6 +17,21 @@ console.log(obj.prop);
 // expected output: 42
 ```
 
+## Object.assign(obj)
+
+This way we can combine properties from one object with another object. Click [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign).
+
+```javascript
+const target = { a: 1, b: 2 };
+const source = { b: 4, c: 5 };
+
+console.log(target);
+// expected output: Object { a: 1, b: 4, c: 5 }
+
+console.log(returnedTarget);
+// expected output: Object { a: 1, b: 4, c: 5 }
+```
+
 ## Destructuring arrays examples
 
 Pulling the first and the rest of the elements
