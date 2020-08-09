@@ -1,36 +1,36 @@
 class Turtle {
-    constructor(name, age, geneder) {
-        if (new.target === Turtle) {
-            throw new Error;
-        }
-
-        this._name = name;
-        this._age = age;
-        this._gender = geneder;
+  constructor(name, age, geneder) {
+    if (new.target === Turtle) {
+      throw new Error();
     }
 
-    get name() {
-        return this._name;
-    }
+    this._name = name;
+    this._age = age;
+    this._gender = geneder;
+  }
 
-    get age() {
-        return this._age;
-    }
+  get name() {
+    return this._name;
+  }
 
-    get gender() {
-        return this._gender;
-    }
+  get age() {
+    return this._age;
+  }
 
-    grow(age) {
-        this._age += age;
-    }
+  get gender() {
+    return this._gender;
+  }
 
-    toString() {
-        let output = `Turtle: ${this._name}\n`;
-        output += `Aged - ${this._age}; Gender - ${this._gender}`;
+  grow(age) {
+    this._age += age;
+  }
 
-        return output;
-    }
+  toString() {
+    let output = `Turtle: ${this._name}\n`;
+    output += `Aged - ${this._age}; Gender - ${this._gender}`;
+
+    return output;
+  }
 }
 
 module.exports = Turtle;

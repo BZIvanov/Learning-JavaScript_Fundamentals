@@ -1,16 +1,14 @@
-let BaseElement = require('./BaseElement.js');
+const BaseElement = require('./BaseElement.js');
 
 class Footer extends BaseElement {
-    constructor(message) {
-        super();
+  constructor(message) {
+    super();
+    this.message = message;
+  }
 
-        this.message = message;
-    }
-
-    getElementString() {
-        return $('<footer>')
-            .html('Copyright &copy; ' + this.message);
-    }
+  getElementString() {
+    return $('<footer>').html('Copyright &copy; ' + this.message);
+  }
 }
 
 module.exports = Footer;

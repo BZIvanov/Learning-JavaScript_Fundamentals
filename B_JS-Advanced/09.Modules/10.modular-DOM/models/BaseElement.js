@@ -1,24 +1,24 @@
 class BaseElement {
-    constructor() {
-        if (new.target === BaseElement) {
-            throw new Error('Abstract class cannot be instantiated.');
-        }
-
-        this.element = null;
+  constructor() {
+    if (new.target === BaseElement) {
+      throw new Error('Abstract class cannot be instantiated.');
     }
 
-    appendTo(selector) {
-        this.createElement();
-        $(selector).append(this.element);
-    }
+    this.element = null;
+  }
 
-    createElement() {
-        this.element = this.getElementString();
-    }
+  appendTo(selector) {
+    this.createElement();
+    $(selector).append(this.element);
+  }
 
-    getElementString() {
-        // to be overwritten and implemented by derived class
-    }
+  createElement() {
+    this.element = this.getElementString();
+  }
+
+  getElementString() {
+    // to be overwritten and implemented by derived class
+  }
 }
 
 module.exports = BaseElement;

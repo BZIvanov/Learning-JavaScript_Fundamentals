@@ -1,28 +1,28 @@
 class Employee {
-    constructor(name, age) {
-        if (new.target === Employee) {
-            throw new Error('Employee class cannot be instantiated.');
-        }
-
-        this.name = name;
-        this.age = age;
-        this.salary = 0;
-        this.tasks = [];
+  constructor(name, age) {
+    if (new.target === Employee) {
+      throw new Error('Employee class cannot be instantiated.');
     }
 
-    work() {
-        let currentTask = this.tasks.shift();
-        console.log(`${this.name} ${currentTask}`);
-        this.tasks.push(currentTask);
-    }
+    this.name = name;
+    this.age = age;
+    this.salary = 0;
+    this.tasks = [];
+  }
 
-    collectSalary() {
-        console.log(`${this.name} received ${this._calculateSalary()} this month.`);
-    }
+  work() {
+    const currentTask = this.tasks.shift();
+    console.log(`${this.name} ${currentTask}`);
+    this.tasks.push(currentTask);
+  }
 
-    _calculateSalary() {
-        return this.salary;
-    }
+  collectSalary() {
+    console.log(`${this.name} received ${this._calculateSalary()} this month.`);
+  }
+
+  _calculateSalary() {
+    return this.salary;
+  }
 }
 
 module.exports = Employee;

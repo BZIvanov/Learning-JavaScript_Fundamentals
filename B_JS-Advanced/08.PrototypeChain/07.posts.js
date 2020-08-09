@@ -55,22 +55,20 @@ function generatePostClasses() {
   return { Post, SocialMediaPost, BlogPost };
 }
 
-let p = generatePostClasses();
-let post = new p.Post('Post', 'Content');
+const p = generatePostClasses();
+const post = new p.Post('Post', 'Content');
 
 console.log(post.toString());
-
 // Post: Post
 // Content: Content
 
-let scm = new p.SocialMediaPost('TestTitle', 'TestContent', 25, 30);
+const scm = new p.SocialMediaPost('TestTitle', 'TestContent', 25, 30);
 
 scm.addComment('Good post');
 scm.addComment('Very good post');
 scm.addComment('Wow!');
 
 console.log(scm.toString());
-
 // Post: TestTitle
 // Content: TestContent
 // Rating: -5

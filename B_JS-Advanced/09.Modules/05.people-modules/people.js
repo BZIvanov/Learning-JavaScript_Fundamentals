@@ -1,3 +1,3 @@
 function createPeopleClasses() {
-    return {Employee, Junior, Senior, Manager};
+  return { Employee, Junior, Senior, Manager };
 }

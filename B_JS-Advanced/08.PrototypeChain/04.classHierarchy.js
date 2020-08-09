@@ -51,12 +51,14 @@ function generateClasses() {
   return { Figure, Circle, Rectangle };
 }
 
-let objectClasses = generateClasses();
+const objectClasses = generateClasses();
 
-//let f = new objectClasses.Figure();       //Error
-let c = new objectClasses.Circle(5);
-console.log(c.area); //78.53981633974483
-console.log(c.toString()); //Circle - radius: 5
-let r = new objectClasses.Rectangle(3, 4);
-console.log(r.area); //12
-console.log(r.toString()); //Rectangle - width: 3, height: 4
+const f = new objectClasses.Figure(); // Error
+
+const c = new objectClasses.Circle(5);
+console.log(c.area); // 78.53981633974483
+console.log(c.toString()); // Circle - radius: 5
+
+const r = new objectClasses.Rectangle(3, 4);
+console.log(r.area); // 12
+console.log(r.toString()); // Rectangle - width: 3, height: 4

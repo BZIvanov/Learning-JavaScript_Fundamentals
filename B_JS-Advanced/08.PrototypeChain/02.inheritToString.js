@@ -35,6 +35,6 @@ function generateClasses() {
   return { Person, Teacher, Student };
 }
 
-let p = generateClasses();
-let ivan = new p.Student('Ivan', 'ivan@mail.bg', 'js');
+const p = generateClasses();
+const ivan = new p.Student('Ivan', 'ivan@mail.bg', 'js');
 console.log(ivan); // Student { name: 'Ivan', email: 'ivan@mail.bg', course: 'js' }

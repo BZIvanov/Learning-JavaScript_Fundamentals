@@ -1,46 +1,36 @@
-let BaseElement = require('./BaseElement.js');
+const BaseElement = require('./BaseElement.js');
 
 class TitleBar extends BaseElement {
-    constructor(title) {
-        super();
+  constructor(title) {
+    super();
+    this.title = title;
+    this.links = [];
+  }
 
-        this.title = title;
-        this.links = [];
-    }
+  addLink(href, name) {
+    const link = $('<a>').addClass('menu-link').attr('href', href).text(name);
+    this.links.push(link);
+  }
 
-    addLink(href, name) {
-        let link = $('<a>')
-            .addClass('menu-link')
-            .attr('href', href)
-            .text(name);
+  getElementString() {
+    const nav = $('<nav>').addClass('menu');
 
-        this.links.push(link);
-    }
+    let first = true;
+    this.links.forEach((e) => {
+      if (first) {
+        nav.append(e);
+        first = false;
+      } else {
+        nav.append('|');
+        nav.append(e);
+      }
+    });
 
-    getElementString() {
-        let nav = $('<nav>')
-            .addClass('menu');
-
-        let first = true;
-        this.links.forEach(e => {
-            if (first) {
-                nav.append(e);
-                first = false;
-            } else {
-                nav.append('|');
-                nav.append(e);
-            }
-        });
-
-        return $('<header>')
-            .addClass('header')
-            .append($('<div>')
-                .append($('<span>')
-                    .addClass('title')
-                    .text(this.title)))
-            .append($('<div>')
-                .append(nav));
-    }
+    return $('<header>')
+      .addClass('header')
+      .append($('<div>').append($('<span>').addClass('title').text(this.title)))
+      .append($('<div>').append(nav));
+  }
 }
 
 module.exports = TitleBar;

@@ -1,121 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
-        <title>Handlebars Demo</title>
-    </head>
-    <body>
-        <h1>Example of how to render template</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+    <title>Handlebars Demo</title>
+  </head>
+  <body>
+    <h1>Example of how to render template</h1>
 
-        <!-- This is where our final result will be displayed on the webpage -->
-        <div id="container"></div>
+    <!-- This is where our final result will be displayed on the webpage -->
+    <div id="container"></div>
 
-        <!-- This is our template we are going to use one or more times -->
-        <script type="text/x-handlebars-template" id="hb-template">
-            <h3>Hello {{name}}!</h3>
-        </script>
+    <!-- This is our template we are going to use one or more times -->
+    <script type="text/x-handlebars-template" id="hb-template">
+      <h3>
+        Hello {{name}}!
+      </h3>
+    </script>
 
-        <!-- This is where the data comes from and the function to do the work -->
-        <script>
-            const mates = [
-                {
-                    name: "Maria",
-                    age: 25
-                },
-                {
-                    name: "Peter",
-                    age: 27
-                }
-            ];
-            
-            $(function() {
-                //- in source variable we obtain the template as text
-                const source = $("#hb-template").html();
-                //- Handlebars.compile returns a function which we can call with our data
-                let template = Handlebars.compile(source);
-                //- here we specify where data to be rendered and what data to use
-                $("#container").html(template(mates[0]));
+    <!-- This is where the data comes from and the function to do the work -->
+    <script>
+      const mates = [
+        {
+          name: 'Maria',
+          age: 25,
+        },
+        {
+          name: 'Peter',
+          age: 27,
+        },
+      ];
 
-                //- this is example with for loop how to render all the data
-                // for(let i = 0; i < data.length; i++) {
-                //     $("#container").append(template(data[i]));
-                // }
-            });
-        </script>
+      $(function () {
+        //- in source variable we obtain the template as text
+        const source = $('#hb-template').html();
+        //- Handlebars.compile returns a function which we can call with our data
+        let template = Handlebars.compile(source);
+        //- here we specify where data to be rendered and what data to use
+        $('#container').html(template(mates[0]));
 
-        <hr>
-        <h1>Example of forEach with Handlebars</h1>
+        //- this is example with for loop how to render all the data
+        // for(let i = 0; i < data.length; i++) {
+        //     $("#container").append(template(data[i]));
+        // }
+      });
+    </script>
 
-        <ul id="box"></ul>
+    <hr />
+    <h1>Example of forEach with Handlebars</h1>
 
-        <script type="text/x-handlebars-template" id="my-template">
-            {{#each data}}
-                <li>Name: {{name}}, Age: {{age}}</li>
-            {{/each}}
-        </script>
+    <ul id="box"></ul>
 
-        <script>
-            //- pay attention here, that you need to use object and in it property name for the data. You can't provide array directly
-            const people = {
-                data: [
-                { name: "Maria", age: 25 },
-                { name: "Peter", age: 27 },
-                { name: "Qna", age: 28 }
-            ]};
-            
-            $(function() {
-                const model = $("#my-template").html();
-                let template = Handlebars.compile(model);
-                // here we provide people variable but the specific property will be searched in template, this is in case we have many different properties
-                $("#box").html(template(people));
-            });
-        </script>
+    <script type="text/x-handlebars-template" id="my-template">
+      {{#each data}}
+        <li>
+          Name: {{name}}, Age: {{age}}
+        </li>
+      {{/each}}
+    </script>
 
-        <hr>
-        <h1>Example of how to use Partial templates</h1>
+    <script>
+      //- pay attention here, that you need to use object and in it property name for the data. You can't provide array directly
+      const people = {
+        data: [
+          { name: 'Maria', age: 25 },
+          { name: 'Peter', age: 27 },
+          { name: 'Qna', age: 28 },
+        ],
+      };
 
-        <div id="result"></div>
+      $(function () {
+        const model = $('#my-template').html();
+        let template = Handlebars.compile(model);
+        // here we provide people variable but the specific property will be searched in template, this is in case we have many different properties
+        $('#box').html(template(people));
+      });
+    </script>
 
-        <script type="text/x-handlebars-template" id="main-template">
-            Grade: {{grade}}
-            {{#each teacher}}
-                {{> listItem}}
-            {{/each}}
-        </script>
+    <hr />
+    <h1>Example of how to use Partial templates</h1>
 
-        <script type="text/x-handlebars-template" id="secondary-template">
-            <li>Name: {{name}}, Subject: {{subject}}</li>
-        </script>
+    <div id="result"></div>
 
-        <script>
-            const teachers = {
-                teacher: [
-                    {
-                        name: "Ani",
-                        subject: "History"
-                    },
-                    {
-                        name: "Stamat",
-                        subject: "Math"
-                    }
-                ],
-                grade: 5
-            }
+    <script type="text/x-handlebars-template" id="main-template">
+      Grade: {{grade}}
+      {{#each teacher}}
+          {{> listItem}}
+      {{/each}}
+    </script>
 
-            $(function() {
-                Handlebars.registerPartial('listItem', $("#secondary-template").html())
-                const htmlContent = $("#main-template").html();
-                let template = Handlebars.compile(htmlContent);
-                $("#result").html(template(teachers));
-            });
-        </script>
+    <script type="text/x-handlebars-template" id="secondary-template">
+      <li>
+        Name: {{name}}, Subject: {{subject}}
+      </li>
+    </script>
 
-        <hr>
-        <p>Note: in Handlebars double curly braces {{variable}} will not escape html symbols and triple curly braces {{{variable}}}will escape html symbols</p>
-        <p>Note: if we for example keep Hadnlebars template in external file we have to use .hbs extension, Example file name: template.hbs</p>
-    </body>
+    <script>
+      const teachers = {
+        teacher: [
+          {
+            name: 'Ani',
+            subject: 'History',
+          },
+          {
+            name: 'Stamat',
+            subject: 'Math',
+          },
+        ],
+        grade: 5,
+      };
+
+      $(function () {
+        Handlebars.registerPartial('listItem', $('#secondary-template').html());
+        const htmlContent = $('#main-template').html();
+        let template = Handlebars.compile(htmlContent);
+        $('#result').html(template(teachers));
+      });
+    </script>
+
+    <hr />
+    <p>
+      Note: in Handlebars double curly braces {{variable}} will not escape html
+      symbols and triple curly braces {{{variable}}}will escape html symbols
+    </p>
+    <p>
+      Note: if we for example keep Hadnlebars template in external file we have
+      to use .hbs extension, Example file name: template.hbs
+    </p>
+  </body>
 </html>

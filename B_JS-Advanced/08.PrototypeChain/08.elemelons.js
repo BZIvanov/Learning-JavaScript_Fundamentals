@@ -68,14 +68,12 @@ function generateMelonClasses() {
   return { Melon, Watermelon, Firemelon, Earthmelon, Airmelon, Melolemonmelon };
 }
 
-let m = generateMelonClasses();
-let test = new m.Melon(100, 'Test');
-
+const m = generateMelonClasses();
+const test = new m.Melon(100, 'Test');
 //Throws error
 
-let watermelon = new m.Watermelon(12.5, 'Kingsize');
+const watermelon = new m.Watermelon(12.5, 'Kingsize');
 console.log(watermelon.toString());
-
 // Element: Water
 // Sort: Kingsize
 // Element Index: 100
