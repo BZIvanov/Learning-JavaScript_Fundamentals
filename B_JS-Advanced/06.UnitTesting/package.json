@@ -9,13 +9,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "BI",
+  "license": "MIT",
   "dependencies": {
     "chai": "^4.2.0",
-    "jquery": "^3.3.1",
-    "jsdom": "^13.0.0",
+    "jsdom": "^16.4.0",
     "jsdom-global": "^3.0.2",
-    "mocha": "^5.2.0"
+    "mocha": "^8.1.1"
   }
 }
