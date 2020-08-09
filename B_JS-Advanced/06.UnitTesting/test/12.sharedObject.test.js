@@ -36,19 +36,16 @@ describe('test cases for sharedObject functionality', function () {
       testObject.changeName('');
       expect(testObject.name).to.equal(null);
     });
-
     it('should return pesho on testObject.name after changeName("pesho")', () => {
       testObject.name = 'pesho';
       testObject.changeName('');
       expect(testObject.name).to.equal('pesho');
     });
-
     it('should return test on testObject.name after changeName("test")', () => {
       testObject.changeName('test');
       expect(testObject.name).to.equal('test');
       expect(document.querySelector('#name').value).to.equal('test');
     });
-
     it('should return "5" on testObject.name after changeName(5)', () => {
       testObject.changeName(5);
       expect(testObject.name).to.equal(5);
@@ -64,7 +61,6 @@ describe('test cases for sharedObject functionality', function () {
       expect(testObject.income).to.equal(prevPropValue);
       expect(document.querySelector('#income').value).to.equal(prevInput);
     });
-
     it('should return null on testObject.income after changeIncome(88)', () => {
       const prevInput = document.querySelector('#income').value;
       testObject.income = 88;
@@ -72,7 +68,6 @@ describe('test cases for sharedObject functionality', function () {
       expect(testObject.income).to.equal(88);
       expect(document.querySelector('#income').value).to.equal(prevInput);
     });
-
     it('should return null on testObject.income after changeIncome(0)', () => {
       const prevInput = document.querySelector('#income').value;
       const prevPropValue = testObject.income;
@@ -80,7 +75,6 @@ describe('test cases for sharedObject functionality', function () {
       expect(testObject.income).to.equal(prevPropValue);
       expect(document.querySelector('#income').value).to.equal(prevInput);
     });
-
     it('should return null on testObject.income after changeIncome(-20)', () => {
       const prevInput = document.querySelector('#income').value;
       const prevPropValue = testObject.income;
@@ -88,7 +82,6 @@ describe('test cases for sharedObject functionality', function () {
       expect(testObject.income).to.equal(prevPropValue);
       expect(document.querySelector('#income').value).to.equal(prevInput);
     });
-
     it('should return null on testObject.income after changeIncome(2.5)', () => {
       const prevInput = document.querySelector('#income').value;
       const prevPropValue = testObject.income;
@@ -96,13 +89,11 @@ describe('test cases for sharedObject functionality', function () {
       expect(testObject.income).to.equal(prevPropValue);
       expect(document.querySelector('#income').value).to.equal(prevInput);
     });
-
     it('should return "18" on testObject.income after changeIncome("18")', () => {
       testObject.changeIncome(18);
       expect(testObject.income).to.equal(18);
       expect(document.querySelector('#income').value).to.equal('18');
     });
-
     it('should return "50" on testObject.income after {1,-5,50})', () => {
       testObject.changeIncome(1);
       testObject.changeIncome(-5);
@@ -118,14 +109,12 @@ describe('test cases for sharedObject functionality', function () {
       expect(document.querySelector('#name').value).to.equal('');
       expect(testObject.name).to.equal(null);
     });
-
     it('should not change anything on updateName() and change object name', () => {
       testObject.name = 'kiro';
       testObject.updateName('pesho');
       expect(document.querySelector('#name').value).to.equal('');
       expect(testObject.name).to.equal('kiro');
     });
-
     it('should update testObject.name on updateName()', () => {
       const nameInput = document.querySelector('#name');
       nameInput.value = 'pesho';
@@ -143,7 +132,6 @@ describe('test cases for sharedObject functionality', function () {
       expect(incomeInput.value).to.equal('2.5');
       expect(testObject.income).to.equal(null);
     });
-
     it('should not change anything on updateIncome() with previously set obj.income', () => {
       testObject.income = 65;
       const incomeInput = document.querySelector('#income');
@@ -152,7 +140,6 @@ describe('test cases for sharedObject functionality', function () {
       expect(incomeInput.value).to.equal('-30');
       expect(testObject.income).to.equal(65);
     });
-
     it('should not change anything on updateIncome() with previously set obj.income and input value of 0', () => {
       testObject.income = 65;
       const incomeInput = document.querySelector('#income');
@@ -161,7 +148,6 @@ describe('test cases for sharedObject functionality', function () {
       expect(incomeInput.value).to.equal('0');
       expect(testObject.income).to.equal(65);
     });
-
     it('should change income on updateIncome() {50}', () => {
       const incomeInput = document.querySelector('#income');
       incomeInput.value = 50;

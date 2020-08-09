@@ -14,7 +14,6 @@ describe('Test odd/even function', function () {
     const testCase = isOddOrEven({});
     expect(testCase).to.be.undefined;
   });
-
   it('test input is even normal case', function () {
     const testCase = isOddOrEven('Hi');
     expect(testCase).equal('even');
@@ -23,7 +22,6 @@ describe('Test odd/even function', function () {
     const testCase = isOddOrEven('');
     expect(testCase).equal('even');
   });
-
   it('test input is odd normal case', function () {
     const testCase = isOddOrEven('job');
     expect(testCase).equal('odd');
