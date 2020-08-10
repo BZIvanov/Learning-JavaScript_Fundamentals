@@ -1,11 +1,11 @@
 // 02. F1 race
 function race(arr) {
-  let pilots = arr
+  const pilots = arr
     .shift()
     .split(' ')
     .filter((x) => x !== '');
 
-  let commands = (function () {
+  const commands = (function () {
     function join(name) {
       if (!pilots.includes(name)) {
         pilots.push(name);
@@ -13,13 +13,13 @@ function race(arr) {
     }
     function crash(name) {
       if (pilots.includes(name)) {
-        let index = pilots.indexOf(name);
+        const index = pilots.indexOf(name);
         pilots.splice(index, 1);
       }
     }
     function pit(name) {
       if (pilots.includes(name)) {
-        let index = pilots.indexOf(name);
+        const index = pilots.indexOf(name);
         if (index !== pilots.length - 1) {
           pilots.splice(index, 1);
           pilots.splice(index + 1, 0, name);
@@ -28,7 +28,7 @@ function race(arr) {
     }
     function overtake(name) {
       if (pilots.includes(name)) {
-        let index = pilots.indexOf(name);
+        const index = pilots.indexOf(name);
         if (index !== 0) {
           pilots.splice(index, 1);
           pilots.splice(index - 1, 0, name);
@@ -39,7 +39,7 @@ function race(arr) {
     return { join, crash, pit, overtake };
   })();
 
-  for (let row of arr) {
+  for (const row of arr) {
     let [action, pilot] = row.split(' ').filter((x) => x !== '');
     action = action.toLowerCase();
     commands[action](pilot);
@@ -61,15 +61,15 @@ race([
 
 // 03. DNAex
 function DNAex(arr) {
-  let species = {};
+  const species = {};
 
-  let regex = /([!@#$?a-z]+)=(\d+)--(\d+)<<([a-z]+)/g;
+  const regex = /([!@#$?a-z]+)=(\d+)--(\d+)<<([a-z]+)/g;
   let match = regex.exec(arr);
   while (match) {
-    let gene = match[1].replace(/[!@#$?]+/g, '');
-    let geneLength = match[2];
-    let countOFGenes = match[3];
-    let organism = match[4];
+    const gene = match[1].replace(/[!@#$?]+/g, '');
+    const geneLength = match[2];
+    const countOFGenes = match[3];
+    const organism = match[4];
 
     if (gene.length === +geneLength) {
       if (!species.hasOwnProperty(organism)) {
@@ -80,10 +80,10 @@ function DNAex(arr) {
     match = regex.exec(arr);
   }
 
-  let sortedKeys = Object.keys(species).sort((a, b) => {
+  const sortedKeys = Object.keys(species).sort((a, b) => {
     return species[b] - species[a];
   });
-  for (let key of sortedKeys) {
+  for (const key of sortedKeys) {
     console.log(`${key} has genome size of ${species[key]}`);
   }
 }
@@ -97,9 +97,10 @@ DNAex([
 
 // 04. F1 championship
 function championsip(arr) {
-  let pilots = {};
-  for (let row of arr) {
-    let [team, pilot, points] = row.split(' -> ');
+  const pilots = {};
+
+  for (const row of arr) {
+    const [team, pilot, points] = row.split(' -> ');
     if (!pilots.hasOwnProperty(team)) {
       pilots[team] = { ___totalPoints___: 0 };
     }
@@ -110,19 +111,19 @@ function championsip(arr) {
     pilots[team]['___totalPoints___'] += +points;
   }
 
-  let sortedKeys = Object.keys(pilots)
+  const sortedKeys = Object.keys(pilots)
     .sort((a, b) => {
       return pilots[b]['___totalPoints___'] - pilots[a]['___totalPoints___'];
     })
     .slice(0, 3);
-  for (let key of sortedKeys) {
+  for (const key of sortedKeys) {
     console.log(`${key}: ${pilots[key]['___totalPoints___']}`);
-    let sortedInnerKeys = Object.keys(pilots[key])
+    const sortedInnerKeys = Object.keys(pilots[key])
       .filter((x) => x !== '___totalPoints___')
       .sort((a, b) => {
         return pilots[key][b] - pilots[key][a];
       });
-    for (let innerKey of sortedInnerKeys) {
+    for (const innerKey of sortedInnerKeys) {
       console.log(`-- ${innerKey} -> ${pilots[key][innerKey]}`);
     }
   }
