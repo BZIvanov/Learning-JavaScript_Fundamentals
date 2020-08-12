@@ -103,6 +103,16 @@ const newPerson = {
 console.log(newPerson); // results in { name: "Ina", age: 28 }
 ```
 
+- string interpolation example with unknown object key
+
+```javascript
+const animalSounds = { cat: 'meow', dog: 'bark' };
+const animal = 'lion';
+const sound = 'roar';
+const result = { ...animalSounds, [animal]: sound };
+console.log(result); // {cat: "meow", dog: "bark", lion: "roar"}
+```
+
 !!! Something VERY important. Object with spread operator are not cloned in a new object deeply, meaning that nested object will not get new reference, but will point to the same nested object. If that is your case you need to clone deeply manually.
 
 Also when working with arrays you will often want to use concat() method where it will return new array instead using push() method where it mutates the already existing array.
