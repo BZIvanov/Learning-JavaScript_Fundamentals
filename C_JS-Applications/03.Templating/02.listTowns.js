@@ -2,7 +2,7 @@ function attachEvents() {
   $('#btnLoadTowns').on('click', getTowns);
 
   function getTowns() {
-    let towns = $('#towns')
+    const towns = $('#towns')
       .val()
       .split(', ')
       .reduce(
@@ -18,7 +18,7 @@ function attachEvents() {
 
   async function renderTowns(towns) {
     const source = await $.get('./02.template.hbs');
-    let template = Handlebars.compile(source);
+    const template = Handlebars.compile(source);
     $('#root').html(template(towns));
     $('#towns').val('');
   }

@@ -8,7 +8,7 @@
     }
   }
 
-  let cats = [
+  const cats = [
     new Cat('100', 100, 'Continue', 'cat100'),
     new Cat('200', 200, 'Ok', 'cat200'),
     new Cat('204', 204, 'No content', 'cat204'),

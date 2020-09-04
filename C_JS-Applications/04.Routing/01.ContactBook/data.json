@@ -28,29 +28,5 @@
     "lastName": "Kane",
     "phone": "0123 423 873",
     "email": "lana@misix.com"
-  },
-  {
-    "firstName": "Cyril",
-    "lastName": "Figgis",
-    "phone": "0123 176 679",
-    "email": "cyril@misix.com"
-  },
-  {
-    "firstName": "Cheryl",
-    "lastName": "Tunt",
-    "phone": "0123 277 380",
-    "email": "cheryl@misix.com"
-  },
-  {
-    "firstName": "Pam",
-    "lastName": "Poovey",
-    "phone": "0123 070 768",
-    "email": "pam@misix.com"
-  },
-  {
-    "firstName": "Malory",
-    "lastName": "Archer",
-    "phone": "0123 999 999",
-    "email": "malory@misix.com"
   }
 ]
