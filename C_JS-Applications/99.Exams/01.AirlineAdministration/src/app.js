@@ -1,8 +1,8 @@
 $(() => {
-    attachLinkEvents()
-    showHideLinks()
-    hideAllViews()
-    attachButtonEvents()
-    attachBoxesEvents()
-    showHomeView()
+  attachLinkEvents();
+  showHideLinks();
+  hideAllViews();
+  attachButtonEvents();
+  attachBoxesEvents();
+  showHomeView();
 });
