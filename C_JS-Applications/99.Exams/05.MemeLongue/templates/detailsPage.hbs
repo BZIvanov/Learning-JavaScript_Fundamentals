@@ -1,26 +1,26 @@
 {{> navbar}}
 
 <div class="meme-details">
-    <div class="my-meme-details">
-        <a href="#/meme/:{{details._id}}" id="meme-title">{{details.title}}</a>
-        <img src="{{details.imageUrl}}">
-        <div class="meme-props">
-            <h2>Description</h2>
-            <p class="meme-description">
-                {{details.description}}
-            </p>
-        </div>
-
-
-        <div class="meme-details-buttons">
-            <a class="meme-details-button" href="#/profile/:{{details._acl.creator}}">Created by {{details.creator}}</a>
-            {{#if isOwner}}
-                <a href="#/edit/:{{details._id}}" class="meme-details-button">Edit</a>
-                <a href="#/delete/:{{details._id}}" class="meme-details-button">Delete</a>
-            {{/if}}
-        </div>
-
+  <div class="my-meme-details">
+    <a href="#/meme/:{{details._id}}" id="meme-title">{{details.title}}</a>
+    <img src="{{details.imageUrl}}">
+    <div class="meme-props">
+      <h2>Description</h2>
+      <p class="meme-description">
+        {{details.description}}
+      </p>
     </div>
+
+
+    <div class="meme-details-buttons">
+      <a class="meme-details-button" href="#/profile/:{{details._acl.creator}}">Created by {{details.creator}}</a>
+      {{#if isOwner}}
+      <a href="#/edit/:{{details._id}}" class="meme-details-button">Edit</a>
+      <a href="#/delete/:{{details._id}}" class="meme-details-button">Delete</a>
+      {{/if}}
+    </div>
+
+  </div>
 </div>
 
 {{> footer}}

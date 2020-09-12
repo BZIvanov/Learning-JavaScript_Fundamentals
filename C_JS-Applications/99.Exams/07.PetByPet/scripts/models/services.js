@@ -1,16 +1,16 @@
-let servicer = (() => {
+const servicer = (() => {
   function saveSession(userInfo) {
-    let userAuth = userInfo._kmd.authtoken;
+    const userAuth = userInfo._kmd.authtoken;
     sessionStorage.setItem('authtoken', userAuth);
-    let userId = userInfo._id;
+    const userId = userInfo._id;
     sessionStorage.setItem('userId', userId);
-    let username = userInfo.username;
+    const username = userInfo.username;
     sessionStorage.setItem('username', username);
   }
 
   // user/login
   function login(username, password) {
-    let userData = {
+    const userData = {
       username,
       password,
     };
@@ -20,7 +20,7 @@ let servicer = (() => {
 
   // user/register
   function register(username, password) {
-    let userData = {
+    const userData = {
       username,
       password,
     };
@@ -30,7 +30,7 @@ let servicer = (() => {
 
   // user/logout
   function logout() {
-    let logoutData = {
+    const logoutData = {
       authtoken: sessionStorage.getItem('authtoken'),
     };
 
@@ -43,7 +43,7 @@ let servicer = (() => {
   });
 
   function showInfo(message) {
-    let infoBox = $('#infoBox');
+    const infoBox = $('#infoBox');
     infoBox.find('span').text(message);
     //infoBox.text(message);
     infoBox.show();
@@ -55,7 +55,7 @@ let servicer = (() => {
   }
 
   function showError(message) {
-    let errorBox = $('#errorBox');
+    const errorBox = $('#errorBox');
     errorBox.find('span').text(message);
     //errorBox.text(message);
     errorBox.show();
