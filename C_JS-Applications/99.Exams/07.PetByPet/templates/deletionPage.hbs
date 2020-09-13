@@ -1,15 +1,15 @@
 {{> header}}
 
 <main id="site-content">
-    <section class="deletePet">
-        <h3>{{name}}</h3>
-        <p>Pet counter: <i class="fas fa-heart"></i> {{likes}}</p>
-        <p class="img"><img src="{{imageURL}}"></p>
-        <form action="#/deletePet/:{{id}}" method="POST">
-            <p class="description">{{description}}</p>
-            <input type="submit" value="Delete" class="button" >
-        </form>
-    </section>
+  <section class="deletePet">
+    <h3>{{name}}</h3>
+    <p>Pet counter: <i class="fas fa-heart"></i> {{likes}}</p>
+    <p class="img"><img src="{{imageURL}}"></p>
+    <form action="#/deletePet/:{{id}}" method="POST">
+      <p class="description">{{description}}</p>
+      <input type="submit" value="Delete" class="button">
+    </form>
+  </section>
 </main>
 
 {{> footer}}
