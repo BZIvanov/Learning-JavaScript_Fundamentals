@@ -24,8 +24,8 @@ function initializeTable() {
   }
 
   function createCountry() {
-    let country = $('#newCountryText');
-    let capital = $('#newCapitalText');
+    const country = $('#newCountryText');
+    const capital = $('#newCapitalText');
     addCountryToTable(country.val(), capital.val());
     country.val('');
     capital.val('');
@@ -33,13 +33,13 @@ function initializeTable() {
   }
 
   function moveUp() {
-    let row = $(this).parent().parent();
+    const row = $(this).parent().parent();
     row.insertBefore(row.prev());
     hideButtons();
   }
 
   function moveDown() {
-    let row = $(this).parent().parent();
+    const row = $(this).parent().parent();
     row.insertAfter(row.next());
     hideButtons();
   }

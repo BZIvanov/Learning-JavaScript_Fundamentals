@@ -24,17 +24,13 @@
         <td>Didi</td>
         <td>Ruse</td>
       </tr>
-      <tr>
-        <td>Tedy</td>
-        <td>Varna</td>
-      </tr>
     </table>
     <button onclick="colorize()">Colorize</button>
     <script>
       function colorize() {
-        let table = document.querySelectorAll('tbody tr');
-        for (let i = 1; i < table.length; i += 2) {
-          table[i].style.backgroundColor = 'Teal';
+        const tableRows = document.querySelectorAll('tbody tr');
+        for (let i = 1; i < tableRows.length; i += 2) {
+          tableRows[i].style.backgroundColor = 'Teal';
         }
       }
     </script>

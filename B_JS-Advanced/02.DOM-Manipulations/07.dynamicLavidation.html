@@ -14,12 +14,12 @@
     <input id="email" type="text" />
     <script>
       function validate() {
-        let box = document.getElementById('email');
+        const box = document.getElementById('email');
         box.addEventListener('change', valid);
 
         function valid() {
-          let text = box.value;
-          let pattern = /\w+@\w+\.\w+/g;
+          const text = box.value;
+          const pattern = /\w+@\w+\.\w+/g;
           if (pattern.test(text)) {
             box.className = '';
           } else {

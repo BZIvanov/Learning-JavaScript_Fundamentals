@@ -48,8 +48,8 @@
     </div>
     <script>
       function toggle() {
-        let contentDiv = document.getElementById('extra');
-        let btn = document.getElementsByClassName('button')[0];
+        const contentDiv = document.getElementById('extra');
+        const btn = document.getElementsByClassName('button')[0];
         if (contentDiv.style.display === 'none') {
           contentDiv.style.display = 'block';
           btn.textContent = 'Less';

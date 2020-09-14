@@ -27,15 +27,15 @@
     <script>
       function create(sentences) {
         for (let word of sentences) {
-          let divElement = document.createElement('div');
-          let paraElement = document.createElement('p');
+          const divElement = document.createElement('div');
+          const paraElement = document.createElement('p');
           paraElement.textContent = word;
           paraElement.style.display = 'none';
           divElement.appendChild(paraElement);
           divElement.addEventListener('click', function () {
             this.children[0].style.display = 'block';
           });
-          let container = document.getElementById('content');
+          const container = document.getElementById('content');
           container.appendChild(divElement);
         }
       }

@@ -41,8 +41,8 @@
     </div>
     <script>
       function focus() {
-        let boxes = document.querySelectorAll('div div');
-        for (let box of boxes) {
+        const boxes = document.querySelectorAll('div div');
+        for (const box of boxes) {
           box.children[1].addEventListener('focus', highlight);
           box.children[1].addEventListener('blur', lightOut);
         }

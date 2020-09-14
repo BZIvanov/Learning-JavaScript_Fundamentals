@@ -1,6 +1,6 @@
 function attachEventsListeners() {
-  let inputValue = document.getElementById('inputDistance');
-  let btn = document.getElementById('convert');
+  const inputValue = document.getElementById('inputDistance');
+  const btn = document.getElementById('convert');
   btn.addEventListener('click', calc);
 
   function calc() {
@@ -63,7 +63,7 @@ function attachEventsListeners() {
         result = convertToMeters / 0.0254;
         break;
     }
-    let output = document.getElementById('outputDistance');
+    const output = document.getElementById('outputDistance');
     output.value = result;
   }
 }

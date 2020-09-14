@@ -19,7 +19,7 @@
     <div id="result"></div>
     <script>
       function extractText() {
-        let items = $('#items li')
+        const items = $('#items li')
           .toArray()
           .map((li) => li.textContent)
           .join(', ');

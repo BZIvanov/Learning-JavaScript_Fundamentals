@@ -10,7 +10,7 @@
     <input
       type="text"
       id="time"
-      style="border: 3px solid blue; text-align: center; font-size: 2em;"
+      style="border: 3px solid blue; text-align: center; font-size: 2em"
       disabled="true"
     />
 
@@ -20,15 +20,15 @@
       };
 
       function countdown(n) {
-        let minutes = Math.floor(n / 60);
-        let seconds = n % 60;
-        let clock = document.getElementById('time');
+        const minutes = Math.floor(n / 60);
+        const seconds = n % 60;
+        const clock = document.getElementById('time');
         clock.value = `${minutes}:${('0' + seconds).slice(-2)}`;
 
         setInterval(function tick() {
           n--;
-          let minutes = Math.floor(n / 60);
-          let seconds = n % 60;
+          const minutes = Math.floor(n / 60);
+          const seconds = n % 60;
           clock.value = `${minutes}:${('0' + seconds).slice(-2)}`;
         }, 1000);
       }
