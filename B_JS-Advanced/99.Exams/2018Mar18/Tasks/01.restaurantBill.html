@@ -1,20 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Restaurant Bill</title>
     <style>
-      body {padding: 30px;}
-      table, section {border: 1px solid black; border-collapse: collapse;}
-      th, td {padding: 5px 20px;}
-      th, tfoot td {background: #cccccc;}
-      tr:nth-child(odd) {background: #eeeeee;}
-      tr:nth-child(even) {background: #dddddd;}
-      tfoot > tr td {font-style: italic; font-weight: bold;}
-      section {margin-top: 10px; width: 177px; background: #cccccc;}
-      section > * {display: block; padding: 5px;}
-      h3 {margin: 0; text-align: center;}
-      button {margin: 5px auto;}
+      body {
+        padding: 30px;
+      }
+      table,
+      section {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 5px 20px;
+      }
+      th,
+      tfoot td {
+        background: #cccccc;
+      }
+      tr:nth-child(odd) {
+        background: #eeeeee;
+      }
+      tr:nth-child(even) {
+        background: #dddddd;
+      }
+      tfoot > tr td {
+        font-style: italic;
+        font-weight: bold;
+      }
+      section {
+        margin-top: 10px;
+        width: 177px;
+        background: #cccccc;
+      }
+      section > * {
+        display: block;
+        padding: 5px;
+      }
+      h3 {
+        margin: 0;
+        text-align: center;
+      }
+      button {
+        margin: 5px auto;
+      }
     </style>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   </head>
@@ -39,11 +70,13 @@
 
     <section id="add-product">
       <h3>Add new product</h3>
-      <label>Product:
-        <input type="text">
+      <label
+        >Product:
+        <input type="text" />
       </label>
-      <label>Price:
-        <input type="number">
+      <label
+        >Price:
+        <input type="number" />
       </label>
       <button onclick="addProduct()">Add</button>
     </section>
@@ -53,22 +86,22 @@
         let product = $('#add-product input[type="text"]').val();
         let price = $('#add-product input[type="number"]').val();
 
-        if (product !== "" && price !== "") {
-          let table = $("#product-list");
+        if (product !== '' && price !== '') {
+          let table = $('#product-list');
 
-          let tr = $("<tr>");
-          let tdProduct = $("<td>").text(product);
+          let tr = $('<tr>');
+          let tdProduct = $('<td>').text(product);
           tdProduct.appendTo(tr);
-          let tdPrice = $("<td>").text(price);
+          let tdPrice = $('<td>').text(price);
           tdPrice.appendTo(tr);
 
           tr.appendTo(table);
 
-          let totalSum = $("#bill tfoot tr").find("td").eq(1);
-          totalSum.text((+totalSum.text() + +price));
+          let totalSum = $('#bill tfoot tr').find('td').eq(1);
+          totalSum.text(+totalSum.text() + +price);
 
-          $('#add-product input[type="text"]').val("");
-          $('#add-product input[type="number"]').val("");
+          $('#add-product input[type="text"]').val('');
+          $('#add-product input[type="number"]').val('');
         }
       }
     </script>
