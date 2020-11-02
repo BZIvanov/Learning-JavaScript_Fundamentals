@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll *.js"
+    "test": "jest --watchAll"
   },
   "keywords": [
     "jest"
@@ -12,9 +12,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^26.0.1"
+    "jest": "^26.6.1"
   },
   "dependencies": {
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.1"
   }
 }
