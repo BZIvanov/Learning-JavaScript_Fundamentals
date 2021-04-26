@@ -1,3 +1,4 @@
+// tagged template example
 const color = 'green';
 const food = 'chocolate';
 
