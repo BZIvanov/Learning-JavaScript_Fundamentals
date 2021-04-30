@@ -1,5 +1,5 @@
 function mapSort(map, sortFunction) {
-  if (sortFunction == undefined) {
+  if (!sortFunction) {
     sortFunction = (a, b) => a[0].toString().localeCompare(b[0].toString());
   }
 

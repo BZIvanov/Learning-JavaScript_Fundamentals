@@ -1,4 +1,4 @@
-let BaseElement = require('./BaseElement.js');
+const BaseElement = require('./BaseElement.js');
 
 class Article extends BaseElement {
   constructor(title, content) {
