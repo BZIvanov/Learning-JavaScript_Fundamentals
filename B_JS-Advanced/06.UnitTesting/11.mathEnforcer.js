@@ -18,4 +18,5 @@ const mathEnforcer = {
     return num1 + num2;
   },
 };
+
 module.exports = { mathEnforcer };

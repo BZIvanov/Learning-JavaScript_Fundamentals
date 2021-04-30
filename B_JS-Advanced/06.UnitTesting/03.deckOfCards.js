@@ -49,5 +49,6 @@ function printDeckOfCards(cards) {
   }
   console.log(cards.join(' '));
 }
+
 printDeckOfCards(['AS', '10D', 'KH', '2C']); // A♠ 10♦ K♥ 2♣
 printDeckOfCards(['5S', '3D', 'QD', '1C']); // Invalid card: 1C
