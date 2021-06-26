@@ -1,5 +1,11 @@
 # Terminology
 
+## General
+
+- **compilation** - the source code of a program is compiled all at once.
+
+- **interpretation** - one line of code is executed before proceeding to the next line of the source code. Syntax errors for example are still thrown on later lines, because JS engine first parse the entire program, before it is executed.
+
 ## JS
 
 - **interpolation** - it allows us to use simple expressions or variable in a string. The string must be surrounded with back-ticks. Example:
