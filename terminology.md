@@ -23,6 +23,8 @@ console.log(`eight = ${5 + 3}`);
 console.log('Hi ' + 5); // the number 5 will converted to string and concatenated with the word Hi
 ```
 
+- **closure** - function using variables from outer scope even while running in a scope where those variables can not be accessed.
+
 ## Keyboard keys
 
 - **back-tick** - the symbol above tab **`**. In javascript it is used for _interpolation_
