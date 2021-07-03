@@ -1,6 +1,6 @@
 ## Object.freeze(obj)
 
-This way we can freeze an object disallowing to be changed in a later use.
+This way we can freeze an object disallowing to be changed if used later.
 For more info read [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze).
 
 ```javascript

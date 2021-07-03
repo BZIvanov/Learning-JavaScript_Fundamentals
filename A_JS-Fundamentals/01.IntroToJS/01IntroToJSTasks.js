@@ -8,7 +8,7 @@ console.log(figureArea(2, 4, 5, 3));
 // 02. Next Day
 function nextDay(year, month, day) {
   const date = new Date(year, month - 1, day);
-  const oneDay = 24 * 60 * 60 * 1000; // miliseconds in 1 day
+  const oneDay = 24 * 60 * 60 * 1000; // miliseconds per 1 day
   const nextDay = new Date(date.getTime() + oneDay);
   console.log(
     nextDay.getFullYear() +

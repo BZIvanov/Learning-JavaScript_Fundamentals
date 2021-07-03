@@ -1,5 +1,5 @@
 // 01. Triangle of star
-// here we have default value for the function in case none is provided
+// here we have default value for the function if none is provided
 function stars(n = 3) {
   for (let i = 1; i <= n; i++) {
     drawStars(i);
