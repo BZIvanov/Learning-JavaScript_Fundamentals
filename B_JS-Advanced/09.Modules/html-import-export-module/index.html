@@ -13,5 +13,20 @@
       type='module' for the script tag.
     </p>
     <p>Check the console for the printed message.</p>
+    <div>
+      <p>ES6 modules info</p>
+      <ul>
+        <li>
+          by specifying a file as module, everything in it will be private, not
+          on the global scope.
+        </li>
+        <li>modules always use strict mode.</li>
+        <li>
+          'this' will be undefined, not the global scope if used directly in the
+          file.
+        </li>
+        <li>module scripts are loaded with defer</li>
+      </ul>
+    </div>
   </body>
 </html>
