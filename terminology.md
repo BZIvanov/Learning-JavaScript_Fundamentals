@@ -6,6 +6,10 @@
 
 - **interpretation** - one line of code is executed before proceeding to the next line of the source code. Syntax errors for example are still thrown on later lines, because JS engine first parse the entire program, before it is executed.
 
+- **imperative programming** - programming style, that tells the computer how to accomplish some task. Example: take 2 steps, then turn right, then take 3 steps, then turn left.
+
+- **declarative programming** - expresses the logic of a program without identifying the control flow. Control flow is abstracted away, so declarative code only needs to specify what to do. Example: go to the kitchen.
+
 ## JS
 
 - **interpolation** - it allows us to use simple expressions or variable in a string. The string must be surrounded with back-ticks. Example:
