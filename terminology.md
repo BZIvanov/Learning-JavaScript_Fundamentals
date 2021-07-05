@@ -8,7 +8,7 @@
 
 - **imperative programming** - programming style, that tells the computer how to accomplish some task. Example: take 2 steps, then turn right, then take 3 steps, then turn left.
 
-- **declarative programming** - expresses the logic of a program without identifying the control flow. Control flow is abstracted away, so declarative code only needs to specify what to do. Example: go to the kitchen.
+- **declarative programming** - expresses the logic of a program without identifying the control flow. Control flow is abstracted away, so declarative code only needs to specify what to do. Example: go to the kitchen. HTML is also an example of declarative programming.
 
 ## JS
 
