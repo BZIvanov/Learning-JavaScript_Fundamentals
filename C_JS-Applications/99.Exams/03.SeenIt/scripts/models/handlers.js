@@ -228,8 +228,6 @@ handlers.displayComments = function (context) {
       context.post = post;
       context.comments = comments;
       context.idPost = post._id;
-      //console.log(post)
-      //console.log(comments)
 
       context.post.creationTime = specifics.calcTime(post._kmd.ect);
       context.comments.forEach((el, i) => {
