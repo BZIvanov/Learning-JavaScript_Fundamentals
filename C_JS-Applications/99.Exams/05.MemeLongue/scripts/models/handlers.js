@@ -48,8 +48,8 @@ handlers.registerNewUser = function (context) {
   const email = context.params.email;
   const avatarUrl = context.params.avatarUrl;
 
-  let usernameRegex = /[A-Za-z]{3,}/;
-  let passwordRegex = /[A-Za-z0-9]{6,}/;
+  const usernameRegex = /[A-Za-z]{3,}/;
+  const passwordRegex = /[A-Za-z0-9]{6,}/;
   if (!usernameRegex.test(username)) {
     servicer.showError('Username should contain 3 or more latin letters!');
   } else if (!passwordRegex.test(password)) {
@@ -59,7 +59,7 @@ handlers.registerNewUser = function (context) {
   } else if (password !== repeatPassword) {
     servicer.showError('Both passwords should match!');
   } else {
-    let data = { username, password, email, avatarUrl };
+    const data = { username, password, email, avatarUrl };
     requester
       .post('user', '', 'basic', data)
       .then(function (response) {
