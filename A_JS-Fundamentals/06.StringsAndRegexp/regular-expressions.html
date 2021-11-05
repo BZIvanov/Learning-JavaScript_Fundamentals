@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+      }
+      h2 {
+        padding-left: 5px;
+      }
+      span {
+        margin: 5px;
+        padding: 5px 8px;
+        border: 1px solid lightskyblue;
+        border-radius: 5px;
+      }
+      b {
+        color: rosybrown;
+      }
+      .list {
+        margin: 2px;
+        padding: 5px 8px;
+        border: 1px solid lightskyblue;
+        border-radius: 5px;
+      }
+      .regexp {
+        margin: 2px;
+        padding: 5px 8px;
+        letter-spacing: 3px;
+        border: 1px solid lightskyblue;
+        border-radius: 5px;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <title>Regular expressions</title>
+  </head>
+  <body>
+    <div>
+      <h2>Negative Lookahead</h2>
+      <div class="list">
+        <h4>Raw List:</h4>
+        <p>
+          <span>data-list</span><span>data-tag</span><span>data-item</span
+          ><span>data-model</span><span>data-binding</span>
+        </p>
+      </div>
+      <div class="regexp">
+        <h4>Reg expression:</h4>
+        <p>data-<b>(?!</b>list<b>|</b>tag<b>)[a-z]+</b></p>
+      </div>
+      <div class="list">
+        <h4>Result List:</h4>
+        <p>
+          <span>data-item</span><span>data-model</span><span>data-binding</span>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
