@@ -36,5 +36,4 @@ console.log(distanceBetweenPoints(2, 4, 5, 0));
 function exponent(a, b) {
   console.log(a ** b); // 125
 }
-
-multi(5, 3);
+exponent(5, 3);
