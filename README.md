@@ -1,6 +1,6 @@
-## :baby: JavaScript Fundamentals
+## Learning JavaScript
 
-This repository contains learning material related to the fundamentals of JavaScript.
+This repository contains learning material for JavaScript.
 
 ## :pencil: Content
 
