@@ -25,11 +25,13 @@ This way we can combine properties from one object with another object. Click [h
 const target = { a: 1, b: 2 };
 const source = { b: 4, c: 5 };
 
+const returnedTarget = Object.assign(target, source);
+
 console.log(target);
 // expected output: Object { a: 1, b: 4, c: 5 }
 
-console.log(returnedTarget);
-// expected output: Object { a: 1, b: 4, c: 5 }
+console.log(returnedTarget === target);
+// Expected output: true
 ```
 
 ## Destructuring arrays examples
@@ -37,7 +39,7 @@ console.log(returnedTarget);
 Pulling the first and the rest of the elements
 
 ```javascript
-const racers = ['Ivan', 'Mira', 'Toni', 'Katq'];
+const racers = ["Ivan", "Mira", "Toni", "Katq"];
 const [winner, ...others] = racers;
 console.log(winner); // "Ivan"
 console.log(others); // "["Mira", "Toni", "Katq"]"
@@ -46,7 +48,7 @@ console.log(others); // "["Mira", "Toni", "Katq"]"
 Pulling the first and the third elements and ignoring the second
 
 ```javascript
-const racers = ['Ivan', 'Mira', 'Toni', 'Katq'];
+const racers = ["Ivan", "Mira", "Toni", "Katq"];
 const [winner, , third] = racers;
 console.log(winner); // "Ivan"
 console.log(third); // "Toni"
@@ -56,9 +58,9 @@ console.log(third); // "Toni"
 
 ```javascript
 const user = {
-  name: 'Iva',
+  name: "Iva",
   age: 27,
-  city: 'Sofia',
+  city: "Sofia",
 };
 
 const { city: currentCity } = user;
